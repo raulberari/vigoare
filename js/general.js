@@ -91,3 +91,28 @@ function storage()
 
     }
 }
+
+function changeColumns()
+{
+    var grid = document.getElementsByClassName("grid");
+    var item = document.getElementsByClassName("item");
+
+
+    if (grid[0].style.columnCount == 3)
+    {
+        grid[0].style.columnCount = 1;
+        grid[0].style.width = "45%";
+    }
+    else
+    {
+        grid[0].style.columnCount = 3;
+        grid[0].style.width = "90%";
+
+        for (var i = 0; i < item.length; i++)
+        {
+            item[i].style.paddingBottom = "1em";
+        }
+
+    }
+
+}
