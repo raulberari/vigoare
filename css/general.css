@@ -1,0 +1,193 @@
+p.title {
+	font-family: Helvetica Neue;
+	font-weight: 100;
+	font-size: 8em;
+	margin-top: 0.3em;
+}
+
+a.title {
+	text-decoration: none;
+	color: #0f0f0f;
+
+	animation-name: titluNecolor;
+	animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+a.title:hover {
+	color: #ad89a6;
+
+	animation-name: titluColor;
+	animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes titluColor {
+	to {color: #ad89a6;}
+	from {color: #0f0f0f;}
+}
+@keyframes titluNecolor {
+	to {color: #0f0f0f;}
+	from {color: #ad89a6;}
+}
+
+p.subtitle {
+	font-family: Baskerville;
+	font-style: italic;
+	font-weight: 100;
+	font-size: 2.3em;
+	margin-top: -100px;
+}
+
+a.subtitle {
+	text-decoration: none;
+	color: #0f0f0f;
+
+	animation-name: titluNecolor;
+	animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+a.subtitle:hover {
+	color: #ad89a6;
+	animation-name: titluColor;
+	animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+}
+
+div{
+	text-align: center;
+}
+
+.nightModeButton {
+	display: inline-block;
+
+	position: relative;
+	overflow: hidden;
+
+	width: 50px;
+	height: 50px;
+	border: 2px solid;
+	border-color: #0f0f0f;
+	border-radius: 25px;
+	background: #fafafa;
+
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	-webkit-transition-property: color;
+	transition-property: color;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+#whiteBG:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #0f0f0f;
+	border-radius: 100%;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+
+#whiteBG:hover:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+#whiteBG:focus{
+	outline: none;
+}
+
+#blackBG:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fafafa;
+	border-radius: 100%;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+
+#blackBG:hover:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+#blackBG:focus{
+	outline: none;
+}
+
+.grid {
+	padding-top: 2em;
+	width: 75%;
+	margin: 0 auto;
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+
+    -webkit-column-gap: 4em; /* Chrome, Safari, Opera */
+    -moz-column-gap: 4em; /* Firefox */
+    column-gap: 4em;
+}
+
+.item {
+	width: 100%;
+	padding-bottom: 4em;
+
+	animation-name: inauntru;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.item:hover {
+	opacity: 0.7;
+	filter: brightness(150%), contrast(150%), saturate(70%);
+	animation-name: afara;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes afara {
+    to { opacity: 0.7; filter: brightness(150%), contrast(150%), saturate(70%);}
+    from   { opacity: 1; filter: brightness(100%), contrast(10%), saturate(100%);}
+}
+
+@keyframes inauntru {
+    to { opacity: 1; filter: brightness(100%), contrast(10%), saturate(100%);}
+    from   { opacity: 0.7; filter: brightness(150%), contrast(150%), saturate(70%);}
+}
+
+
+html, body {
+	font-size: 100%;
+	background-color: #fafafa;
+	overflow-y: scroll;
+}
+
+p.footer {
+	margin-bottom: 0;
+	font-family: Helvetica Neue;
+	font-weight: 300;
+	font-size: 1.3em;
+}

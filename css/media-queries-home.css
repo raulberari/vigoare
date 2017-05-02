@@ -1,0 +1,34 @@
+@media screen and (max-width: 1280px) {
+	p.title {
+		font-size: 6em;
+		margin-top: 0.2em;
+	}
+
+	p.subtitle {
+		font-size: 1.8em;
+		margin-top: -80px;
+	}
+	p.footer {
+		font-size: 1.1em;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	p.title {
+		font-size: 4em;
+	}
+	p.subtitle {
+		font-size: 1.6em;
+		margin-top: -50px;
+	}
+	.grid {
+		width: 80%;
+
+		-webkit-column-count: 1; /* Chrome, Safari, Opera */
+    	-moz-column-count: 1; /* Firefox */
+    	column-count: 1;
+	}
+	.item {
+		padding-bottom: 2em;
+	}
+}
