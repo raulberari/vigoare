@@ -71,6 +71,7 @@ function storage()
     if (localStorage.getItem("columnNumber") == 3)
     {
         changeColumns();
+        changeIcon();
     }
     else
     {
@@ -176,7 +177,7 @@ function changeColumns()
         localStorage.setItem("columnNumber", "3");
 
     }
-    
+
     changeIcon();
 
 }
