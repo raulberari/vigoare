@@ -176,5 +176,21 @@ function changeColumns()
         localStorage.setItem("columnNumber", "3");
 
     }
+    
+    changeIcon();
 
+}
+
+function changeIcon()
+{
+    var currentIcon = document.getElementById("columnButton").innerText;
+
+    if (currentIcon === "▥")
+    {
+        document.getElementById("columnButton").innerText = "▣";
+    }
+    else
+    {
+        document.getElementById("columnButton").innerText = "▥";
+    }
 }
