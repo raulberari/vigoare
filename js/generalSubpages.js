@@ -60,7 +60,7 @@ function schimbaCuloarea ()
 function storage()
 {
     var nightModeButton = document.getElementsByClassName("nightModeButton");
-    var paragraphs = document.getElementsByTagName('P');
+    var paragraphs = document.getElementsByTagName('p');
     var links = document.getElementsByTagName('A');
 
 
@@ -130,6 +130,46 @@ function storage()
     }
 
 }
+
+function shufflePhotos()
+{
+    var photos = document.getElementsByClassName("item");
+    var photoNames = [];
+
+    var pathName = photos[0].src;
+    pathName = pathName.slice(0, -4); //stripping off ".jpg"
+    pathName = pathName.replace(/[_0-9]+$/, ''); //stripping off the index
+
+
+    for (var i = 1; i <= photos.length; i++)
+    {
+        photoNames[i - 1] = pathName + i + ".jpg";
+    }
+
+    
+    for (var i = 0; i < photos.length - 1; i++)
+    {
+        var j = Math.floor(Math.random() * (photos.length - i)) + i;
+
+        var temp = photoNames[i];
+        photoNames[i] = photoNames[j];
+        photoNames[j] = temp;
+    }
+
+
+
+    for (var i = 0; i < photos.length; i++)
+    {
+        photos[i].src = photoNames[i];
+    }
+}
+
+function onLoad()
+{
+    shufflePhotos();
+    storage();
+}
+
 function changeColumns()
 {
     var grid = document.getElementsByClassName("grid");
