@@ -9,27 +9,14 @@ a.title {
 	text-decoration: none;
 	color: #0f0f0f;
 
-	animation-name: titluNecolor;
-	animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
+	transition-duration: 0.5s;
+	transition-property: ease-in;
 }
 
 a.title:hover {
-	color: #ad89a6;
-
-	animation-name: titluColor;
-	animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
+	color: #edbde2 !important;
 }
 
-@keyframes titluColor {
-	to {color: #ad89a6;}
-	from {color: #0f0f0f;}
-}
-@keyframes titluNecolor {
-	to {color: #0f0f0f;}
-	from {color: #ad89a6;}
-}
 
 p.subtitle {
 	font-family: Baskerville;
@@ -43,16 +30,12 @@ a.subtitle {
 	text-decoration: none;
 	color: #0f0f0f;
 
-	animation-name: titluNecolor;
-	animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
+	transition-duration: 0.5s;
+	transition-property: ease-in;
 }
 
 a.subtitle:hover {
-	color: #ad89a6;
-	animation-name: titluColor;
-	animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
+	color: #edbde2 !important;
 }
 
 div{
@@ -61,6 +44,7 @@ div{
 
 .nightModeButton {
 	display: inline-block;
+	vertical-align: top;
 
 	position: relative;
 	overflow: hidden;
@@ -155,34 +139,23 @@ div{
 	width: 100%;
 	padding-bottom: 4em;
 
-	animation-name: inauntru;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
+	-webkit-transition-duration: 0.6s;
+	transition-duration: 0.6s;
 }
 
 .item:hover {
 	opacity: 0.7;
 	filter: brightness(150%), contrast(150%), saturate(70%);
-	animation-name: afara;
-    animation-duration: 0.4s;
-    animation-timing-function: ease-in-out;
+	
 }
-
-@keyframes afara {
-    to { opacity: 0.7; filter: brightness(150%), contrast(150%), saturate(70%);}
-    from   { opacity: 1; filter: brightness(100%), contrast(10%), saturate(100%);}
-}
-
-@keyframes inauntru {
-    to { opacity: 1; filter: brightness(100%), contrast(10%), saturate(100%);}
-    from   { opacity: 0.7; filter: brightness(150%), contrast(150%), saturate(70%);}
-}
-
 
 html, body {
 	font-size: 100%;
-	background-color: #fafafa;
 	overflow-y: scroll;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
 }
 
 p.footer {

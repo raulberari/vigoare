@@ -9,27 +9,14 @@ a.title {
 	text-decoration: none;
 	color: #0f0f0f;
 
-	animation-name: titluNecolor;
-	animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
+	transition-duration: 0.5s;
+	transition-property: ease-in;
 }
 
 a.title:hover {
-	color: #ad89a6;
-
-	animation-name: titluColor;
-	animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
+	color: #edbde2 !important;
 }
 
-@keyframes titluColor {
-	to {color: #ad89a6;}
-	from {color: #0f0f0f;}
-}
-@keyframes titluNecolor {
-	to {color: #0f0f0f;}
-	from {color: #ad89a6;}
-}
 
 p.subtitle {
 	font-family: Baskerville;
@@ -43,16 +30,12 @@ a.subtitle {
 	text-decoration: none;
 	color: #0f0f0f;
 
-	animation-name: titluNecolor;
-	animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
+	transition-duration: 0.5s;
+	transition-property: ease-in;
 }
 
 a.subtitle:hover {
-	color: #ad89a6;
-	animation-name: titluColor;
-	animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
+	color: #edbde2 !important;
 }
 
 p.description {
@@ -66,16 +49,13 @@ a.description {
 	text-decoration: none;
 	color: #0f0f0f;
 
-	animation-name: titluNecolor;
-	animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
+	
+	transition-duration: 0.5s;
+	transition-property: ease-in;
 }
 
 a.description:hover {
-	color: #ad89a6;
-	animation-name: titluColor;
-	animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
+	color: #edbde2 !important;
 }
 
 p.back {
@@ -90,16 +70,12 @@ a.back {
 	text-decoration: none;
 	color: #0f0f0f;
 
-	animation-name: titluNecolor;
-	animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
+	transition-duration: 0.5s;
+	transition-property: ease-in;
 }
 
 a.back:hover {
-	color: #ad89a6;
-	animation-name: titluColor;
-	animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
+	color: #edbde2 !important;
 }
 
 div{
@@ -199,23 +175,31 @@ div{
 	border-color: #0f0f0f;
 	border-radius: 0px;
 	background: #fafafa;
+	font-size: 40px;
+	line-height: 1em;
 
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+
+.columnsNumberButton:hover{
+	
 }
 
 .grid {
 	padding-top: 2em;
-	width: 45%;
+	width: 45% ;
 	margin: 0 auto;
-	-webkit-column-count: 1; /* Chrome, Safari, Opera */
-    -moz-column-count: 1; /* Firefox */
-    column-count: 1;
-
 }
 
 .item {
 	width: 100%;
 	margin: auto;
 	padding-bottom: 4em;
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;
 
 }
 
@@ -225,8 +209,11 @@ div{
 
 html, body {
 	font-size: 100%;
-	background-color: #fafafa;
 	overflow-y: scroll;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
 }
 
 p.footer {

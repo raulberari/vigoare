@@ -15,8 +15,17 @@
 	p.footer {
 		font-size: 1.1em;
 	}
+	.nightModeButton {
+		width: 40px;
+		height: 40px;
+	}
+	.columnsNumberButton {
+		width: 40px;
+		height: 40px;
+		font-size: 28px;
+	}
 	.grid {
-		width: 70%;
+		width: 70% ;
 	}
 	p.back {
 		font-size:1.8em;
@@ -34,6 +43,15 @@
 	p.description {
 		font-size: 1.6em;
 		margin-top: -50px;
+	}
+	.nightModeButton {
+		width: 35px;
+		height: 35px;
+	}
+	.columnsNumberButton {
+		width: 35px;
+		height: 35px;
+		font-size: 22px;
 	}
 	.grid {
 		width: 80%;
