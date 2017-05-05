@@ -207,6 +207,12 @@ function changeColumns()
     else
     {
         var numberOfColumns = Math.floor((window.innerWidth) / 400) + 1;
+
+        if (numberOfColumns == 1)
+        {
+            numberOfColumns = 2;
+        }
+
         grid[0].style.columnCount = numberOfColumns;
         grid[0].style.width = "90%";
 
