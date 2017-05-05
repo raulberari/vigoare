@@ -29,11 +29,14 @@
 		width: 35px;
 		height: 35px;
 	}
+	.item:hover {
+		opacity: 1;
+	}
 	.grid {
 		width: 80%;
 
-		-webkit-column-count: 1; /* Chrome, Safari, Opera */
-    	-moz-column-count: 1; /* Firefox */
+		-webkit-column-count: 1;
+    	-moz-column-count: 1; 
     	column-count: 1;
 	}
 	.item {
