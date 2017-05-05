@@ -17,7 +17,6 @@ a.title:hover {
 	color: #edbde2 !important;
 }
 
-
 p.subtitle {
 	font-family: Baskerville;
 	font-style: italic;
@@ -38,9 +37,18 @@ a.subtitle:hover {
 	color: #edbde2 !important;
 }
 
-div{
-	text-align: center;
+#buttonsContainer{
+	position: absolute;
+	left: 50%;
+	padding-top: -50px;
+	z-index = 100;
+	transition-duration: 0.3s;
+}
 
+#buttons{
+	position: relative;
+	left: -50%;
+	z-index = 100;
 }
 
 .nightModeButton {
@@ -63,6 +71,8 @@ div{
 	transition-property: color;
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
+
+	z-index = 100;
 }
 
 #whiteBG:before {
@@ -75,6 +85,7 @@ div{
 	bottom: 0;
 	background: #0f0f0f;
 	border-radius: 100%;
+
 	-webkit-transform: scale(0);
 	transform: scale(0);
 	-webkit-transition-property: transform;
@@ -104,6 +115,7 @@ div{
 	bottom: 0;
 	background: #fafafa;
 	border-radius: 100%;
+
 	-webkit-transform: scale(0);
 	transform: scale(0);
 	-webkit-transition-property: transform;
@@ -124,14 +136,15 @@ div{
 }
 
 .grid {
+	padding-top: 4em;
 	width: 75%;
 	margin: 0 auto;
-	-webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
+	-webkit-column-count: 2; 
+    -moz-column-count: 2;
     column-count: 2;
 
-    -webkit-column-gap: 4em; /* Chrome, Safari, Opera */
-    -moz-column-gap: 4em; /* Firefox */
+    -webkit-column-gap: 4em; 
+    -moz-column-gap: 4em;
     column-gap: 4em;
 }
 
