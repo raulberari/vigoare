@@ -1,3 +1,10 @@
+window.onscroll = function () {buttonFloatOnTop()};
+
+function onLoad()
+{
+    storage();
+}
+
 function changeColour() 
 {
 	var nightModeButton = document.getElementsByClassName("nightModeButton");
@@ -22,8 +29,6 @@ function changeColour()
             paragraphs[i].style.color = "#fafafa";  
 
         }  
-
-
     }
     else
     {
@@ -63,12 +68,10 @@ function storage()
         for (var i = 0; i < links.length; i++)
         {
             links[i].style.color = "#fafafa";  
-
         }  
         for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#fafafa";  
-
         }  
 
     }
@@ -83,16 +86,12 @@ function storage()
         for (var i = 0; i < links.length; i++)
         {
             links[i].style.color = "#0f0f0f";  
-
         }  
         for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#0f0f0f";  
-
         }  
-
     }
-
 }
 
 function buttonFloatOnTop()
@@ -111,11 +110,3 @@ function buttonFloatOnTop()
         buttonContainer.style.top = "";
     }
 }
-
-function onLoad()
-{
-    storage();
-}
-
-window.onscroll = function () {buttonFloatOnTop()};
-

@@ -22,7 +22,7 @@ p.subtitle {
 	font-style: italic;
 	font-weight: 100;
 	font-size: 2.3em;
-	margin-top: -100px;
+	margin-top: -120px;
 }
 
 a.subtitle {
@@ -158,13 +158,13 @@ a.subtitle:hover {
 
 .item:hover {
 	opacity: 0.7;
-	filter: brightness(150%), contrast(150%), saturate(70%);
 	
 }
 
 html, body {
 	font-size: 100%;
 	overflow-y: scroll;
+	
 	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.5s;
 	-webkit-transition-timing-function: ease-out;

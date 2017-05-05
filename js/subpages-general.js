@@ -1,5 +1,11 @@
 window.onscroll = function () {buttonFloatOnTop()};
 
+function onLoad()
+{
+    shufflePhotos();
+    storage();
+}
+
 function changeColour() 
 {
 	var nightModeButton = document.getElementsByClassName("nightModeButton");
@@ -23,15 +29,11 @@ function changeColour()
         for (var i = 0; i < links.length; i++)
         {
             links[i].style.color = "#fafafa";  
-
         }  
         for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#fafafa";  
-
         }  
-
-
     }
     else
     {
@@ -49,12 +51,10 @@ function changeColour()
         for (var i = 0; i < links.length; i++)
         {
             links[i].style.color = "#0f0f0f";  
-
         }  
         for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#0f0f0f";  
-
         }  
     }
 }
@@ -65,12 +65,11 @@ function storage()
     var paragraphs = document.getElementsByTagName('p');
     var links = document.getElementsByTagName('A');
 
-
     var grid = document.getElementsByClassName("grid");
     var item = document.getElementsByClassName("item");
     var oneColumnWidth;
 
-    if (localStorage.getItem("columnNumber") == 3)
+    if (localStorage.getItem("columnNumber") > 1)
     {
         changeColumns();
         changeIcon();
@@ -96,12 +95,10 @@ function storage()
         for (var i = 0; i < links.length; i++)
         {
             links[i].style.color = "#fafafa";  
-
         }  
         for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#fafafa";  
-
         }  
 
     }
@@ -121,16 +118,12 @@ function storage()
         for (var i = 0; i < links.length; i++)
         {
             links[i].style.color = "#0f0f0f";  
-
         }  
         for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#0f0f0f";  
-
         }  
-
     }
-
 }
 
 function shufflePhotos()
@@ -139,16 +132,14 @@ function shufflePhotos()
     var photoNames = [];
 
     var pathName = photos[0].src;
-    pathName = pathName.slice(0, -4); //stripping off ".jpg"
-    pathName = pathName.replace(/[_0-9]+$/, ''); //stripping off the index
-
+    pathName = pathName.slice(0, -5); //stripping off "1.jpg"
 
     for (var i = 1; i <= photos.length; i++)
     {
         photoNames[i - 1] = pathName + i + ".jpg";
     }
 
-    
+    //Fisher-Yates shuffle
     for (var i = 0; i < photos.length - 1; i++)
     {
         var j = Math.floor(Math.random() * (photos.length - i)) + i;
@@ -158,18 +149,10 @@ function shufflePhotos()
         photoNames[j] = temp;
     }
 
-
-
     for (var i = 0; i < photos.length; i++)
     {
         photos[i].src = photoNames[i];
     }
-}
-
-function onLoad()
-{
-    shufflePhotos();
-    storage();
 }
 
 function buttonFloatOnTop()
@@ -223,8 +206,8 @@ function changeColumns()
     }
     else
     {
-        var nrColoane = Math.floor((window.innerWidth) / 400) + 1;
-        grid[0].style.columnCount = nrColoane;
+        var numberOfColumns = Math.floor((window.innerWidth) / 400) + 1;
+        grid[0].style.columnCount = numberOfColumns;
         grid[0].style.width = "90%";
 
         for (var i = 0; i < item.length; i++)
@@ -234,10 +217,37 @@ function changeColumns()
         document.getElementById("columnButton").innerText = "▥";
 
         localStorage.setItem("columnNumber", "3");
-
     }
 
     changeIcon();
+}
+
+function onResize()
+{
+    var numberOfColumns = Math.floor((window.innerWidth) / 400) + 1;
+    var grid = document.getElementsByClassName("grid");
+
+    if (window.innerWidth > 1280)
+    {
+        oneColumnWidth = "45%";
+    }
+    else if (window.innerWidth > 800)
+    {
+        oneColumnWidth = "70%";
+    }
+    else
+    {
+        oneColumnWidth = "80%";
+    }
+
+    if (grid[0].style.columnCount > 1)
+    {
+        grid[0].style.columnCount = numberOfColumns;
+    }
+    else
+    {
+        grid[0].style.width = oneColumnWidth;
+    }
 
 }
 
