@@ -40,6 +40,7 @@ a.subtitle:hover {
 
 div{
 	text-align: center;
+
 }
 
 .nightModeButton {
@@ -123,7 +124,6 @@ div{
 }
 
 .grid {
-	padding-top: 2em;
 	width: 75%;
 	margin: 0 auto;
 	-webkit-column-count: 2; /* Chrome, Safari, Opera */

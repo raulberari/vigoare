@@ -82,6 +82,20 @@ div{
 	text-align: center;
 }
 
+#buttonsContainer{
+	position: absolute;
+	left: 50%;
+	padding-top: -50px;
+	z-index = 100;
+	transition-duration: 0.3s;
+}
+
+#buttons{
+	position: relative;
+	left: -50%;
+	z-index = 100;
+}
+
 .nightModeButton {
 	display: inline-block;
 	vertical-align: top;
@@ -186,7 +200,7 @@ div{
 }
 
 .grid {
-	padding-top: 2em;
+	padding-top: 4em;
 	width: 45% ;
 	margin: 0 auto;
 }

@@ -1,4 +1,6 @@
-function schimbaCuloarea () 
+window.onscroll = function () {buttonFloatOnTop()};
+
+function changeColour() 
 {
 	var nightModeButton = document.getElementsByClassName("nightModeButton");
     var paragraphs = document.getElementsByTagName('P');
@@ -23,7 +25,7 @@ function schimbaCuloarea ()
             links[i].style.color = "#fafafa";  
 
         }  
-        for (var i = 0; i < paragrahps.length; i++)
+        for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#fafafa";  
 
@@ -49,7 +51,7 @@ function schimbaCuloarea ()
             links[i].style.color = "#0f0f0f";  
 
         }  
-        for (var i = 0; i < paragrahps.length; i++)
+        for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#0f0f0f";  
 
@@ -96,7 +98,7 @@ function storage()
             links[i].style.color = "#fafafa";  
 
         }  
-        for (var i = 0; i < paragrahps.length; i++)
+        for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#fafafa";  
 
@@ -121,7 +123,7 @@ function storage()
             links[i].style.color = "#0f0f0f";  
 
         }  
-        for (var i = 0; i < paragrahps.length; i++)
+        for (var i = 0; i < paragraphs.length; i++)
         {
             paragraphs[i].style.color = "#0f0f0f";  
 
@@ -168,6 +170,23 @@ function onLoad()
 {
     shufflePhotos();
     storage();
+}
+
+function buttonFloatOnTop()
+{
+    var buttonContainer = document.getElementById("buttonsContainer");
+    var heightThreshold = (window.innerHeight) / 3;
+
+    if (document.body.scrollTop > heightThreshold || document.documentElement.scrollTop > heightThreshold)
+    {
+        buttonContainer.style.position = "fixed";
+        buttonContainer.style.top = "2%";
+    }
+    else
+    {
+        buttonContainer.style.position = "absolute";
+        buttonContainer.style.top = "";
+    }
 }
 
 function changeColumns()
