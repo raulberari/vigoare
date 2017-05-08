@@ -231,6 +231,10 @@ function changeColumns()
 function onResize()
 {
     var numberOfColumns = Math.floor((window.innerWidth) / 400) + 1;
+    if (numberOfColumns == 1)
+    {
+        numberOfColumns = 2;
+    }
     var grid = document.getElementsByClassName("grid");
 
     if (window.innerWidth > 1280)

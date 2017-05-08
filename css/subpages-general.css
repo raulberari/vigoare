@@ -11,6 +11,10 @@ a.title {
 
 	transition-duration: 0.5s;
 	transition-property: ease-in;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: ease-in;
+	-moz-transition-duration: 0.5s;
+	-moztransition-property: ease-in;
 }
 
 a.title:hover {
@@ -31,6 +35,10 @@ a.subtitle {
 
 	transition-duration: 0.5s;
 	transition-property: ease-in;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: ease-in;
+	-moz-transition-duration: 0.5s;
+	-moztransition-property: ease-in;
 }
 
 a.subtitle:hover {
@@ -50,6 +58,10 @@ a.description {
 	
 	transition-duration: 0.5s;
 	transition-property: ease-in;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: ease-in;
+	-moz-transition-duration: 0.5s;
+	-moztransition-property: ease-in;
 }
 
 a.description:hover {
@@ -70,6 +82,10 @@ a.back {
 
 	transition-duration: 0.5s;
 	transition-property: ease-in;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: ease-in;
+	-moz-transition-duration: 0.5s;
+	-moztransition-property: ease-in;
 }
 
 a.back:hover {
@@ -82,6 +98,8 @@ a.back:hover {
 	padding-top: -50px;
 	z-index = 100;
 	transition-duration: 0.3s;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
 }
 
 #buttons{
@@ -104,12 +122,16 @@ a.back:hover {
 	border-radius: 25px;
 	background: #fafafa;
 
-	-webkit-transform: perspective(1px) translateZ(0);
 	transform: perspective(1px) translateZ(0);
-	-webkit-transition-property: color;
-	transition-property: color;
-	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
+	transition-property: color;
+	-webkit-transform: perspective(1px) translateZ(0);
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-property: color;
+	-moz-transform: perspective(1px) translateZ(0);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-property: color;
+
 }
 
 #whiteBG:before {
@@ -123,14 +145,19 @@ a.back:hover {
 	background: #0f0f0f;
 	border-radius: 100%;
 	
-	-webkit-transform: scale(0);
 	transform: scale(0);
-	-webkit-transition-property: transform;
 	transition-property: transform;
-	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
-	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
+	-webkit-transform: scale(0);
+	-webkit-transition-property: transform;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-moz-transform: scale(0);
+	-moz-transition-property: transform;
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+
 }
 
 #whiteBG:hover:before {
@@ -154,17 +181,22 @@ a.back:hover {
 	border-radius: 100%;
 	-webkit-transform: scale(0);
 	transform: scale(0);
-	-webkit-transition-property: transform;
-	transition-property: transform;
-	-webkit-transition-duration: 0.3s;
+	
+	transform: perspective(1px) translateZ(0);
 	transition-duration: 0.3s;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
+	transition-property: color;
+	-webkit-transform: perspective(1px) translateZ(0);
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-property: color;
+	-moz-transform: perspective(1px) translateZ(0);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-property: color;
 }
 
 #blackBG:hover:before {
-  -webkit-transform: scale(1);
   transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
 }
 
 #blackBG:focus{
@@ -188,10 +220,14 @@ a.back:hover {
 	line-height: 1em;
 	outline: none;
 
-	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.5s;
-	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
+
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+
+	-moz-transition-duration: 0.5s;
+	-moz-transition-timing-function: ease-out;
 }
 
 .grid {
@@ -205,18 +241,23 @@ a.back:hover {
 	margin: auto;
 	padding-bottom: 2em;
 
-	-webkit-transition-duration: 1s;
 	transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
 }
 
 html, body {
 	font-size: 100%;
 	overflow-y: scroll;
 	
-	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.5s;
-	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
+
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	
+	-moz-transition-duration: 0.5s;
+	-moz-transition-timing-function: ease-out;
 }
 
 p.footer {

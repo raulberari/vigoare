@@ -11,6 +11,7 @@ a.title {
 
 	transition-duration: 0.5s;
 	transition-property: ease-in;
+	
 }
 
 a.title:hover {
