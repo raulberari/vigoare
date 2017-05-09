@@ -163,7 +163,7 @@ a.subtitle:hover {
 
 html, body {
 	font-size: 100%;
-	overflow-y: scroll;
+	overflow: auto;
 	
 	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.5s;
