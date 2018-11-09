@@ -9,5 +9,5 @@ Website repository for some of the (mostly mobile) photography I did between 201
 * circle button for dark mode
 * square button for multiple-column mode
 
+![Dark homepage, with the subsequent categories](readme-images/darkhomepage.png?raw=true)
 ![2 column view](readme-images/2columns.png?raw=true)
-![Dark homepage, with the subsequent categories](readme-images/darkhome.png?raw=true)
