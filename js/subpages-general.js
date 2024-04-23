@@ -124,7 +124,7 @@ function changeColumns() {
 
     localStorage.setItem("columnNumber", "1");
   } else {
-    const numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
+    let numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
 
     if (numberOfColumns == 1) {
       numberOfColumns = 2;
@@ -143,7 +143,7 @@ function changeColumns() {
 }
 
 function onResize() {
-  const numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
+  let numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
   if (numberOfColumns == 1) {
     numberOfColumns = 2;
   }
