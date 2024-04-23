@@ -122,7 +122,7 @@ function changeColumns() {
 
     document.getElementById("columnsButton").innerText = "1";
 
-    localStorage.setItem("columnNumber", "1");
+    localStorage.setItem("columnNumber", 1);
   } else {
     let numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
 
@@ -136,9 +136,10 @@ function changeColumns() {
     for (let i = 0; i < item.length; i++) {
       item[i].style.paddingBottom = "1em";
     }
-    document.getElementById("columnsButton").innerText = "10";
+    document.getElementById("columnsButton").innerText =
+      numberOfColumns.toString();
 
-    localStorage.setItem("columnNumber", "3");
+    localStorage.setItem("columnNumber", numberOfColumns);
   }
 }
 
@@ -161,15 +162,5 @@ function onResize() {
     grid.style.columnCount = numberOfColumns;
   } else {
     grid.style.width = oneColumnWidth;
-  }
-}
-
-function changeIcon() {
-  const currentIcon = document.getElementById("columnsButton").innerText;
-
-  if (currentIcon === "10") {
-    document.getElementById("columnsButton").innerText = "1";
-  } else {
-    document.getElementById("columnsButton").innerText = "10";
   }
 }
