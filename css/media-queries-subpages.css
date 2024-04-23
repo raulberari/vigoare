@@ -1,65 +1,14 @@
 @media screen and (max-width: 1280px) {
-	p.title {
-		font-size: 6em;
-		margin-top: 0.2em;
-	}
-
-	p.subtitle {
-		font-size: 1.8em;
-		margin-top: -80px;
-	}
-	p.description {
-		font-size: 1.8em;
-		margin-top: -80px;
-	}
-	p.footer {
-		font-size: 1.1em;
-	}
-	.nightModeButton {
-		width: 40px;
-		height: 40px;
-	}
-	.columnsNumberButton {
-		width: 40px;
-		height: 40px;
-		font-size: 28px;
-	}
-	.grid {
-		width: 70% ;
-	}
-	p.back {
-		font-size:1.8em;
-	}
+  .grid {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 800px) {
-	p.title {
-		font-size: 4em;
-	}
-	p.subtitle {
-		font-size: 1.6em;
-		margin-top: -50px;
-	}
-	p.description {
-		font-size: 1.6em;
-		margin-top: -50px;
-	}
-	.nightModeButton {
-		width: 35px;
-		height: 35px;
-	}
-	.columnsNumberButton {
-		width: 35px;
-		height: 35px;
-		font-size: 22px;
-	}
-	.grid {
-		width: 80%;
-	}
-	.item {
-		padding-bottom: 2em;
-	}
-	p.back {
-		font-size:1.6em;
-	}
+  .grid {
+    width: 80%;
+  }
+  .item {
+    padding-bottom: 2em;
+  }
 }

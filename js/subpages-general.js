@@ -1,276 +1,175 @@
-window.onscroll = function () {buttonFloatOnTop()};
-
-function onLoad()
-{
-    shufflePhotos();
-    storage();
+function onLoad() {
+  initPhotos();
+  storage();
 }
 
-function changeColour() 
-{
-	var nightModeButton = document.getElementsByClassName("nightModeButton");
-    var paragraphs = document.getElementsByTagName('P');
-    var links = document.getElementsByTagName('A');
-    var columnButton = document.getElementById("columnButton");
+const colors = {
+  WHITE: "#fafafa",
+  BLACK: "#0f0f0f",
+};
 
-	if (document.body.style.background != "rgb(15, 15, 15)")
-    {
-    	document.body.style.background = "#0f0f0f";
-        nightModeButton[0].style.borderColor = "#fafafa";
-        nightModeButton[0].style.background = "#0f0f0f"; 
-        nightModeButton[0].id = "blackBG";
+const photoCount = {
+  architecture: 113,
+  industry: 30,
+  light: 38,
+  lines: 47,
+  me: 56,
+  nature: 33,
+  noise: 28,
+};
 
-        columnButton.style.borderColor = "#fafafa";
-        columnButton.style.color = "#fafafa";
-        columnButton.style.background = "#0f0f0f";
-        
-        localStorage.setItem("BGColor", "#0f0f0f");
-
-        for (var i = 0; i < links.length; i++)
-        {
-            links[i].style.color = "#fafafa";  
-        }  
-        for (var i = 0; i < paragraphs.length; i++)
-        {
-            paragraphs[i].style.color = "#fafafa";  
-        }  
-    }
-    else
-    {
-    	document.body.style.background = "#fafafa";
-        nightModeButton[0].style.borderColor = "#0f0f0f";
-        nightModeButton[0].style.background = "#fafafa"; 
-        nightModeButton[0].id = "whiteBG";
-
-        columnButton.style.borderColor = "#0f0f0f";
-        columnButton.style.color = "#0f0f0f";
-        columnButton.style.background = "#fafafa";
-
-        localStorage.setItem("BGColor", "#fafafa");
-
-        for (var i = 0; i < links.length; i++)
-        {
-            links[i].style.color = "#0f0f0f";  
-        }  
-        for (var i = 0; i < paragraphs.length; i++)
-        {
-            paragraphs[i].style.color = "#0f0f0f";  
-        }  
-    }
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
-function storage()
-{
-    var nightModeButton = document.getElementsByClassName("nightModeButton");
-    var paragraphs = document.getElementsByTagName('p');
-    var links = document.getElementsByTagName('A');
+function initPhotos() {
+  const grid = document.getElementById("grid");
+  const pageName = document.body.getAttribute("data-name");
 
-    var grid = document.getElementsByClassName("grid");
-    var item = document.getElementsByClassName("item");
-    var oneColumnWidth;
+  const indexes = [];
+  for (let i = 0; i < photoCount[pageName]; i++) {
+    indexes.push(i);
+  }
+  shuffleArray(indexes);
 
-    if (localStorage.getItem("columnNumber") > 1)
-    {
-        changeColumns();
-        changeIcon();
-    }
-    else
-    {
-        document.getElementById("columnButton").innerText = "▣";
-    }
+  for (let i = 0; i < photoCount[pageName]; i++) {
+    const img = document.createElement("img");
+    const idx = indexes[i] + 1;
 
-    if (localStorage.getItem("BGColor") === "#0f0f0f")
-    {
-        document.body.style.background = "#0f0f0f";
-        nightModeButton[0].style.borderColor = "#fafafa";
-        nightModeButton[0].style.background = "#0f0f0f"; 
-        nightModeButton[0].id = "blackBG";
+    img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+    img.className = "item";
 
-        columnButton.style.borderColor = "#fafafa";
-        columnButton.style.color = "#fafafa";
-        columnButton.style.background = "#0f0f0f";
-
-        localStorage.setItem("BGColor", "#0f0f0f");
-
-        for (var i = 0; i < links.length; i++)
-        {
-            links[i].style.color = "#fafafa";  
-        }  
-        for (var i = 0; i < paragraphs.length; i++)
-        {
-            paragraphs[i].style.color = "#fafafa";  
-        }  
-
-    }
-    else
-    {
-        document.body.style.background = "#fafafa";
-        nightModeButton[0].style.borderColor = "#0f0f0f";
-        nightModeButton[0].style.background = "#fafafa"; 
-        nightModeButton[0].id = "whiteBG";
-
-        columnButton.style.borderColor = "#0f0f0f";
-        columnButton.style.color = "#0f0f0f";
-        columnButton.style.background = "#fafafa";
-
-        localStorage.setItem("BGColor", "#fafafa");
-
-        for (var i = 0; i < links.length; i++)
-        {
-            links[i].style.color = "#0f0f0f";  
-        }  
-        for (var i = 0; i < paragraphs.length; i++)
-        {
-            paragraphs[i].style.color = "#0f0f0f";  
-        }  
-    }
+    grid.appendChild(img);
+  }
 }
 
-function shufflePhotos()
-{
-    var photos = document.getElementsByClassName("item");
-    var photoNames = [];
+function changeColour() {
+  const nightModeButton = document.getElementById("nightModeButton");
+  const columnButton = document.getElementById("columnsButton");
+  const title = document.getElementsByClassName("title")[0];
 
-    var pathName = photos[0].src;
-    pathName = pathName.slice(0, -5); //stripping off "1.jpg"
+  if (localStorage.getItem("BGColor") === colors.BLACK) {
+    document.body.style.background = colors.WHITE;
 
-    for (var i = 1; i <= photos.length; i++)
-    {
-        photoNames[i - 1] = pathName + i + ".jpg";
-    }
+    title.style.color = colors.BLACK;
+    nightModeButton.style.borderColor = colors.BLACK;
+    columnButton.style.borderColor = colors.BLACK;
+    columnButton.style.color = colors.BLACK;
 
-    //Fisher-Yates shuffle
-    for (var i = 0; i < photos.length - 1; i++)
-    {
-        var j = Math.floor(Math.random() * (photos.length - i)) + i;
+    localStorage.setItem("BGColor", colors.WHITE);
+  } else {
+    document.body.style.background = colors.BLACK;
 
-        var temp = photoNames[i];
-        photoNames[i] = photoNames[j];
-        photoNames[j] = temp;
-    }
+    title.style.color = colors.WHITE;
+    nightModeButton.style.borderColor = colors.WHITE;
+    columnButton.style.borderColor = colors.WHITE;
+    columnButton.style.color = colors.WHITE;
 
-    for (var i = 0; i < photos.length; i++)
-    {
-        photos[i].src = photoNames[i];
-    }
+    localStorage.setItem("BGColor", colors.BLACK);
+  }
 }
 
-function buttonFloatOnTop()
-{
-    var buttonContainer = document.getElementById("buttonsContainer");
-    var heightThreshold = (window.innerHeight) / 3;
+function storage() {
+  const nightModeButton = document.getElementById("nightModeButton");
+  const columnButton = document.getElementById("columnsButton");
+  const title = document.getElementsByClassName("title")[0];
 
-    if (document.body.scrollTop > heightThreshold || document.documentElement.scrollTop > heightThreshold)
-    {
-        buttonContainer.style.position = "fixed";
-        buttonContainer.style.top = "2%";
-    }
-    else
-    {
-        buttonContainer.style.position = "absolute";
-        buttonContainer.style.top = "";
-    }
+  if (localStorage.getItem("columnNumber") > 1) {
+    changeColumns();
+  } else {
+    document.getElementById("columnsButton").innerText = "1";
+  }
+
+  if (localStorage.getItem("BGColor") === colors.BLACK) {
+    document.body.style.background = colors.BLACK;
+
+    title.style.color = colors.WHITE;
+    nightModeButton.style.borderColor = colors.WHITE;
+    columnButton.style.borderColor = colors.WHITE;
+    columnButton.style.color = colors.WHITE;
+  } else {
+    document.body.style.background = colors.WHITE;
+
+    title.style.color = colors.BLACK;
+    nightModeButton.style.borderColor = colors.BLACK;
+    columnButton.style.borderColor = colors.BLACK;
+    columnButton.style.color = colors.BLACK;
+  }
 }
 
-function changeColumns()
-{
-    var grid = document.getElementsByClassName("grid");
-    var item = document.getElementsByClassName("item");
-    var oneColumnWidth;
+function changeColumns() {
+  const grid = document.getElementById("grid");
+  const item = document.getElementsByClassName("item");
+  let oneColumnWidth;
 
-    if (window.innerWidth > 1280)
-    {
-        oneColumnWidth = "45%";
-    }
-    else if (window.innerWidth > 800)
-    {
-        oneColumnWidth = "70%";
-    }
-    else
-    {
-        oneColumnWidth = "80%";
-    }
+  if (window.innerWidth > 1280) {
+    oneColumnWidth = "45%";
+  } else if (window.innerWidth > 800) {
+    oneColumnWidth = "70%";
+  } else {
+    oneColumnWidth = "80%";
+  }
 
-    if (grid[0].style.columnCount > 1)
-    {
-        grid[0].style.columnCount = 1;
-        grid[0].style.width = oneColumnWidth;
-        for (var i = 0; i < item.length; i++)
-        {
-            item[i].style.paddingBottom = "2em";
-        }
-
-        document.getElementById("columnButton").innerText = "▣";
-
-        localStorage.setItem("columnNumber", "1");
-    }
-    else
-    {
-        var numberOfColumns = Math.floor((window.innerWidth) / 400) + 1;
-
-        if (numberOfColumns == 1)
-        {
-            numberOfColumns = 2;
-        }
-
-        grid[0].style.columnCount = numberOfColumns;
-        grid[0].style.width = "90%";
-
-        for (var i = 0; i < item.length; i++)
-        {
-            item[i].style.paddingBottom = "1em";
-        }
-        document.getElementById("columnButton").innerText = "▥";
-
-        localStorage.setItem("columnNumber", "3");
+  if (grid.style.columnCount > 1) {
+    grid.style.columnCount = 1;
+    grid.style.width = oneColumnWidth;
+    for (let i = 0; i < item.length; i++) {
+      item[i].style.paddingBottom = "2em";
     }
 
-    changeIcon();
+    document.getElementById("columnsButton").innerText = "1";
+
+    localStorage.setItem("columnNumber", "1");
+  } else {
+    const numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
+
+    if (numberOfColumns == 1) {
+      numberOfColumns = 2;
+    }
+
+    grid.style.columnCount = numberOfColumns;
+    grid.style.width = "90%";
+
+    for (let i = 0; i < item.length; i++) {
+      item[i].style.paddingBottom = "1em";
+    }
+    document.getElementById("columnsButton").innerText = "10";
+
+    localStorage.setItem("columnNumber", "3");
+  }
 }
 
-function onResize()
-{
-    var numberOfColumns = Math.floor((window.innerWidth) / 400) + 1;
-    if (numberOfColumns == 1)
-    {
-        numberOfColumns = 2;
-    }
-    var grid = document.getElementsByClassName("grid");
+function onResize() {
+  const numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
+  if (numberOfColumns == 1) {
+    numberOfColumns = 2;
+  }
+  const grid = document.getElementById("grid");
 
-    if (window.innerWidth > 1280)
-    {
-        oneColumnWidth = "45%";
-    }
-    else if (window.innerWidth > 800)
-    {
-        oneColumnWidth = "70%";
-    }
-    else
-    {
-        oneColumnWidth = "80%";
-    }
+  if (window.innerWidth > 1280) {
+    oneColumnWidth = "45%";
+  } else if (window.innerWidth > 800) {
+    oneColumnWidth = "70%";
+  } else {
+    oneColumnWidth = "80%";
+  }
 
-    if (grid[0].style.columnCount > 1)
-    {
-        grid[0].style.columnCount = numberOfColumns;
-    }
-    else
-    {
-        grid[0].style.width = oneColumnWidth;
-    }
-
+  if (grid.style.columnCount > 1) {
+    grid.style.columnCount = numberOfColumns;
+  } else {
+    grid.style.width = oneColumnWidth;
+  }
 }
 
-function changeIcon()
-{
-    var currentIcon = document.getElementById("columnButton").innerText;
+function changeIcon() {
+  const currentIcon = document.getElementById("columnsButton").innerText;
 
-    if (currentIcon === "▥")
-    {
-        document.getElementById("columnButton").innerText = "▣";
-    }
-    else
-    {
-        document.getElementById("columnButton").innerText = "▥";
-    }
+  if (currentIcon === "10") {
+    document.getElementById("columnsButton").innerText = "1";
+  } else {
+    document.getElementById("columnsButton").innerText = "10";
+  }
 }
