@@ -8,7 +8,7 @@
 @font-face {
   font-family: "Financier Display";
   src: local("TestFinancierDisplay-Light"),
-    url("../fonts/TestFinancierDisplay-Lightotf") format("opentype");
+    url("../fonts/TestFinancierDisplay-Light.otf") format("opentype");
   font-weight: 100;
 }
 
