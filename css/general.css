@@ -51,6 +51,7 @@
   grid-template-columns: 1fr;
   width: 45%;
   margin: 0 auto;
+  transform: translateX(10%) skew(-15deg);
 }
 
 #links a {
@@ -60,6 +61,7 @@
   color: #0f0f0f;
   text-decoration: none;
   margin-left: 100px;
+  transform: skew(15deg);
 }
 
 @media screen and (max-width: 1280px) {
@@ -73,6 +75,6 @@
 
   #links a {
     font-size: 50px;
-    margin-left: 10px;
+    margin-left: 30px;
   }
 }
