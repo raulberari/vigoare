@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "GT America Extended";
+  src: local("GT-America-Extended-Black-Trial"),
+    url("../fonts/GT-America-Extended-Black-Trial.otf") format("opentype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "GT America Extended";
+  src: local("GT-America-Extended-Ultra-Light"),
+    url("../fonts/GT-America-Expanded-Ultra-Light-Trial.otf") format("opentype");
+  font-weight: 100;
+}
+
 body {
   display: flex;
 }
@@ -11,7 +25,7 @@ body {
 .title {
   text-decoration: none;
   color: #0f0f0f;
-  font-family: Helvetica Neue;
+  font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
   font-size: 3em;
 }
@@ -26,7 +40,8 @@ body {
   align-items: center;
   justify-content: center;
   user-select: none;
-  font-family: Helvetica Neue;
+  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-weight: 100;
   width: 30px;
   height: 30px;
   border: 1px solid;

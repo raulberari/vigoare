@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "GT America Extended";
+  src: local("GT-America-Extended-Black-Trial"),
+    url("../fonts/GT-America-Extended-Black-Trial.otf") format("opentype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Financier Display";
+  src: local("TestFinancierDisplay-Light"),
+    url("../fonts/TestFinancierDisplay-Lightotf") format("opentype");
+  font-weight: 100;
+}
+
 #title-buttons {
   margin-top: 3em;
   margin-left: 1em;
@@ -7,7 +21,7 @@
 .title {
   text-decoration: none;
   color: #0f0f0f;
-  font-family: Helvetica Neue;
+  font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
   font-size: 3em;
 }
@@ -41,10 +55,10 @@
 }
 
 #links a {
-  font-family: "Bell MT";
-  color: #0f0f0f;
+  font-family: "Financier Display", serif;
   font-size: 70px;
   font-weight: 100;
+  color: #0f0f0f;
   text-decoration: none;
   margin-left: 100px;
 }
