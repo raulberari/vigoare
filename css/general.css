@@ -80,21 +80,22 @@
   }
 }
 
-body {
-  margin: 0;
-}
-
-.holder {
+.news {
   display: flex;
+  justify-content: center;
+  border: 1px solid #0f0f0f;
   background: #0f0f0f;
   color: #fafafa;
-  padding: 0.5em;
-  padding-left: 1em;
   overflow: hidden;
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
+}
+
+.news p {
+  margin: 0;
 }
 
 .news a {
   color: #fafafa;
+  line-height: 120%;
 }
