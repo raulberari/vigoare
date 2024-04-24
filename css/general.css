@@ -51,6 +51,7 @@
   grid-template-columns: 1fr;
   width: 45%;
   margin: 0 auto;
+  margin-bottom: 80px;
   transform: translateX(10%) skew(-15deg);
 }
 
