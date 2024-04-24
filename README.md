@@ -1,9 +1,3 @@
-# Vigoare Photo Webpage
+# Vigoare Webpage
 
-Website repository for some of the (mostly mobile) photography I did between 2015 and 2024.
-
-# Features
-
-- responsive, fits on every device width
-- circle button for dark mode
-- square button for multiple-column mode
+Website repository for everything I publish. It started as a portofolio of the (mostly mobile) photography I did between 2015 and 2017. Now it includes everything I made up until 2024.
