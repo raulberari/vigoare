@@ -12,6 +12,13 @@
   font-weight: 100;
 }
 
+@font-face {
+  font-family: "Financier Text";
+  src: local("TestFinancierText-Regular"),
+    url("../fonts/TestFinancierText-Regular.otf") format("opentype");
+  font-weight: 300;
+}
+
 body {
   display: flex;
 }
@@ -63,8 +70,29 @@ body {
   margin: 0 auto;
 }
 
+#inspo-grid {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  width: 45%;
+  margin: 0 auto;
+  font-family: "Financier Text", serif;
+  font-size: 20px;
+}
+
+#inspo-grid h1 {
+  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-weight: 100;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
 .item {
   width: 100%;
   margin: auto;
   padding-bottom: 2em;
+}
+
+.inspo-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

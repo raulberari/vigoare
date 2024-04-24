@@ -1,11 +1,13 @@
 @media screen and (max-width: 1280px) {
-  #grid {
+  #grid,
+  #inspo-grid {
     width: 70%;
   }
 }
 
 @media screen and (max-width: 800px) {
-  #grid {
+  #grid,
+  #inspo-grid {
     width: 80%;
   }
   .item {
