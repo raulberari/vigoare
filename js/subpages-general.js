@@ -41,6 +41,7 @@ function initPhotos() {
 
     img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
+    img.loading = "lazy";
 
     grid.appendChild(img);
   }
