@@ -78,3 +78,22 @@
     margin-left: 30px;
   }
 }
+
+body {
+  margin: 0;
+}
+
+.holder {
+  display: flex;
+  background: #0f0f0f;
+  color: #fafafa;
+  padding: 0.5em;
+  padding-left: 1em;
+  overflow: hidden;
+  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-size: 14px;
+}
+
+.news a {
+  color: #fafafa;
+}
