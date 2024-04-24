@@ -1,5 +1,5 @@
 function onLoad() {
-  initPhotos();
+  // initPhotos();
   storage();
 }
 
@@ -35,26 +35,26 @@ function initPhotos() {
   }
   shuffleArray(indexes);
 
-  const images = [];
-
   for (let i = 0; i < photoCount[pageName]; i++) {
     const img = document.createElement("img");
     const idx = indexes[i] + 1;
 
-    img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+    // img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
     img.loading = "lazy";
 
-    images.push(img);
+    grid.appendChild(img);
   }
 
-  // Wait for 1000ms after the loop is done
+  const imgElements = Array.from(document.getElementsByClassName("item"));
+
   setTimeout(function () {
-    // Code to execute after 1000ms
-    for (const img of images) {
-      grid.appendChild(img);
+    for (let i = 0; i < photoCount[pageName]; i++) {
+      const idx = indexes[i] + 1;
+      imgElements[i].src =
+        `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     }
-  }, 100);
+  }, 2000);
 }
 
 function changeColour() {
