@@ -35,6 +35,8 @@ function initPhotos() {
   }
   shuffleArray(indexes);
 
+  const images = [];
+
   for (let i = 0; i < photoCount[pageName]; i++) {
     const img = document.createElement("img");
     const idx = indexes[i] + 1;
@@ -43,8 +45,17 @@ function initPhotos() {
     img.className = "item";
     img.loading = "lazy";
 
-    grid.appendChild(img);
+    images.push(img);
   }
+
+  // Wait for 1000ms after the loop is done
+  setTimeout(function () {
+    // Code to execute after 1000ms
+    for (const img of images) {
+      grid.appendChild(img);
+    }
+    console.log("Done appending images");
+  }, 100);
 }
 
 function changeColour() {
