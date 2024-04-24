@@ -48,6 +48,7 @@ body {
 #stills {
   width: 80%;
   margin: 0 auto;
+  padding-top: 80px;
 }
 
 #buttons {
