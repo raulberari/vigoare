@@ -23,6 +23,10 @@ body {
   display: flex;
 }
 
+#body-stills {
+  background-color: #0f0f0f;
+}
+
 #title-buttons {
   margin-top: 3em;
   margin-left: 1em;
@@ -35,6 +39,15 @@ body {
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
   font-size: 3em;
+}
+
+.black-text {
+  color: #fafafa;
+}
+
+#stills {
+  width: 80%;
+  margin: 0 auto;
 }
 
 #buttons {
