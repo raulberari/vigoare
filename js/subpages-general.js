@@ -54,7 +54,6 @@ function initPhotos() {
     for (const img of images) {
       grid.appendChild(img);
     }
-    console.log("Done appending images");
   }, 100);
 }
 
