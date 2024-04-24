@@ -9,12 +9,12 @@ const colors = {
 };
 
 const photoCount = {
-  architecture: 113,
+  architecture: 112,
   industry: 30,
   light: 38,
   lines: 47,
   me: 52,
-  nature: 33,
+  nature: 34,
   noise: 28,
 };
 
