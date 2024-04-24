@@ -1,5 +1,5 @@
 function onLoad() {
-  // initPhotos();
+  initPhotos();
   storage();
 }
 
@@ -39,22 +39,12 @@ function initPhotos() {
     const img = document.createElement("img");
     const idx = indexes[i] + 1;
 
-    // img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+    img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
     img.loading = "lazy";
 
     grid.appendChild(img);
   }
-
-  const imgElements = Array.from(document.getElementsByClassName("item"));
-
-  setTimeout(function () {
-    for (let i = 0; i < photoCount[pageName]; i++) {
-      const idx = indexes[i] + 1;
-      imgElements[i].src =
-        `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
-    }
-  }, 2000);
 }
 
 function changeColour() {
