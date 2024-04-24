@@ -13,7 +13,7 @@ const photoCount = {
   industry: 30,
   light: 38,
   lines: 47,
-  me: 56,
+  me: 52,
   nature: 33,
   noise: 28,
 };
