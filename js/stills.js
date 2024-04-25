@@ -1,30 +1,8 @@
 function onLoad() {
-  initPhotos();
+  fetchJSONData();
 }
 
 const photoCount = 19;
-
-const descriptions = {
-  1: "Blade (1998)",
-  2: "California Dreamin' (2007)",
-  3: "Chocolat (1988)",
-  4: "Heat (1995)",
-  5: "Made in Hong Kong (1997)",
-  6: "Red Desert (1966)",
-  7: "Still Life (2006)",
-  8: "Nostalgia (1983)",
-  9: "Wicker Man (1973)",
-  10: "Hard Boiled (1992)",
-  11: "The Lovely Month of May (1963)",
-  12: "Paris, Texas (1984)",
-  13: "Weekend (1967)",
-  14: "Wild at Heart (1990)",
-  15: "Possession (1981)",
-  16: "Bleeder (1999)",
-  17: "R.M.N. (2022)",
-  18: "The World (2005)",
-  19: "La Jetée (1962)",
-};
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -33,7 +11,7 @@ function shuffleArray(array) {
   }
 }
 
-function initPhotos() {
+function initPhotos(descriptions) {
   const container = document.getElementById("stills");
 
   const indexes = [];
@@ -45,12 +23,29 @@ function initPhotos() {
   for (let i = 0; i < photoCount; i++) {
     const img = document.createElement("img");
     const idx = indexes[i] + 1;
+    const name = "stills" + idx;
 
     img.src = `../images/subpages/stills/stills` + idx + ".jpg";
     img.className = "item";
-    img.title = descriptions[idx];
+    img.title = descriptions[name] ?? "";
     img.loading = "lazy";
 
     container.appendChild(img);
   }
+}
+
+function fetchJSONData() {
+  fetch(
+    "https://gist.githubusercontent.com/raulberari/cc8ee000f618f099c59df869d3fb6d63/raw/e2ad82ad7d3542675ccd29fd7c552939aa2364ea/stills.json"
+  )
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      initPhotos(data);
+    })
+    .catch((error) => console.error("Unable to fetch data:", error));
 }

@@ -1,5 +1,5 @@
 function onLoad() {
-  initPhotos();
+  fetchJSONData();
   storage();
 }
 
@@ -28,6 +28,22 @@ const newPhotos = {
   noise: [29],
 };
 
+function fetchJSONData() {
+  fetch(
+    "https://gist.githubusercontent.com/raulberari/05acdedc2aff60d2b940ca73ca654404/raw/4c874abe292e06e1e80437f58db40cf09de37498/descriptions.json"
+  )
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      initPhotos(data);
+    })
+    .catch((error) => console.error("Unable to fetch data:", error));
+}
+
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -35,7 +51,7 @@ function shuffleArray(array) {
   }
 }
 
-function initPhotos() {
+function initPhotos(descriptions) {
   const grid = document.getElementById("grid");
   const pageName = document.body.getAttribute("data-name");
 
@@ -43,9 +59,11 @@ function initPhotos() {
   for (let i = 0; i < newPhotos[pageName].length; i++) {
     const img = document.createElement("img");
     const idx = newPhotos[pageName][i];
+    const name = pageName + idx;
 
     img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
+    img.title = descriptions[name] ?? "";
     img.loading = "lazy";
 
     // New photos
@@ -79,9 +97,11 @@ function initPhotos() {
   for (let i = 0; i < photoCount[pageName]; i++) {
     const img = document.createElement("img");
     const idx = indexes[i] + 1;
+    const name = pageName + idx;
 
     img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
+    img.title = descriptions[name] ?? "";
     img.loading = "lazy";
 
     if (!newPhotos[pageName].includes(idx)) {
