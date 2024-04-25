@@ -1,16 +1,19 @@
 @media screen and (max-width: 1280px) {
   #grid,
-  #inspo-grid {
+  .text-grid {
     width: 70%;
   }
 }
 
 @media screen and (max-width: 800px) {
   #grid,
-  #inspo-grid {
+  .text-grid {
     width: 80%;
   }
   .item {
-    padding-bottom: 2em;
+    margin-bottom: 1em;
+  }
+  .new-item-text {
+    font-size: 20px;
   }
 }

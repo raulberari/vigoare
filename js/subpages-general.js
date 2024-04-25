@@ -9,13 +9,23 @@ const colors = {
 };
 
 const photoCount = {
-  architecture: 112,
-  industry: 30,
-  light: 38,
-  lines: 47,
-  me: 52,
-  nature: 34,
-  noise: 28,
+  architecture: 114,
+  industry: 32,
+  light: 39,
+  lines: 48,
+  me: 54,
+  nature: 35,
+  noise: 29,
+};
+
+const newPhotos = {
+  architecture: [113, 114],
+  industry: [31, 32],
+  light: [39],
+  lines: [48],
+  me: [53, 54],
+  nature: [35],
+  noise: [29],
 };
 
 function shuffleArray(array) {
@@ -29,12 +39,43 @@ function initPhotos() {
   const grid = document.getElementById("grid");
   const pageName = document.body.getAttribute("data-name");
 
+  // Add new photos
+  for (let i = 0; i < newPhotos[pageName].length; i++) {
+    const img = document.createElement("img");
+    const idx = newPhotos[pageName][i];
+
+    img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+    img.className = "item";
+    img.loading = "lazy";
+
+    // New photos
+    const container = document.createElement("div");
+    const text = document.createElement("h1");
+    text.className = "new-item-text";
+    text.innerHTML = "NEW";
+    container.className = "new-item-container";
+
+    container.appendChild(text);
+    container.appendChild(img);
+
+    // Add click event listener to toggle text visibility
+    container.addEventListener("click", function () {
+      if (text.style.display === "none") {
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    });
+
+    grid.appendChild(container);
+  }
+
+  // Shuffle the rest of the photos and add them
   const indexes = [];
   for (let i = 0; i < photoCount[pageName]; i++) {
     indexes.push(i);
   }
   shuffleArray(indexes);
-
   for (let i = 0; i < photoCount[pageName]; i++) {
     const img = document.createElement("img");
     const idx = indexes[i] + 1;
@@ -43,7 +84,9 @@ function initPhotos() {
     img.className = "item";
     img.loading = "lazy";
 
-    grid.appendChild(img);
+    if (!newPhotos[pageName].includes(idx)) {
+      grid.appendChild(img);
+    }
   }
 }
 
@@ -103,7 +146,6 @@ function storage() {
 
 function changeColumns() {
   const grid = document.getElementById("grid");
-  const item = document.getElementsByClassName("item");
   let oneColumnWidth;
 
   if (window.innerWidth > 1280) {
@@ -117,9 +159,6 @@ function changeColumns() {
   if (grid.style.columnCount > 1) {
     grid.style.columnCount = 1;
     grid.style.width = oneColumnWidth;
-    for (let i = 0; i < item.length; i++) {
-      item[i].style.paddingBottom = "2em";
-    }
 
     document.getElementById("columnsButton").innerText = "1";
 
@@ -134,9 +173,6 @@ function changeColumns() {
     grid.style.columnCount = numberOfColumns;
     grid.style.width = "90%";
 
-    for (let i = 0; i < item.length; i++) {
-      item[i].style.paddingBottom = "1em";
-    }
     document.getElementById("columnsButton").innerText =
       numberOfColumns.toString();
 

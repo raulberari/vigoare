@@ -52,7 +52,7 @@
   width: 45%;
   margin: 0 auto;
   margin-bottom: 80px;
-  transform: translateX(10%) skew(-15deg);
+  transform: translateX(10%) skew(-20deg);
 }
 
 #links a {
@@ -62,7 +62,7 @@
   color: #0f0f0f;
   text-decoration: none;
   margin-left: 100px;
-  transform: skew(15deg);
+  transform: skew(20deg);
 }
 
 @media screen and (max-width: 1280px) {
@@ -75,9 +75,13 @@
   }
 
   #links a {
-    font-size: 50px;
+    font-size: 45px;
     margin-left: 30px;
   }
+}
+
+#news-link {
+  text-decoration: none;
 }
 
 .news {
@@ -93,9 +97,4 @@
 
 .news p {
   margin: 0;
-}
-
-.news a {
-  color: #fafafa;
-  line-height: 120%;
 }
