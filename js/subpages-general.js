@@ -30,12 +30,13 @@ const newPhotos = {
 
 function fetchJSONData() {
   fetch(
-    "https://gist.githubusercontent.com/raulberari/05acdedc2aff60d2b940ca73ca654404/raw/4c874abe292e06e1e80437f58db40cf09de37498/descriptions.json"
+    "https://gist.githubusercontent.com/raulberari/05acdedc2aff60d2b940ca73ca654404/raw"
   )
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }
+      console.log(res);
       return res.json();
     })
     .then((data) => {

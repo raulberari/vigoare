@@ -36,7 +36,7 @@ function initPhotos(descriptions) {
 
 function fetchJSONData() {
   fetch(
-    "https://gist.githubusercontent.com/raulberari/cc8ee000f618f099c59df869d3fb6d63/raw/e2ad82ad7d3542675ccd29fd7c552939aa2364ea/stills.json"
+    "https://gist.githubusercontent.com/raulberari/cc8ee000f618f099c59df869d3fb6d63/raw"
   )
     .then((res) => {
       if (!res.ok) {
