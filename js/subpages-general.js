@@ -36,7 +36,6 @@ function fetchJSONData() {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }
-      console.log(res);
       return res.json();
     })
     .then((data) => {
@@ -61,6 +60,8 @@ function initPhotos(descriptions) {
     const img = document.createElement("img");
     const idx = newPhotos[pageName][i];
     const name = pageName + idx;
+    let modifiedDescription = descriptions[name] ?? "";
+    modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
 
     img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
@@ -72,17 +73,37 @@ function initPhotos(descriptions) {
     const text = document.createElement("h1");
     text.className = "new-item-text";
     text.innerHTML = "NEW";
+    text.style.display = "block";
     container.className = "new-item-container";
 
+    const description = document.createElement("h1");
+    description.className = "description";
+    description.innerHTML = modifiedDescription;
+    description.lang = "en";
+    description.style.display = "none";
+
     container.appendChild(text);
+    container.appendChild(description);
     container.appendChild(img);
 
     // Add click event listener to toggle text visibility
     container.addEventListener("click", function () {
-      if (text.style.display === "none") {
-        text.style.display = "block";
-      } else {
+      if (
+        text.style.display === "none" &&
+        description.style.display === "none"
+      ) {
+        description.style.display = "block";
+      } else if (
+        text.style.display === "block" &&
+        description.style.display === "none"
+      ) {
         text.style.display = "none";
+      } else if (
+        text.style.display === "none" &&
+        description.style.display === "block"
+      ) {
+        description.style.display = "none";
+        text.style.display = "block";
       }
     });
 
@@ -96,17 +117,40 @@ function initPhotos(descriptions) {
   }
   shuffleArray(indexes);
   for (let i = 0; i < photoCount[pageName]; i++) {
-    const img = document.createElement("img");
     const idx = indexes[i] + 1;
-    const name = pageName + idx;
-
-    img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
-    img.className = "item";
-    img.title = descriptions[name] ?? "";
-    img.loading = "lazy";
 
     if (!newPhotos[pageName].includes(idx)) {
-      grid.appendChild(img);
+      const img = document.createElement("img");
+      const name = pageName + idx;
+
+      img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+      img.className = "item";
+      img.title = descriptions[name] ?? "";
+      img.loading = "lazy";
+
+      let modifiedDescription = descriptions[name] ?? "";
+      modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
+
+      const container = document.createElement("div");
+      const text = document.createElement("h1");
+      text.className = "description";
+      text.innerHTML = modifiedDescription;
+      text.lang = "en";
+      text.style.display = "none";
+      container.className = "item-container";
+
+      // Add click event listener to toggle text visibility
+      container.addEventListener("click", function () {
+        if (text.style.display === "none") {
+          text.style.display = "block";
+        } else {
+          text.style.display = "none";
+        }
+      });
+
+      container.appendChild(text);
+      container.appendChild(img);
+      grid.appendChild(container);
     }
   }
 }

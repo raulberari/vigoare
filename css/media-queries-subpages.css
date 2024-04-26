@@ -10,10 +10,12 @@
   .text-grid {
     width: 80%;
   }
-  .item {
+  .item-container,
+  .new-item-container {
     margin-bottom: 1em;
   }
-  .new-item-text {
+  .new-item-text,
+  .description {
     font-size: 20px;
   }
 }

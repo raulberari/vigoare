@@ -125,7 +125,6 @@ body {
 .item {
   width: 100%;
   margin: auto;
-  margin-bottom: 2em;
 }
 
 .inspo-items {
@@ -133,10 +132,12 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.new-item-container {
+.new-item-container,
+.item-container {
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: 2em;
 }
 
 .new-item-text {
@@ -153,4 +154,23 @@ body {
   -webkit-text-stroke: 0.5px #fafafa;
   cursor: pointer;
   user-select: none;
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  background: #0f0f0f99;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "GT America Extended";
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 0.5px #fafafa;
+  text-transform: uppercase;
+  font-size: 28px;
+  user-select: none;
+  overflow: auto;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
