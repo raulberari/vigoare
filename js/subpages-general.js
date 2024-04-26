@@ -65,7 +65,7 @@ function initPhotos(descriptions) {
 
     img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
-    img.title = descriptions[name] ?? "";
+    img.alt = descriptions[name] ?? "";
     img.loading = "lazy";
 
     const text = document.createElement("h1");
@@ -137,7 +137,7 @@ function initPhotos(descriptions) {
 
       img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
       img.className = "item";
-      img.title = descriptions[name] ?? "";
+      img.alt = descriptions[name] ?? "";
       img.loading = "lazy";
 
       let modifiedDescription = descriptions[name] ?? "";
