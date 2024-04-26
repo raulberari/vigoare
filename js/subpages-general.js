@@ -68,41 +68,44 @@ function initPhotos(descriptions) {
     img.title = descriptions[name] ?? "";
     img.loading = "lazy";
 
-    // New photos
-    const container = document.createElement("div");
     const text = document.createElement("h1");
     text.className = "new-item-text";
     text.innerHTML = "NEW";
     text.style.display = "block";
-    container.className = "new-item-container";
-
-    container.appendChild(text);
-    container.appendChild(img);
 
     const description = document.createElement("h1");
     description.className = "description";
     description.innerHTML = modifiedDescription;
     description.lang = "en";
-    description.style.display = "none";
-    container.appendChild(description);
+
+    const descriptionContainer = document.createElement("div");
+    descriptionContainer.className = "description-container";
+    descriptionContainer.style.display = "none";
+    descriptionContainer.appendChild(description);
+
+    const container = document.createElement("div");
+    container.className = "new-item-container";
+    container.appendChild(text);
+    container.appendChild(descriptionContainer);
+    container.appendChild(img);
 
     if (modifiedDescription) {
       container.addEventListener("click", function () {
         if (
           text.style.display === "none" &&
-          description.style.display === "none"
+          descriptionContainer.style.display === "none"
         ) {
-          description.style.display = "block";
+          descriptionContainer.style.display = "flex";
         } else if (
           text.style.display === "block" &&
-          description.style.display === "none"
+          descriptionContainer.style.display === "none"
         ) {
           text.style.display = "none";
         } else if (
           text.style.display === "none" &&
-          description.style.display === "block"
+          descriptionContainer.style.display === "flex"
         ) {
-          description.style.display = "none";
+          descriptionContainer.style.display = "none";
           text.style.display = "block";
         }
       });
@@ -140,26 +143,30 @@ function initPhotos(descriptions) {
       let modifiedDescription = descriptions[name] ?? "";
       modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
 
+      const description = document.createElement("h1");
+      description.className = "description";
+      description.innerHTML = modifiedDescription;
+      description.lang = "en";
+
+      const descriptionContainer = document.createElement("div");
+      descriptionContainer.className = "description-container";
+      descriptionContainer.style.display = "none";
+      descriptionContainer.appendChild(description);
+
       const container = document.createElement("div");
-      const text = document.createElement("h1");
-      text.className = "description";
-      text.innerHTML = modifiedDescription;
-      text.lang = "en";
-      text.style.display = "none";
       container.className = "item-container";
+      container.appendChild(descriptionContainer);
+      container.appendChild(img);
 
       if (modifiedDescription) {
         container.addEventListener("click", function () {
-          if (text.style.display === "none") {
-            text.style.display = "block";
+          if (descriptionContainer.style.display === "none") {
+            descriptionContainer.style.display = "flex";
           } else {
-            text.style.display = "none";
+            descriptionContainer.style.display = "none";
           }
         });
       }
-
-      container.appendChild(text);
-      container.appendChild(img);
       grid.appendChild(container);
     }
   }
