@@ -76,36 +76,45 @@ function initPhotos(descriptions) {
     text.style.display = "block";
     container.className = "new-item-container";
 
+    container.appendChild(text);
+    container.appendChild(img);
+
     const description = document.createElement("h1");
     description.className = "description";
     description.innerHTML = modifiedDescription;
     description.lang = "en";
     description.style.display = "none";
-
-    container.appendChild(text);
     container.appendChild(description);
-    container.appendChild(img);
 
-    // Add click event listener to toggle text visibility
-    container.addEventListener("click", function () {
-      if (
-        text.style.display === "none" &&
-        description.style.display === "none"
-      ) {
-        description.style.display = "block";
-      } else if (
-        text.style.display === "block" &&
-        description.style.display === "none"
-      ) {
-        text.style.display = "none";
-      } else if (
-        text.style.display === "none" &&
-        description.style.display === "block"
-      ) {
-        description.style.display = "none";
-        text.style.display = "block";
-      }
-    });
+    if (modifiedDescription) {
+      container.addEventListener("click", function () {
+        if (
+          text.style.display === "none" &&
+          description.style.display === "none"
+        ) {
+          description.style.display = "block";
+        } else if (
+          text.style.display === "block" &&
+          description.style.display === "none"
+        ) {
+          text.style.display = "none";
+        } else if (
+          text.style.display === "none" &&
+          description.style.display === "block"
+        ) {
+          description.style.display = "none";
+          text.style.display = "block";
+        }
+      });
+    } else {
+      container.addEventListener("click", function () {
+        if (text.style.display === "none") {
+          text.style.display = "block";
+        } else {
+          text.style.display = "none";
+        }
+      });
+    }
 
     grid.appendChild(container);
   }
@@ -139,14 +148,15 @@ function initPhotos(descriptions) {
       text.style.display = "none";
       container.className = "item-container";
 
-      // Add click event listener to toggle text visibility
-      container.addEventListener("click", function () {
-        if (text.style.display === "none") {
-          text.style.display = "block";
-        } else {
-          text.style.display = "none";
-        }
-      });
+      if (modifiedDescription) {
+        container.addEventListener("click", function () {
+          if (text.style.display === "none") {
+            text.style.display = "block";
+          } else {
+            text.style.display = "none";
+          }
+        });
+      }
 
       container.appendChild(text);
       container.appendChild(img);
