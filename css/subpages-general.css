@@ -28,6 +28,7 @@
 
 body {
   display: flex;
+  margin: 0;
 }
 
 #body-stills {
@@ -54,9 +55,17 @@ body {
 }
 
 #stills {
-  width: 80%;
-  margin: 0 auto;
-  padding-top: 80px;
+  width: 100%;
+}
+
+#stills img {
+  min-height: 100vh;
+  padding: 50px 0;
+  object-fit: contain;
+}
+
+#stills img:first-child {
+  padding: 0;
 }
 
 #buttons {

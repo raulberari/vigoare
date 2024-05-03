@@ -11,6 +11,10 @@
   font-weight: 100;
 }
 
+body {
+  margin: 0;
+}
+
 #title-buttons {
   margin-top: 3em;
   margin-left: 1em;
