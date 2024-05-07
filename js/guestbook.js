@@ -33,8 +33,15 @@ function initComments(data) {
 
     commentContent.appendChild(content);
 
-    commentContainer.appendChild(commentHeader);
-    commentContainer.appendChild(commentContent);
+    const textContainer = document.createElement("div");
+    textContainer.className = "text-container";
+    textContainer.appendChild(commentHeader);
+    textContainer.appendChild(commentContent);
+
+    const obliqueIndicator = document.createElement("div");
+    obliqueIndicator.className = "oblique";
+    commentContainer.appendChild(obliqueIndicator);
+    commentContainer.appendChild(textContainer);
 
     container.appendChild(commentContainer);
   }

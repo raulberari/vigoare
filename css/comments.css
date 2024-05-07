@@ -13,15 +13,28 @@
 }
 
 .comment {
-  border: 1px solid #0f0f0f;
   margin-bottom: 30px;
-  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+}
+
+.oblique {
+  min-width: 2px;
+  height: 80px;
+  background: #000;
+  transform: skew(-20deg);
+  margin-right: 20px;
+}
+
+.text-container {
+  flex-grow: 1;
 }
 
 .comment-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .comment-author {
@@ -38,6 +51,7 @@
 
 .comment-content {
   margin-top: 5px;
+  width: 100%;
 }
 
 @media screen and (max-width: 800px) {
