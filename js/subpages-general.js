@@ -13,7 +13,7 @@ const photoCount = {
   industry: 32,
   light: 39,
   lines: 48,
-  me: 54,
+  me: 53,
   nature: 35,
   noise: 29,
 };
@@ -23,7 +23,7 @@ const newPhotos = {
   industry: [31, 32],
   light: [39],
   lines: [48],
-  me: [53, 54],
+  me: [52, 53],
   nature: [35],
   noise: [29],
 };
