@@ -2,7 +2,7 @@ function onLoad() {
   fetchJSONData();
 }
 
-const photoCount = 19;
+const photoCount = 24;
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
