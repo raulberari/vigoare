@@ -20,9 +20,8 @@
 }
 
 @font-face {
-  font-family: "Financier Text";
-  src: local("TestFinancierText-Regular"),
-    url("../fonts/TestFinancierText-Regular.otf") format("opentype");
+  font-family: "Firs Neue";
+  src: url("../fonts/TT\ Firs\ Neue\ Trial\ Regular.ttf") format("truetype");
   font-weight: 300;
 }
 
@@ -111,8 +110,8 @@ body {
 
 .text-grid p,
 .text-grid li {
-  font-family: "Financier Text", serif;
-  font-size: 20px;
+  font-family: "Firs Neue", sans-serif;
+  font-size: 16px;
   margin: 0;
 }
 

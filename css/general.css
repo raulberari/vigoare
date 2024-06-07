@@ -6,9 +6,9 @@
 }
 
 @font-face {
-  font-family: "Financier Display";
-  src: url("../fonts/TestFinancierDisplay-Light.otf") format("opentype");
-  font-weight: 100;
+  font-family: "Firs Neue";
+  src: url("../fonts/TT Firs Neue Trial Light.ttf") format("truetype");
+  font-weight: 300;
 }
 
 body {
@@ -53,7 +53,7 @@ body {
 
 #links {
   display: grid;
-  border-left: solid 4px;
+  border-left: solid 5px;
   position: relative;
   top: 200px;
   left: 100px;
@@ -65,14 +65,19 @@ body {
 }
 
 #links a {
-  font-family: "Financier Display", serif;
-  font-size: 65px;
-  font-weight: 100;
+  font-family: "Firs Neue", sans-serif;
+  font-size: 60px;
+  line-height: 1.2;
+  font-weight: 300;
   color: #0f0f0f;
   text-decoration: none;
-  margin-left: 100px;
+  margin-left: 80px;
   transform: skew(20deg);
   text-shadow: 0px -1px 0 #fafafa;
+}
+
+#links a:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1280px) {
@@ -103,7 +108,7 @@ body {
   }
 
   #links a {
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 30px;
   }
 }
