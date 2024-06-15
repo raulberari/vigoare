@@ -31,6 +31,10 @@ body {
   margin: 0;
 }
 
+q {
+  font-style: italic;
+}
+
 #body-stills {
   background-color: #0f0f0f;
 }
@@ -114,6 +118,7 @@ body {
   font-family: "Firs Neue", sans-serif;
   font-size: 16px;
   margin: 0;
+  margin-bottom: 4px;
 }
 
 .text-grid h1 {
