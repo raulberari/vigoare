@@ -25,7 +25,7 @@ function initPhotos(descriptions) {
     const idx = indexes[i] + 1;
     const name = "stills" + idx;
 
-    img.src = `../images/subpages/stills/stills` + idx + ".jpg";
+    img.src = `./images/subpages/stills/stills` + idx + ".jpg";
     img.className = "item";
     img.title = descriptions[name] ?? "";
     img.loading = "lazy";

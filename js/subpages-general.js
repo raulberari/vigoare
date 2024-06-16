@@ -63,7 +63,7 @@ function initPhotos(descriptions) {
     let modifiedDescription = descriptions[name] ?? "";
     modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
 
-    img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+    img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
     img.alt = descriptions[name] ?? "";
     img.loading = "lazy";
@@ -135,7 +135,7 @@ function initPhotos(descriptions) {
       const img = document.createElement("img");
       const name = pageName + idx;
 
-      img.src = `../images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+      img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
       img.className = "item";
       img.alt = descriptions[name] ?? "";
       img.loading = "lazy";
