@@ -9,22 +9,22 @@ const colors = {
 };
 
 const photoCount = {
-  architecture: 114,
+  architecture: 115,
   industry: 32,
   light: 39,
   lines: 48,
-  me: 53,
-  nature: 35,
+  me: 54,
+  nature: 36,
   noise: 29,
 };
 
 const newPhotos = {
-  architecture: [113, 114],
+  architecture: [115],
   industry: [31, 32],
   light: [39],
   lines: [48],
-  me: [52, 53],
-  nature: [35],
+  me: [54],
+  nature: [36],
   noise: [29],
 };
 
