@@ -176,11 +176,13 @@ function changeColour() {
   const nightModeButton = document.getElementById("nightModeButton");
   const columnButton = document.getElementById("columnsButton");
   const title = document.getElementsByClassName("title")[0];
+  const pageName = document.getElementsByClassName("page-name")[0];
 
   if (localStorage.getItem("BGColor") === colors.BLACK) {
     document.body.style.background = colors.WHITE;
 
     title.style.color = colors.BLACK;
+    pageName.style.color = colors.BLACK;
     nightModeButton.style.borderColor = colors.BLACK;
     columnButton.style.borderColor = colors.BLACK;
     columnButton.style.color = colors.BLACK;
@@ -190,6 +192,7 @@ function changeColour() {
     document.body.style.background = colors.BLACK;
 
     title.style.color = colors.WHITE;
+    pageName.style.color = colors.WHITE;
     nightModeButton.style.borderColor = colors.WHITE;
     columnButton.style.borderColor = colors.WHITE;
     columnButton.style.color = colors.WHITE;
@@ -202,6 +205,7 @@ function storage() {
   const nightModeButton = document.getElementById("nightModeButton");
   const columnButton = document.getElementById("columnsButton");
   const title = document.getElementsByClassName("title")[0];
+  const pageName = document.getElementsByClassName("page-name")[0];
 
   if (localStorage.getItem("columnNumber") > 1) {
     changeColumns();
@@ -213,6 +217,7 @@ function storage() {
     document.body.style.background = colors.BLACK;
 
     title.style.color = colors.WHITE;
+    pageName.style.color = colors.WHITE;
     nightModeButton.style.borderColor = colors.WHITE;
     columnButton.style.borderColor = colors.WHITE;
     columnButton.style.color = colors.WHITE;
@@ -220,6 +225,7 @@ function storage() {
     document.body.style.background = colors.WHITE;
 
     title.style.color = colors.BLACK;
+    pageName.style.color = colors.BLACK;
     nightModeButton.style.borderColor = colors.BLACK;
     columnButton.style.borderColor = colors.BLACK;
     columnButton.style.color = colors.BLACK;

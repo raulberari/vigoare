@@ -54,8 +54,8 @@ q {
   font-size: 3em;
 }
 
-.black-text {
-  color: #fafafa;
+.white-text {
+  color: #fafafa !important;
 }
 
 #stills {
@@ -74,7 +74,15 @@ q {
 
 #buttons {
   display: flex;
+  align-items: center;
   gap: 12px;
+}
+
+#buttons p {
+  color: #0f0f0f;
+  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-weight: 900;
+  margin: 0;
 }
 
 .button {
@@ -107,7 +115,7 @@ q {
 }
 
 .text-grid {
-  padding-top: 120px;
+  padding-top: 140px;
   padding-bottom: 40px;
   width: 45%;
   margin: 0 auto;
@@ -124,8 +132,8 @@ q {
 .text-grid h1 {
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 100;
-  font-size: 36px;
-  margin-bottom: 8px;
+  font-size: 32px;
+  margin-bottom: 4px;
 }
 
 .text-grid ul {

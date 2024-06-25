@@ -10,6 +10,10 @@
   .text-grid {
     width: 80%;
   }
+
+  .text-grid h1 {
+    font-size: 24px;
+  }
   .item-container,
   .new-item-container {
     margin-bottom: 1em;
