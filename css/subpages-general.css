@@ -109,9 +109,15 @@ q {
 }
 
 #grid {
+  display: flex;
+  gap: 20px;
   padding: 80px 0;
   width: 45%;
   margin: 0 auto;
+}
+
+.grid-column {
+  flex: 1;
 }
 
 .text-grid {
@@ -159,7 +165,7 @@ q {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 2em;
+  margin-bottom: 20px;
 }
 
 .new-item-text {
