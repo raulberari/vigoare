@@ -122,63 +122,59 @@ function initPhotos(descriptions) {
   }
 
   function createNormalPhoto(idx) {
-    return new Promise((resolve) => {
-      const img = document.createElement("img");
-      const name = pageName + idx;
+    const img = document.createElement("img");
+    const name = pageName + idx;
 
-      img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
-      img.className = "item";
-      img.alt = descriptions[name] ?? "";
-      img.loading = "lazy";
+    img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+    img.className = "item";
+    img.alt = descriptions[name] ?? "";
+    img.loading = "lazy";
 
-      let modifiedDescription = descriptions[name] ?? "";
-      modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
+    let modifiedDescription = descriptions[name] ?? "";
+    modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
 
-      const description = document.createElement("h1");
-      description.className = "description";
-      description.innerHTML = modifiedDescription;
-      description.lang = "en";
+    const description = document.createElement("h1");
+    description.className = "description";
+    description.innerHTML = modifiedDescription;
+    description.lang = "en";
 
-      const descriptionContainer = document.createElement("div");
-      descriptionContainer.className = "description-container";
-      descriptionContainer.style.display = "none";
-      descriptionContainer.appendChild(description);
+    const descriptionContainer = document.createElement("div");
+    descriptionContainer.className = "description-container";
+    descriptionContainer.style.display = "none";
+    descriptionContainer.appendChild(description);
 
-      const container = document.createElement("div");
-      container.className = "item-container";
-      container.appendChild(descriptionContainer);
+    const container = document.createElement("div");
+    container.className = "item-container";
+    container.appendChild(descriptionContainer);
 
-      container.appendChild(img);
+    container.appendChild(img);
 
-      if (modifiedDescription) {
-        container.addEventListener("click", function () {
-          if (descriptionContainer.style.display === "none") {
-            descriptionContainer.style.display = "flex";
-          } else {
-            descriptionContainer.style.display = "none";
-          }
-        });
+    if (modifiedDescription) {
+      container.addEventListener("click", function () {
+        if (descriptionContainer.style.display === "none") {
+          descriptionContainer.style.display = "flex";
+        } else {
+          descriptionContainer.style.display = "none";
+        }
+      });
 
-        // Add the info button if there is a description
-        const infoButton = document.createElement("div");
-        infoButton.className = "info-button";
-        infoButton.style.display = "none";
-        container.appendChild(infoButton);
+      // Add the info button if there is a description
+      const infoButton = document.createElement("div");
+      infoButton.className = "info-button";
+      infoButton.style.display = "none";
+      container.appendChild(infoButton);
 
-        infoButton.style.display = "block";
-      }
+      infoButton.style.display = "block";
+    }
 
-      img.onload = () => {
-        resolve(container);
-      };
-    });
+    return container;
   }
 
   async function loadPhotos() {
     // Add new photos
     if (loadedPhotosCount === 0) {
       for (let i = 0; i < newPhotos[pageName].length; i++) {
-        const container = await createNewPhoto(i, descriptions);
+        const container = createNewPhoto(i, descriptions);
 
         window.photos.push(container);
       }
@@ -196,7 +192,7 @@ function initPhotos(descriptions) {
       const idx = indexes[i] + 1;
 
       if (!newPhotos[pageName].includes(idx)) {
-        const container = await createNormalPhoto(idx);
+        const container = createNormalPhoto(idx);
         window.photos.push(container);
       }
     }
