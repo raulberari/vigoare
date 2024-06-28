@@ -146,6 +146,14 @@ function initPhotos(descriptions) {
     const container = document.createElement("div");
     container.className = "item-container";
     container.appendChild(descriptionContainer);
+
+    // Add the info button if there is a description
+    if (modifiedDescription) {
+      const infoButton = document.createElement("div");
+      infoButton.className = "info-button";
+      container.appendChild(infoButton);
+    }
+
     container.appendChild(img);
 
     if (modifiedDescription) {
