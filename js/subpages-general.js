@@ -122,8 +122,6 @@ function initPhotos(descriptions) {
       img.onload = () => {
         resolve(container);
       };
-
-      return container;
     });
   }
 
@@ -177,7 +175,6 @@ function initPhotos(descriptions) {
       img.onload = () => {
         resolve(container);
       };
-      return container;
     });
   }
 
@@ -248,9 +245,6 @@ function initPhotos(descriptions) {
   trigger.style.width = "100%";
   document.body.appendChild(trigger);
   observer.observe(trigger);
-
-  // Initial load
-  loadPhotos();
 
   // Reflow photos on window resize or column toggle
   window.addEventListener("resize", reflowPhotos);
