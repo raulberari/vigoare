@@ -147,6 +147,14 @@ function initPhotos(descriptions) {
     container.className = "item-container";
     container.appendChild(descriptionContainer);
 
+    // Add the info button if there is a description
+    if (modifiedDescription) {
+      const infoButton = document.createElement("div");
+      infoButton.className = "info-button";
+      infoButton.style.display = "none";
+      container.appendChild(infoButton);
+    }
+
     container.appendChild(img);
 
     if (modifiedDescription) {
@@ -157,24 +165,23 @@ function initPhotos(descriptions) {
           descriptionContainer.style.display = "none";
         }
       });
-
-      // Add the info button if there is a description
-      const infoButton = document.createElement("div");
-      infoButton.className = "info-button";
-      infoButton.style.display = "none";
-      container.appendChild(infoButton);
-
-      infoButton.style.display = "block";
     }
 
     return container;
   }
 
-  async function loadPhotos() {
+  function showInfoButtons() {
+    const infoButtons = document.querySelectorAll(".info-button");
+    infoButtons.forEach((button) => {
+      button.style.display = "block";
+    });
+  }
+
+  function loadPhotos() {
     // Add new photos
     if (loadedPhotosCount === 0) {
       for (let i = 0; i < newPhotos[pageName].length; i++) {
-        const container = createNewPhoto(i, descriptions);
+        const container = createNewPhoto(i);
 
         window.photos.push(container);
       }
@@ -206,6 +213,10 @@ function initPhotos(descriptions) {
     if (loadedPhotosCount > photoCount[pageName]) {
       observer.disconnect();
     }
+
+    setTimeout(() => {
+      showInfoButtons();
+    }, 200);
   }
 
   window.photos = [];
@@ -237,6 +248,9 @@ function initPhotos(descriptions) {
   trigger.style.width = "100%";
   document.body.appendChild(trigger);
   observer.observe(trigger);
+
+  // Initial load
+  loadPhotos();
 
   // Reflow photos on window resize or column toggle
   window.addEventListener("resize", reflowPhotos);
@@ -343,7 +357,6 @@ function changeColumns(origin) {
   }
 
   if (localStorage.getItem("columnNumber") > 1 && origin !== "storage") {
-    // grid.style.columnCount = 1;
     grid.style.width = oneColumnWidth;
 
     document.getElementById("columnsButton").innerText = "1";
@@ -356,7 +369,6 @@ function changeColumns(origin) {
       numberOfColumns = 2;
     }
 
-    // grid.style.columnCount = numberOfColumns;
     grid.style.width = "90%";
 
     document.getElementById("columnsButton").innerText =
