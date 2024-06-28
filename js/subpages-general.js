@@ -147,13 +147,6 @@ function initPhotos(descriptions) {
     container.className = "item-container";
     container.appendChild(descriptionContainer);
 
-    // Add the info button if there is a description
-    if (modifiedDescription) {
-      const infoButton = document.createElement("div");
-      infoButton.className = "info-button";
-      container.appendChild(infoButton);
-    }
-
     container.appendChild(img);
 
     if (modifiedDescription) {
@@ -164,6 +157,14 @@ function initPhotos(descriptions) {
           descriptionContainer.style.display = "none";
         }
       });
+
+      // Add the info button if there is a description
+      const infoButton = document.createElement("div");
+      infoButton.className = "info-button";
+      infoButton.style.display = "none";
+      container.appendChild(infoButton);
+
+      infoButton.style.display = "block";
     }
 
     return container;
@@ -224,7 +225,9 @@ function initPhotos(descriptions) {
         entries[0].isIntersecting &&
         loadedPhotosCount < photoCount[pageName]
       ) {
-        loadPhotos();
+        setTimeout(function () {
+          loadPhotos();
+        }, 500);
       }
     },
     { threshold: 0.1 }
