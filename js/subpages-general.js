@@ -56,125 +56,136 @@ function initPhotos(descriptions) {
   const pageName = document.body.getAttribute("data-name");
 
   function createNewPhoto(i) {
-    const img = document.createElement("img");
-    const idx = newPhotos[pageName][i];
-    const name = pageName + idx;
-    let modifiedDescription = descriptions[name] ?? "";
-    modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
+    return new Promise((resolve) => {
+      const img = document.createElement("img");
+      const idx = newPhotos[pageName][i];
+      const name = pageName + idx;
+      let modifiedDescription = descriptions[name] ?? "";
+      modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
 
-    img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
-    img.className = "item";
-    img.alt = descriptions[name] ?? "";
-    img.loading = "lazy";
+      img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+      img.className = "item";
+      img.alt = descriptions[name] ?? "";
+      img.loading = "lazy";
 
-    const text = document.createElement("h1");
-    text.className = "new-item-text";
-    text.innerHTML = "NEW";
-    text.style.display = "block";
+      const text = document.createElement("h1");
+      text.className = "new-item-text";
+      text.innerHTML = "NEW";
+      text.style.display = "block";
 
-    const description = document.createElement("h1");
-    description.className = "description";
-    description.innerHTML = modifiedDescription;
-    description.lang = "en";
+      const description = document.createElement("h1");
+      description.className = "description";
+      description.innerHTML = modifiedDescription;
+      description.lang = "en";
 
-    const descriptionContainer = document.createElement("div");
-    descriptionContainer.className = "description-container";
-    descriptionContainer.style.display = "none";
-    descriptionContainer.appendChild(description);
+      const descriptionContainer = document.createElement("div");
+      descriptionContainer.className = "description-container";
+      descriptionContainer.style.display = "none";
+      descriptionContainer.appendChild(description);
 
-    const container = document.createElement("div");
-    container.className = "new-item-container";
-    container.appendChild(text);
-    container.appendChild(descriptionContainer);
-    container.appendChild(img);
+      const container = document.createElement("div");
+      container.className = "new-item-container";
+      container.appendChild(text);
+      container.appendChild(descriptionContainer);
+      container.appendChild(img);
 
-    if (modifiedDescription) {
-      container.addEventListener("click", function () {
-        if (
-          text.style.display === "none" &&
-          descriptionContainer.style.display === "none"
-        ) {
-          descriptionContainer.style.display = "flex";
-        } else if (
-          text.style.display === "block" &&
-          descriptionContainer.style.display === "none"
-        ) {
-          text.style.display = "none";
-        } else if (
-          text.style.display === "none" &&
-          descriptionContainer.style.display === "flex"
-        ) {
-          descriptionContainer.style.display = "none";
-          text.style.display = "block";
-        }
-      });
-    } else {
-      container.addEventListener("click", function () {
-        if (text.style.display === "none") {
-          text.style.display = "block";
-        } else {
-          text.style.display = "none";
-        }
-      });
-    }
+      if (modifiedDescription) {
+        container.addEventListener("click", function () {
+          if (
+            text.style.display === "none" &&
+            descriptionContainer.style.display === "none"
+          ) {
+            descriptionContainer.style.display = "flex";
+          } else if (
+            text.style.display === "block" &&
+            descriptionContainer.style.display === "none"
+          ) {
+            text.style.display = "none";
+          } else if (
+            text.style.display === "none" &&
+            descriptionContainer.style.display === "flex"
+          ) {
+            descriptionContainer.style.display = "none";
+            text.style.display = "block";
+          }
+        });
+      } else {
+        container.addEventListener("click", function () {
+          if (text.style.display === "none") {
+            text.style.display = "block";
+          } else {
+            text.style.display = "none";
+          }
+        });
+      }
 
-    return container;
+      img.onload = () => {
+        resolve(container);
+      };
+
+      return container;
+    });
   }
 
   function createNormalPhoto(idx) {
-    const img = document.createElement("img");
-    const name = pageName + idx;
+    return new Promise((resolve) => {
+      const img = document.createElement("img");
+      const name = pageName + idx;
 
-    img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
-    img.className = "item";
-    img.alt = descriptions[name] ?? "";
-    img.loading = "lazy";
+      img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
+      img.className = "item";
+      img.alt = descriptions[name] ?? "";
+      img.loading = "lazy";
 
-    let modifiedDescription = descriptions[name] ?? "";
-    modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
+      let modifiedDescription = descriptions[name] ?? "";
+      modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
 
-    const description = document.createElement("h1");
-    description.className = "description";
-    description.innerHTML = modifiedDescription;
-    description.lang = "en";
+      const description = document.createElement("h1");
+      description.className = "description";
+      description.innerHTML = modifiedDescription;
+      description.lang = "en";
 
-    const descriptionContainer = document.createElement("div");
-    descriptionContainer.className = "description-container";
-    descriptionContainer.style.display = "none";
-    descriptionContainer.appendChild(description);
+      const descriptionContainer = document.createElement("div");
+      descriptionContainer.className = "description-container";
+      descriptionContainer.style.display = "none";
+      descriptionContainer.appendChild(description);
 
-    const container = document.createElement("div");
-    container.className = "item-container";
-    container.appendChild(descriptionContainer);
+      const container = document.createElement("div");
+      container.className = "item-container";
+      container.appendChild(descriptionContainer);
 
-    container.appendChild(img);
+      container.appendChild(img);
 
-    if (modifiedDescription) {
-      container.addEventListener("click", function () {
-        if (descriptionContainer.style.display === "none") {
-          descriptionContainer.style.display = "flex";
-        } else {
-          descriptionContainer.style.display = "none";
-        }
-      });
+      if (modifiedDescription) {
+        container.addEventListener("click", function () {
+          if (descriptionContainer.style.display === "none") {
+            descriptionContainer.style.display = "flex";
+          } else {
+            descriptionContainer.style.display = "none";
+          }
+        });
 
-      // Add the info button if there is a description
-      const infoButton = document.createElement("div");
-      infoButton.className = "info-button";
-      infoButton.style.display = "none";
-      container.appendChild(infoButton);
+        // Add the info button if there is a description
+        const infoButton = document.createElement("div");
+        infoButton.className = "info-button";
+        infoButton.style.display = "none";
+        container.appendChild(infoButton);
 
-      infoButton.style.display = "block";
-    }
+        infoButton.style.display = "block";
+      }
 
-    return container;
+      img.onload = () => {
+        resolve(container);
+      };
+      return container;
+    });
   }
 
-  function loadPhotos() {
+  async function loadPhotos() {
     // Add new photos
     if (loadedPhotosCount === 0) {
       for (let i = 0; i < newPhotos[pageName].length; i++) {
-        const container = createNewPhoto(i);
+        const container = await createNewPhoto(i, descriptions);
 
         window.photos.push(container);
       }
@@ -192,7 +203,7 @@ function initPhotos(descriptions) {
       const idx = indexes[i] + 1;
 
       if (!newPhotos[pageName].includes(idx)) {
-        const container = createNormalPhoto(idx);
+        const container = await createNormalPhoto(idx);
         window.photos.push(container);
       }
     }
@@ -225,9 +236,7 @@ function initPhotos(descriptions) {
         entries[0].isIntersecting &&
         loadedPhotosCount < photoCount[pageName]
       ) {
-        setTimeout(function () {
-          loadPhotos();
-        }, 500);
+        loadPhotos();
       }
     },
     { threshold: 0.1 }
