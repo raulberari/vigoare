@@ -7,16 +7,12 @@
 
 @font-face {
   font-family: "Firs Neue";
-  src: url("../fonts/TT Firs Neue Trial Light.ttf") format("truetype");
-  font-weight: 300;
+  src: url("../fonts/TT\ Firs\ Neue\ Trial\ Regular.ttf") format("truetype");
+  font-weight: 500;
 }
 
 body {
   margin: 0;
-  background-image: url("../images/malevich.png");
-  background-size: 35%;
-  background-repeat: no-repeat;
-  background-position: 15% 50%;
   min-height: 100vh;
 }
 
@@ -52,28 +48,27 @@ body {
 }
 
 #links {
-  display: grid;
-  border-left: solid 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
   position: relative;
   top: 200px;
-  left: 100px;
-  grid-template-columns: 1fr;
+  /* left: 100px; */
   width: 45%;
   margin: 0 auto;
   margin-bottom: 80px;
-  transform: translateX(10%) skew(-20deg);
 }
 
-#links a {
+#links a,
+#links p {
   font-family: "Firs Neue", sans-serif;
-  font-size: 54px;
+  font-size: 16px;
   line-height: 1.2;
   font-weight: 300;
   color: #0f0f0f;
+  margin: 0;
   text-decoration: none;
-  margin-left: 80px;
-  transform: skew(20deg);
-  text-shadow: 0px -1px 0 #fafafa;
 }
 
 #links a:hover {
@@ -81,35 +76,16 @@ body {
 }
 
 @media screen and (max-width: 1280px) {
-  body {
-    background-size: 40%;
-    background-position: 0% 30%;
-    min-height: 100vh;
-  }
-
   #links {
     top: 200px;
-    left: 20%;
-    margin: 0;
+    width: 60%;
   }
 }
 
 @media screen and (max-width: 800px) {
-  body {
-    background-size: 50%;
-    background-position: -30% 30%;
-    min-height: 100vh;
-  }
-
   #links {
+    width: 80%;
     top: 175px;
-    left: 15%;
-    margin: 0;
-  }
-
-  #links a {
-    font-size: 30px;
-    margin-left: 30px;
   }
 }
 
