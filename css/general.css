@@ -54,10 +54,8 @@ body {
   gap: 4px;
   position: relative;
   top: 200px;
-  /* left: 100px; */
   width: 45%;
   margin: 0 auto;
-  margin-bottom: 80px;
 }
 
 #links a,
