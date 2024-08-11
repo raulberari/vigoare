@@ -150,11 +150,6 @@ q {
   margin: auto;
 }
 
-.inspo-items {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
 .new-item-container,
 .item-container {
   display: flex;
