@@ -6,25 +6,21 @@
 }
 
 @font-face {
-  font-family: "GT America Extended";
-  src: local("GT-America-Extended-Ultra-Light"),
-    url("../fonts/GT-America-Expanded-Ultra-Light-Trial.otf") format("opentype");
-  font-weight: 100;
+  font-family: "Firs Neue";
+  src: url("../fonts/TT\ Firs\ Neue\ Trial\ Regular.ttf") format("truetype");
+  font-weight: 500;
 }
 
 .comment {
-  margin-bottom: 30px;
-  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
   display: flex;
   width: 100%;
+  border-bottom: 1px solid #0f0f0f;
 }
 
-.oblique {
-  min-width: 2px;
-  height: 80px;
-  background: #000;
-  transform: skew(-20deg);
-  margin-right: 20px;
+.comment:last-child {
+  border-bottom: none;
 }
 
 .text-container {
@@ -33,8 +29,8 @@
 
 .comment-header {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
+  gap: 10px;
 }
 
 .comment-author {
@@ -44,9 +40,26 @@
 }
 
 .comment-date {
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
-  font-weight: 100;
+  font-family: "Firs Neue", Helvetica Neue, sans-serif;
   font-size: 0.8em;
+  color: #999999;
+  position: relative;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 100px;
+  background-color: #0f0f0f;
+  color: #fafafa;
+  text-align: center;
+
+  position: absolute;
+  z-index: 1;
+  left: 105%;
+}
+
+.comment-date:hover .tooltip-text {
+  visibility: visible;
 }
 
 .comment-content {

@@ -2,6 +2,29 @@ function onLoad() {
   fetchJSONData();
 }
 
+function relativeTimeSince(dateString) {
+  const inputDate = new Date(dateString);
+  const currentDate = new Date();
+
+  const diffInMs = currentDate - inputDate;
+
+  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+
+  if (diffInDays === 0) {
+    return "today";
+  } else if (diffInDays === 1) {
+    return "yesterday";
+  } else if (diffInDays < 30) {
+    return `${diffInDays} days ago`;
+  } else if (diffInDays < 365) {
+    const diffInMonths = Math.floor(diffInDays / 30);
+    return `${diffInMonths} month${diffInMonths > 1 ? "s" : ""} ago`;
+  } else {
+    const diffInYears = Math.floor(diffInDays / 365);
+    return `${diffInYears} year${diffInYears > 1 ? "s" : ""} ago`;
+  }
+}
+
 function initComments(data) {
   const container = document.getElementsByClassName("text-grid")[0];
 
@@ -18,9 +41,14 @@ function initComments(data) {
     commentAuthor.className = "comment-author";
     commentAuthor.textContent = comment.name;
 
-    const commentDate = document.createElement("span");
+    const commentDateTooltip = document.createElement("span");
+    commentDateTooltip.className = "tooltip-text";
+    commentDateTooltip.textContent = comment.date;
+
+    const commentDate = document.createElement("div");
     commentDate.className = "comment-date";
-    commentDate.textContent = comment.date;
+    commentDate.textContent = relativeTimeSince(comment.date);
+    commentDate.appendChild(commentDateTooltip);
 
     commentHeader.appendChild(commentAuthor);
     commentHeader.appendChild(commentDate);
@@ -38,9 +66,9 @@ function initComments(data) {
     textContainer.appendChild(commentHeader);
     textContainer.appendChild(commentContent);
 
-    const obliqueIndicator = document.createElement("div");
-    obliqueIndicator.className = "oblique";
-    commentContainer.appendChild(obliqueIndicator);
+    // const obliqueIndicator = document.createElement("div");
+    // obliqueIndicator.className = "oblique";
+    // commentContainer.appendChild(obliqueIndicator);
     commentContainer.appendChild(textContainer);
 
     container.appendChild(commentContainer);
