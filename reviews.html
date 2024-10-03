@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/subpages-general.css" />
     <link rel="stylesheet" href="./css/media-queries-subpages.css" />
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <script src="./js/subpages-general.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -48,11 +49,20 @@
 
       <div id="buttons">
         <p class="page-name">REVIEWS</p>
+        <!-- <div class="button" id="index-button" onclick=""></div> -->
       </div>
     </div>
 
+    <div id="index" onclick="onClickIndex(event)">
+      <p><a href="#film-socialisme">Film Socialisme</a></p>
+      <p><a href="#zone-of-interest">The Zone of Interest</a></p>
+      <p><a href="#sinofuturism">Sinofuturism (1839 - 2046 AD)</a></p>
+      <p><a href="#red-desert">Red Desert</a></p>
+      <p><a href="#network">Network</a></p>
+    </div>
+
     <div class="text-grid">
-      <h1>Film Socialisme</h1>
+      <h1 id="film-socialisme">Film Socialisme</h1>
       <div class="film-details">
         <p class="rating">★★★★★</p>
         <p class="bullet-spacer">•</p>
@@ -70,7 +80,7 @@
         <p>Communism lives on through the youth. Odessa. Gaza.</p>
         <p>"Immagina un deserto."</p>
       </div>
-      <h1>The Zone of Interest</h1>
+      <h1 id="zone-of-interest">The Zone of Interest</h1>
       <div class="film-details">
         <p class="rating">★★★★★</p>
         <p class="bullet-spacer">•</p>
@@ -93,7 +103,7 @@
           of a cinema doesn't do it justice.
         </p>
       </div>
-      <h1>Sinofuturism (1839 - 2046 AD)</h1>
+      <h1 id="sinofuturism">Sinofuturism (1839 - 2046 AD)</h1>
       <div class="film-details">
         <p class="rating">★★★★</p>
         <p class="bullet-spacer">•</p>
@@ -110,7 +120,7 @@
         </p>
       </div>
 
-      <h1>Red Desert</h1>
+      <h1 id="red-desert">Red Desert</h1>
       <div class="film-details">
         <p class="rating">★★★★★</p>
         <p class="bullet-spacer">•</p>
@@ -150,7 +160,7 @@
           is."
         </p>
       </div>
-      <h1>Network</h1>
+      <h1 id="network">Network</h1>
       <div class="film-details">
         <p class="rating">★★★★★</p>
         <p class="bullet-spacer">•</p>

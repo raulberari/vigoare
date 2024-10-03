@@ -405,3 +405,15 @@ function onResize() {
     localStorage.setItem("columnNumber", 1);
   }
 }
+
+function onClickIndex(event) {
+  const children = document.getElementById("index").children;
+
+  for (const element of children) {
+    element.firstChild.style.fontWeight = "normal";
+  }
+  console.log(children);
+
+  event.target.style.fontWeight = "bold";
+  console.log(event.target);
+}

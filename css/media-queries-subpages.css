@@ -5,6 +5,12 @@
   }
 }
 
+@media screen and (max-width: 1150px) {
+  #index {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 800px) {
   #grid,
   .text-grid {
