@@ -209,3 +209,30 @@ q {
   right: 0;
   backdrop-filter: blur(10px);
 }
+
+.film-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.film-details p {
+  font-size: 13px;
+}
+
+.bullet-spacer {
+  margin-right: 4px !important;
+  margin-left: 4px !important;
+}
+
+.rating {
+  padding-bottom: 2px;
+}
+
+.film-review {
+  margin-bottom: 24px;
+}
+
+.film-review p {
+  margin-bottom: 8px;
+}
