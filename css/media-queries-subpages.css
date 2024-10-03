@@ -9,6 +9,7 @@
   #grid,
   .text-grid {
     width: 80%;
+    max-width: auto;
   }
 
   .text-grid h1 {
