@@ -244,6 +244,8 @@ q {
 }
 
 #index {
+  display: flex;
+  flex-direction: column;
   margin-left: 1em;
   height: 95px;
   overflow-y: scroll;
@@ -252,6 +254,13 @@ q {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
+  scrollbar-width: none; /* Firefox */
+}
+
+#index::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
 }
 
 #index p {
@@ -259,6 +268,7 @@ q {
   font-size: 13px;
   margin: 0;
   margin-bottom: 4px;
+  user-select: none;
 }
 
 #index p a {
