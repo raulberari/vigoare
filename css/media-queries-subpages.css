@@ -16,6 +16,7 @@
   .text-grid {
     width: 80%;
     max-width: none;
+    padding: 60px 0;
   }
 
   .text-grid h1 {

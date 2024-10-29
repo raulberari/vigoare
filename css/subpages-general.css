@@ -38,8 +38,13 @@ q {
 }
 
 #title-buttons {
-  margin-top: 3em;
-  margin-left: 1em;
+  display: flex;
+  margin-top: 1em;
+  width: 100%;
+  min-height: 32px;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
   position: fixed;
   z-index: 1;
 }
@@ -49,7 +54,7 @@ q {
   color: #0f0f0f;
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
-  font-size: 3em;
+  align-content: center;
 }
 
 .white-text {
@@ -75,6 +80,7 @@ q {
   align-items: center;
   gap: 12px;
   min-height: 32px;
+  margin-left: 12px;
 }
 
 #buttons p {
