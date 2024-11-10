@@ -11,7 +11,7 @@ const colors = {
 
 const photoCount = {
   architecture: 115,
-  industry: 32,
+  industry: 33,
   light: 39,
   lines: 48,
   me: 56,
@@ -21,7 +21,7 @@ const photoCount = {
 
 const newPhotos = {
   architecture: [115],
-  industry: [31, 32],
+  industry: [33],
   light: [39],
   lines: [48],
   me: [56],
