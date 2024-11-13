@@ -10,20 +10,20 @@ const colors = {
 };
 
 const photoCount = {
-  architecture: 115,
+  architecture: 112,
   industry: 33,
   light: 39,
-  lines: 48,
+  lines: 44,
   me: 56,
   nature: 36,
   noise: 29,
 };
 
 const newPhotos = {
-  architecture: [115],
+  architecture: [112],
   industry: [33],
   light: [39],
-  lines: [48],
+  lines: [44],
   me: [56],
   nature: [36],
   noise: [29],
