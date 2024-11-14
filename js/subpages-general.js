@@ -15,7 +15,7 @@ const photoCount = {
   light: 39,
   lines: 44,
   me: 56,
-  nature: 36,
+  nature: 38,
   noise: 29,
 };
 
@@ -25,7 +25,7 @@ const newPhotos = {
   light: [39],
   lines: [44],
   me: [56],
-  nature: [36],
+  nature: [37, 38],
   noise: [29],
 };
 
