@@ -120,7 +120,7 @@ body {
 .text-grid p,
 .text-grid li {
   font-family: "Firs Neue", sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   margin: 0;
   margin-bottom: 4px;
 }
@@ -128,7 +128,7 @@ body {
 .text-grid h1 {
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 1em;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -178,7 +178,7 @@ body {
   color: transparent;
   -webkit-text-stroke: 0.5px var(--light-color);
   text-transform: uppercase;
-  font-size: 28px;
+  font-size: 1.8em;
   user-select: none;
   overflow: auto;
   overflow-wrap: break-word;
@@ -213,7 +213,7 @@ body {
 }
 
 .film-details p {
-  font-size: 13px;
+  font-size: 0.8em;
 }
 
 .bullet-spacer {
@@ -255,7 +255,7 @@ body {
 
 #index p {
   font-family: "Firs Neue", sans-serif;
-  font-size: 13px;
+  font-size: 0.8em;
   margin: 0;
   margin-bottom: 4px;
   user-select: none;
