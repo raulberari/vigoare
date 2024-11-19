@@ -1,21 +1,16 @@
-@font-face {
-  font-family: "GT America Extended";
-  src: local("GT-America-Extended-Black-Trial"),
-    url("../fonts/GT-America-Extended-Black-Trial.otf") format("opentype");
-  font-weight: 900;
+:root {
+  color-scheme: light dark;
 }
 
-@font-face {
-  font-family: "GT America Extended";
-  src: local("GT-America-Extended-Thin-Trial"),
-    url("../fonts/GT-America-Extended-Thin-Trial.otf") format("opentype");
-  font-weight: 300;
+#canon,
+#changelog,
+#guestbook,
+#reviews {
+  color-scheme: light;
 }
 
-@font-face {
-  font-family: "Firs Neue";
-  src: url("../fonts/TT\ Firs\ Neue\ Trial\ Regular.ttf") format("truetype");
-  font-weight: 500;
+#stills {
+  color-scheme: dark;
 }
 
 html {
@@ -27,14 +22,9 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-}
 
-q {
-  font-style: italic;
-}
-
-#body-stills {
-  background-color: #0f0f0f;
+  background-color: light-dark(var(--light-color), var(--dark-color));
+  color: light-dark(var(--dark-color), var(--light-color));
 }
 
 #title-buttons {
@@ -51,27 +41,23 @@ q {
 
 .title {
   text-decoration: none;
-  color: #0f0f0f;
+  color: light-dark(var(--dark-color), var(--light-color));
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
   align-content: center;
 }
 
-.white-text {
-  color: #fafafa !important;
-}
-
-#stills {
+#stills-container {
   width: 100%;
 }
 
-#stills img {
+#stills-container img {
   height: 100vh;
   padding: 50px 0;
   object-fit: contain;
 }
 
-#stills img:first-child {
+#stills-container img:first-child {
   padding: 0;
 }
 
@@ -84,7 +70,7 @@ q {
 }
 
 #buttons p {
-  color: #0f0f0f;
+  color: light-dark(var(--dark-color), var(--light-color));
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
   margin: 0;
@@ -101,16 +87,14 @@ q {
   width: 30px;
   height: 30px;
   border: 1px solid;
-  border-color: #0f0f0f;
+
+  border-color: light-dark(var(--dark-color), var(--light-color));
+  color: light-dark(var(--dark-color), var(--light-color));
   background: none;
 }
 
 #nightModeButton {
   border-radius: 25px;
-}
-
-#columnsButton {
-  color: #0f0f0f;
 }
 
 #grid {
@@ -154,7 +138,7 @@ q {
 }
 
 .text-grid a {
-  color: #0f0f0f;
+  color: var(--dark-color);
 }
 
 .item {
@@ -176,12 +160,12 @@ q {
   right: 0;
   transform: translateY(-50%);
   margin: 0;
-  background: #0f0f0f;
+  background: var(--dark-color);
   padding: 2px 6px;
   font-family: "GT America Extended";
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 0.5px #fafafa;
+  -webkit-text-stroke: 0.5px var(--light-color);
   cursor: pointer;
   user-select: none;
 }
@@ -192,7 +176,7 @@ q {
   font-family: "GT America Extended";
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 0.5px #fafafa;
+  -webkit-text-stroke: 0.5px var(--light-color);
   text-transform: uppercase;
   font-size: 28px;
   user-select: none;
@@ -216,7 +200,7 @@ q {
   cursor: pointer;
   margin: 8px;
   border-radius: 50%;
-  border: 1px solid #fafafa;
+  border: 1px solid var(--light-color);
   bottom: 0%;
   right: 0;
   backdrop-filter: blur(10px);
@@ -278,7 +262,7 @@ q {
 }
 
 #index p a {
-  color: #0f0f0f;
+  color: var(--dark-color);
   text-decoration: none;
   display: block;
   text-overflow: ellipsis;

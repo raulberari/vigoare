@@ -66,9 +66,6 @@ function initComments(data) {
     textContainer.appendChild(commentHeader);
     textContainer.appendChild(commentContent);
 
-    // const obliqueIndicator = document.createElement("div");
-    // obliqueIndicator.className = "oblique";
-    // commentContainer.appendChild(obliqueIndicator);
     commentContainer.appendChild(textContainer);
 
     container.appendChild(commentContainer);

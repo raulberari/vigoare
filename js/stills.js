@@ -12,7 +12,7 @@ function shuffleArray(array) {
 }
 
 function initPhotos(descriptions) {
-  const container = document.getElementById("stills");
+  const container = document.getElementById("stills-container");
 
   const indexes = [];
   for (let i = 0; i < photoCount; i++) {

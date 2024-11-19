@@ -4,11 +4,6 @@ function onLoad() {
   storage();
 }
 
-const colors = {
-  WHITE: "#fafafa",
-  BLACK: "#0f0f0f",
-};
-
 const photoCount = {
   architecture: 112,
   industry: 33,
@@ -285,62 +280,29 @@ function reflowPhotos() {
 }
 
 function changeColour() {
-  const nightModeButton = document.getElementById("nightModeButton");
-  const columnButton = document.getElementById("columnsButton");
-  const title = document.getElementsByClassName("title")[0];
-  const pageName = document.getElementsByClassName("page-name")[0];
+  const root = document.querySelector(":root");
 
-  if (localStorage.getItem("BGColor") === colors.BLACK) {
-    document.body.style.background = colors.WHITE;
-
-    title.style.color = colors.BLACK;
-    pageName.style.color = colors.BLACK;
-    nightModeButton.style.borderColor = colors.BLACK;
-    columnButton.style.borderColor = colors.BLACK;
-    columnButton.style.color = colors.BLACK;
-
-    localStorage.setItem("BGColor", colors.WHITE);
+  if (localStorage.getItem("colorScheme") === "dark") {
+    root.style.colorScheme = "light";
+    localStorage.setItem("colorScheme", "light");
   } else {
-    document.body.style.background = colors.BLACK;
-
-    title.style.color = colors.WHITE;
-    pageName.style.color = colors.WHITE;
-    nightModeButton.style.borderColor = colors.WHITE;
-    columnButton.style.borderColor = colors.WHITE;
-    columnButton.style.color = colors.WHITE;
-
-    localStorage.setItem("BGColor", colors.BLACK);
+    root.style.colorScheme = "dark";
+    localStorage.setItem("colorScheme", "dark");
   }
 }
 
 function storage() {
-  const nightModeButton = document.getElementById("nightModeButton");
-  const columnButton = document.getElementById("columnsButton");
-  const title = document.getElementsByClassName("title")[0];
-  const pageName = document.getElementsByClassName("page-name")[0];
-
   if (localStorage.getItem("columnNumber") > 1) {
     changeColumns("storage");
   } else {
     document.getElementById("columnsButton").innerText = "1";
   }
 
-  if (localStorage.getItem("BGColor") === colors.BLACK) {
-    document.body.style.background = colors.BLACK;
-
-    title.style.color = colors.WHITE;
-    pageName.style.color = colors.WHITE;
-    nightModeButton.style.borderColor = colors.WHITE;
-    columnButton.style.borderColor = colors.WHITE;
-    columnButton.style.color = colors.WHITE;
+  const root = document.querySelector(":root");
+  if (localStorage.getItem("colorScheme") === "dark") {
+    root.style.colorScheme = "dark";
   } else {
-    document.body.style.background = colors.WHITE;
-
-    title.style.color = colors.BLACK;
-    pageName.style.color = colors.BLACK;
-    nightModeButton.style.borderColor = colors.BLACK;
-    columnButton.style.borderColor = colors.BLACK;
-    columnButton.style.color = colors.BLACK;
+    root.style.colorScheme = "light";
   }
 }
 
@@ -365,7 +327,7 @@ function changeColumns(origin) {
   } else {
     let numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
 
-    if (numberOfColumns == 1) {
+    if (numberOfColumns === 1) {
       numberOfColumns = 2;
     }
 
@@ -382,7 +344,7 @@ function changeColumns(origin) {
 
 function onResize() {
   let numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
-  if (numberOfColumns == 1) {
+  if (numberOfColumns === 1) {
     numberOfColumns = 2;
   }
   const grid = document.getElementById("grid");
@@ -397,7 +359,6 @@ function onResize() {
   }
 
   if (localStorage.getItem("columnNumber") > 1) {
-    // grid.style.columnCount = numberOfColumns;
     columnButton.innerText = numberOfColumns.toString();
     localStorage.setItem("columnNumber", numberOfColumns);
   } else {

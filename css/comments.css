@@ -1,22 +1,9 @@
-@font-face {
-  font-family: "GT America Extended";
-  src: local("GT-America-Extended-Black-Trial"),
-    url("../fonts/GT-America-Extended-Black-Trial.otf") format("opentype");
-  font-weight: 900;
-}
-
-@font-face {
-  font-family: "Firs Neue";
-  src: url("../fonts/TT\ Firs\ Neue\ Trial\ Regular.ttf") format("truetype");
-  font-weight: 500;
-}
-
 .comment {
   padding-bottom: 20px;
   padding-top: 20px;
   display: flex;
   width: 100%;
-  border-bottom: 1px solid #0f0f0f;
+  border-bottom: 1px solid var(--dark-color);
 }
 
 .comment:last-child {
@@ -49,8 +36,8 @@
 .tooltip-text {
   visibility: hidden;
   width: 100px;
-  background-color: #0f0f0f;
-  color: #fafafa;
+  background-color: var(--dark-color);
+  color: var(--light-color);
   text-align: center;
 
   position: absolute;
