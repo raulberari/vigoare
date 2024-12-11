@@ -279,15 +279,24 @@ function reflowPhotos() {
   });
 }
 
+function changeThemeColor(colorScheme) {
+  const color = colorScheme === "light" ? "#fafafa" : "#0f0f0f";
+  document
+    .querySelector('meta[name="theme-color"]')
+    .setAttribute("content", color);
+}
+
 function changeColour() {
   const root = document.querySelector(":root");
 
   if (localStorage.getItem("colorScheme") === "dark") {
     root.style.colorScheme = "light";
     localStorage.setItem("colorScheme", "light");
+    changeThemeColor("light");
   } else {
     root.style.colorScheme = "dark";
     localStorage.setItem("colorScheme", "dark");
+    changeThemeColor("dark");
   }
 }
 
@@ -301,8 +310,10 @@ function storage() {
   const root = document.querySelector(":root");
   if (localStorage.getItem("colorScheme") === "dark") {
     root.style.colorScheme = "dark";
+    changeThemeColor("dark");
   } else {
     root.style.colorScheme = "light";
+    changeThemeColor("light");
   }
 }
 
