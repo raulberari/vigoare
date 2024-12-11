@@ -18,6 +18,12 @@
   font-weight: 500;
 }
 
+@font-face {
+  font-family: "Neue Haas Grotesk";
+  src: url("../fonts/NeueHaasGroteskRegular.ttf");
+  font-weight: 300;
+}
+
 :root {
   --light-color: #fafafa;
   --dark-color: #0f0f0f;
