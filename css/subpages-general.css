@@ -170,9 +170,6 @@ body {
   grid-column: span 2;
 }
 
-.canon-grid div span {
-}
-
 .canon-grid p span:not(:last-child)::after {
   content: " •";
 }

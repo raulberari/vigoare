@@ -39,8 +39,10 @@
 
   .canon-grid h1 {
     font-size: 1em;
-    writing-mode: sideways-lr;
+    writing-mode: vertical-rl;
     text-align: end;
+    display: inline-block;
+    transform: rotate(180deg);
     margin-top: 0.25em;
     margin-bottom: 2em;
   }
