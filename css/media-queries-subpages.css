@@ -30,13 +30,23 @@
     max-width: none;
     padding: 60px 0;
 
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      [col1-start] 10%
+      [col2-start] 90%
+      [col2-end];
     gap: 0;
   }
+
   .canon-grid h1 {
     font-size: 1em;
-    padding-top: 1em;
-    padding-bottom: 0.25em;
+    writing-mode: sideways-lr;
+    text-align: end;
+    margin-top: 0.25em;
+    margin-bottom: 2em;
+  }
+
+  .canon-grid p {
+    margin-bottom: 2em;
   }
 
   .item-container,
