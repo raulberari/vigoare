@@ -126,10 +126,6 @@ body {
   margin-bottom: 4px;
 }
 
-.text-grid p span:not(:last-child)::after {
-  content: " •";
-}
-
 .text-grid h1 {
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
@@ -144,6 +140,49 @@ body {
 
 .text-grid a {
   color: var(--dark-color);
+}
+
+.canon-grid {
+  padding-top: 140px;
+  padding-bottom: 40px;
+  width: 60%;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 20px 0;
+}
+
+.canon-grid h1 {
+  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.canon-grid p {
+  font-family: "Firs Neue", sans-serif;
+  font-size: 1em;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.wide-item {
+  grid-column: span 2;
+}
+
+.canon-grid div span {
+}
+
+.canon-grid p span:not(:last-child)::after {
+  content: " •";
+}
+
+.canon-grid {
+  display: grid;
+  grid-template-columns:
+    [col1-start] 40%
+    [col2-start] 60%
+    [col2-end];
 }
 
 .item {

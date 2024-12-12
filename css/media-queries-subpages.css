@@ -3,6 +3,12 @@
   .text-grid {
     width: 70%;
   }
+  .canon-grid {
+    width: 90%;
+  }
+  .canon-grid h1 {
+    font-size: 1.5em;
+  }
 }
 
 @media screen and (max-width: 1150px) {
@@ -17,6 +23,20 @@
     width: 80%;
     max-width: none;
     padding: 60px 0;
+  }
+
+  .canon-grid {
+    width: 80%;
+    max-width: none;
+    padding: 60px 0;
+
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .canon-grid h1 {
+    font-size: 1em;
+    padding-top: 1em;
+    padding-bottom: 0.25em;
   }
 
   .item-container,
