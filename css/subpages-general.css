@@ -226,9 +226,8 @@ body {
   width: 100%;
 }
 
-.description span {
+.description span:last-child {
   line-height: 1;
-  margin-top: 4px;
 }
 
 .description-container {
