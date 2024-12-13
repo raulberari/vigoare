@@ -55,7 +55,16 @@ function initPhotos(descriptions) {
     const idx = newPhotos[pageName][i];
     const name = pageName + idx;
     let modifiedDescription = descriptions[name] ?? "";
-    modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
+
+    const description = document.createElement("div");
+    description.className = "description";
+    description.lang = "en";
+    for (const part of modifiedDescription.split(", ")) {
+      const descriptionPart = document.createElement("span");
+      descriptionPart.innerHTML = part;
+
+      description.appendChild(descriptionPart);
+    }
 
     img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
@@ -66,11 +75,6 @@ function initPhotos(descriptions) {
     text.className = "new-item-text";
     text.innerHTML = "NEW";
     text.style.display = "block";
-
-    const description = document.createElement("h1");
-    description.className = "description";
-    description.innerHTML = modifiedDescription;
-    description.lang = "en";
 
     const descriptionContainer = document.createElement("div");
     descriptionContainer.className = "description-container";
@@ -126,12 +130,16 @@ function initPhotos(descriptions) {
     img.loading = "lazy";
 
     let modifiedDescription = descriptions[name] ?? "";
-    modifiedDescription = modifiedDescription.replaceAll(", ", "<br>");
 
-    const description = document.createElement("h1");
+    const description = document.createElement("div");
     description.className = "description";
-    description.innerHTML = modifiedDescription;
     description.lang = "en";
+    for (const part of modifiedDescription.split(", ")) {
+      const descriptionPart = document.createElement("span");
+      descriptionPart.innerHTML = part;
+
+      description.appendChild(descriptionPart);
+    }
 
     const descriptionContainer = document.createElement("div");
     descriptionContainer.className = "description-container";
