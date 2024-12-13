@@ -214,7 +214,7 @@ body {
 .description {
   display: grid;
   align-self: flex-end;
-  margin: 0;
+  margin: 8px;
   font-family: "GT America Extended";
   font-weight: 300;
   color: var(--light-color);
