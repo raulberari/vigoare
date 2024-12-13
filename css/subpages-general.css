@@ -220,7 +220,7 @@ body {
   color: var(--light-color);
   font-size: 0.8em;
   user-select: none;
-  overflow: auto;
+  overflow: none;
   overflow-wrap: break-word;
   hyphens: auto;
   width: 100%;
