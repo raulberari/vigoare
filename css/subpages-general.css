@@ -227,8 +227,7 @@ body {
 }
 
 .description span:last-child {
-  line-height: 1;
-  margin-top: 0.25em;
+  margin-bottom: -2px;
 }
 
 .description-container {
