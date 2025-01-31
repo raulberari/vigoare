@@ -309,6 +309,16 @@ function changeColour() {
 }
 
 function storage() {
+  let numberOfColumns = Math.floor(window.innerWidth / 400) + 1;
+  if (numberOfColumns === 1) {
+    numberOfColumns = 2;
+  }
+
+  // Set default to multiple columns on first load
+  if (!localStorage.getItem("columnNumber")) {
+    localStorage.setItem("columnNumber", numberOfColumns);
+  }
+
   if (localStorage.getItem("columnNumber") > 1) {
     changeColumns("storage");
   } else {
