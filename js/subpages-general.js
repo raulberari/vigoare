@@ -67,7 +67,6 @@ function initPhotos(descriptions) {
     }
 
     img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
-    img.width = "200";
     img.className = "item";
     img.alt = descriptions[name] ?? "";
     img.loading = "lazy";
@@ -127,7 +126,6 @@ function initPhotos(descriptions) {
 
     img.src = `./images/subpages/${pageName}/${pageName}` + idx + ".jpg";
     img.className = "item";
-    img.width = "200";
     img.alt = descriptions[name] ?? "";
     img.loading = "lazy";
 
