@@ -87,8 +87,6 @@ function initPhotos(descriptions) {
     container.appendChild(descriptionContainer);
     container.appendChild(img);
 
-    container.style.setProperty("--aspect-ratio", `${(3 / 2) * 100}%`);
-
     if (modifiedDescription) {
       container.addEventListener("click", function () {
         if (
@@ -151,7 +149,6 @@ function initPhotos(descriptions) {
     const container = document.createElement("div");
     container.className = "item-container";
     container.appendChild(descriptionContainer);
-    container.style.setProperty("--aspect-ratio", `${(3 / 2) * 100}%`);
 
     // Add the info button if there is a description
     if (modifiedDescription) {
