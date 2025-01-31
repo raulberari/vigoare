@@ -212,8 +212,9 @@ function initPhotos(descriptions) {
     // Reflow photos into columns
     reflowPhotos();
 
-    // If all photos are loaded, disconnect the observer
-    if (loadedPhotosCount > photoCount[pageName]) {
+    // If all photos are loaded, disconnect the observer and show the quote text
+    if (loadedPhotosCount >= photoCount[pageName]) {
+      document.getElementsByClassName("quote-text")[0].style.display = "block";
       observer.disconnect();
     }
 

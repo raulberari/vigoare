@@ -314,3 +314,15 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+
+.quote-text {
+  display: none;
+  width: 80%;
+  align-self: center;
+  text-align: center;
+  font-family: "GT America Extended";
+  font-size: 2em;
+  font-weight: 900;
+  line-height: 0.8;
+  text-transform: uppercase;
+}

@@ -60,4 +60,8 @@
   .description {
     font-size: 0.8em;
   }
+
+  .quote-text {
+    width: 90%;
+  }
 }
