@@ -150,12 +150,12 @@ body {
 
 @media screen and (max-width: 1280px) {
   #links {
-    width: 45%;
+    width: 70%;
     top: 100px;
   }
 
   #links a {
-    font-size: 3em;
+    font-size: 4em;
   }
 
   #black-square {
