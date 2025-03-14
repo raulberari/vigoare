@@ -215,8 +215,7 @@ body {
   display: grid;
   align-self: flex-end;
   margin: 0;
-  font-family: "GT America Extended";
-  font-weight: 300;
+  font-family: "Firs Neue", sans-serif;
   color: var(--light-color);
   font-size: 0.8em;
   user-select: none;
