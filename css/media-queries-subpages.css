@@ -64,4 +64,8 @@
   .quote-text {
     width: 90%;
   }
+
+  .film-review {
+    margin-bottom: 32px;
+  }
 }
