@@ -27,6 +27,13 @@ function initReviews(reviews) {
     .map(
       (review) => `
     <h1 id="${review.id}">${review.title}</h1>
+    <div class="review-image">
+        ${
+          review.image
+            ? `<img src="${review.image}" alt="${review.title} cinematography" width=100%>`
+            : `<div class="image-placeholder"></div>`
+        }
+      </div>
     <div class="film-details">
       <p class="rating">${"★".repeat(review.rating)}</p>
       <p class="bullet-spacer">•</p>
