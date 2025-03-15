@@ -396,13 +396,3 @@ function onResize() {
     localStorage.setItem("columnNumber", 1);
   }
 }
-
-function onClickIndex(event) {
-  let children = document.getElementById("index").children;
-
-  for (const element of children) {
-    element.firstChild.style.fontWeight = "normal";
-  }
-
-  event.target.style.fontWeight = "bold";
-}
