@@ -26,31 +26,51 @@ function initReviews(reviews) {
   reviewsContainer.innerHTML = reviews
     .map(
       (review) => `
-    <h1 id="${review.id}">${review.title}</h1>
-    <div class="review-image">
-        ${
-          review.image
-            ? `<a href="${review.image}" target="_blank">
-                <img src="${review.image}" alt="${review.title} cinematography" width=100%>
-              </a>`
-            : `<div class="image-placeholder"></div>`
-        }
-    </div>
-    <div class="film-details">
-      <p class="rating">${"★".repeat(review.rating)}</p>
-      <p class="bullet-spacer">•</p>
-      <p>${review.duration}</p>
-      <p class="bullet-spacer">•</p>
-      <p>${review.year}</p>
-      <p class="bullet-spacer">•</p>
-      <p class="watch-date">${review.watchDate}</p>
-    </div>
-    <div class="film-review">
-      ${review.content.map((para) => `<p>${para}</p>`).join("")}
-    </div>
-  `
+        <h1 id="${review.id}">${review.title}</h1>
+        <div class="review-image">
+            ${
+              review.image
+                ? `<a href="${review.image}" target="_blank">
+                    <img src="${review.image}" alt="${review.title} cinematography" width=100%>
+                  </a>`
+                : `<div class="image-placeholder"></div>`
+            }
+        </div>
+        <div class="film-details">
+          <p class="rating">${"★".repeat(review.rating)}</p>
+          <p class="bullet-spacer">•</p>
+          <p>${review.duration}</p>
+          <p class="bullet-spacer">•</p>
+          <p>${review.year}</p>
+          <p class="bullet-spacer">•</p>
+          <p class="watch-date">${review.watchDate}</p>
+        </div>
+        <div class="film-review">
+          ${review.content.map((para) => `<p>${para}</p>`).join("")}
+        </div>
+    `
     )
     .join("");
+}
+
+function getRandomReview() {
+  // Get all review links from the index
+  const indexLinks = document.querySelectorAll("#index a");
+  if (indexLinks.length === 0) return;
+
+  // Select a random link
+  const randomIndex = Math.floor(Math.random() * indexLinks.length);
+  const randomLink = indexLinks[randomIndex];
+
+  // Simulate clicking the link
+  randomLink.click();
+
+  // Scroll to the review
+  const reviewId = randomLink.getAttribute("href");
+  document.querySelector(reviewId).scrollIntoView({ behavior: "smooth" });
+
+  // Update the bold styling in the index
+  randomLink.style.fontWeight = "bold";
 }
 
 function fetchJSONData() {

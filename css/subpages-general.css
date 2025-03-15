@@ -325,3 +325,7 @@ body {
   line-height: 0.8;
   text-transform: uppercase;
 }
+
+#shuffle-button {
+  cursor: pointer;
+}
