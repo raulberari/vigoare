@@ -30,10 +30,12 @@ function initReviews(reviews) {
     <div class="review-image">
         ${
           review.image
-            ? `<img src="${review.image}" alt="${review.title} cinematography" width=100%>`
+            ? `<a href="${review.image}" target="_blank">
+                <img src="${review.image}" alt="${review.title} cinematography" width=100%>
+              </a>`
             : `<div class="image-placeholder"></div>`
         }
-      </div>
+    </div>
     <div class="film-details">
       <p class="rating">${"★".repeat(review.rating)}</p>
       <p class="bullet-spacer">•</p>
