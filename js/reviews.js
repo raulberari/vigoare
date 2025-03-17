@@ -18,7 +18,7 @@ function initReviews(reviews) {
   const indexHTML = reviews
     .map(
       (review) =>
-        `<p><a href="#${review.id}">${review.title} (${review.year})</a></p>`
+        `<p data-director="${review.director}"><a href="#${review.id}">${review.title} (${review.year})</a></p>`
     )
     .join("");
 
@@ -136,7 +136,9 @@ function filterReviews() {
 
   for (const item of allReviews) {
     const title = item.textContent.toLowerCase();
-    if (title.includes(searchTerm)) {
+    const director = item.getAttribute("data-director").toLowerCase();
+
+    if (title.includes(searchTerm) || director.includes(searchTerm)) {
       item.style.display = "block";
     } else {
       item.style.display = "none";
