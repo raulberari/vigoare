@@ -1,6 +1,5 @@
 .comment {
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 36px;
   display: flex;
   width: 100%;
 }
@@ -19,38 +18,20 @@
 
 .comment-header {
   display: flex;
-  margin-bottom: 10px;
-  gap: 10px;
+  margin-bottom: 4px;
+  font-size: 0.7em;
 }
 
 .comment-author {
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
-  font-weight: 300;
-  font-size: 0.8em;
+  font-family: "Firs Neue", sans-serif;
+  font-weight: 700;
 }
 
 .comment-date {
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
-  font-size: 0.8em;
+  font-family: "Firs Neue", sans-serif;
   font-weight: 300;
   color: #999999;
   position: relative;
-}
-
-.tooltip-text {
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
-  font-weight: 300;
-  visibility: hidden;
-  width: 100px;
-  text-align: center;
-
-  position: absolute;
-  z-index: 1;
-  left: 105%;
-}
-
-.comment-date:hover .tooltip-text {
-  visibility: visible;
 }
 
 .comment-content {

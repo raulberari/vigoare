@@ -28,48 +28,26 @@ function relativeTimeSince(dateString) {
 function initComments(data) {
   const container = document.getElementsByClassName("text-grid")[0];
 
-  const comments = data.comments;
-
-  for (const comment of comments) {
-    const commentContainer = document.createElement("div");
-    commentContainer.className = "comment";
-
-    const commentHeader = document.createElement("div");
-    commentHeader.className = "comment-header";
-
-    const commentAuthor = document.createElement("span");
-    commentAuthor.className = "comment-author";
-    commentAuthor.textContent = comment.name;
-
-    const commentDateTooltip = document.createElement("span");
-    commentDateTooltip.className = "tooltip-text";
-    commentDateTooltip.textContent = comment.date;
-
-    const commentDate = document.createElement("div");
-    commentDate.className = "comment-date";
-    commentDate.textContent = relativeTimeSince(comment.date);
-    commentDate.appendChild(commentDateTooltip);
-
-    commentHeader.appendChild(commentAuthor);
-    commentHeader.appendChild(commentDate);
-
-    const commentContent = document.createElement("div");
-    commentContent.className = "comment-content";
-
-    const content = document.createElement("p");
-    content.innerText = comment.content;
-
-    commentContent.appendChild(content);
-
-    const textContainer = document.createElement("div");
-    textContainer.className = "text-container";
-    textContainer.appendChild(commentHeader);
-    textContainer.appendChild(commentContent);
-
-    commentContainer.appendChild(textContainer);
-
-    container.appendChild(commentContainer);
-  }
+  container.innerHTML += data.comments
+    .map(
+      (comment) => `
+      <div class="comment">
+        <div class="text-container">
+          <div class="comment-header">
+            <span class="comment-author">${comment.name}</span>
+            <p class="bullet-spacer">•</p>
+            <div class="comment-date">
+              ${relativeTimeSince(comment.date)}
+            </div>
+          </div>
+          <div class="comment-content">
+            <p>${comment.content}</p>
+          </div>
+        </div>
+      </div>
+      `
+    )
+    .join("");
 }
 
 function fetchJSONData() {
