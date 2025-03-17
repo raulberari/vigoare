@@ -126,8 +126,7 @@ body {
   margin-bottom: 4px;
 }
 
-.text-grid h1,
-#index-popup h1 {
+.text-grid h1 {
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
   font-size: 1em;

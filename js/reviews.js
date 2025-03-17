@@ -61,21 +61,6 @@ function initReviews(reviews) {
   });
 }
 
-function getRandomReview() {
-  const indexLinks = document.querySelectorAll("#index a");
-  if (indexLinks.length === 0) return;
-
-  const randomIndex = Math.floor(Math.random() * indexLinks.length);
-  const randomLink = indexLinks[randomIndex];
-
-  randomLink.click();
-
-  const reviewId = randomLink.getAttribute("href");
-  document.querySelector(reviewId).scrollIntoView({ behavior: "smooth" });
-
-  randomLink.style.fontWeight = "bold";
-}
-
 function fetchJSONData() {
   fetch(
     "https://gist.githubusercontent.com/raulberari/0d206e63880062b162d16aa4f2c3e914/raw"
