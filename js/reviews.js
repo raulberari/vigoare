@@ -16,7 +16,10 @@ function onClickIndex(event) {
 function initReviews(reviews) {
   // Index
   const indexHTML = reviews
-    .map((review) => `<p><a href="#${review.id}">${review.title}</a></p>`)
+    .map(
+      (review) =>
+        `<p><a href="#${review.id}">${review.title} (${review.year})</a></p>`
+    )
     .join("");
 
   // Reviews
@@ -89,11 +92,15 @@ function toggleIndexPopup() {
 function openIndexPopup() {
   const overlay = document.getElementById("index-popup-overlay");
   const popupIndex = document.getElementById("popup-index");
+  const searchInput = document.getElementById("index-search");
 
-  // Load the index content from the stored HTML
   popupIndex.innerHTML = window.reviewsIndexHTML;
 
-  // Add click event to popup index links
+  searchInput.value = "";
+
+  searchInput.addEventListener("input", filterReviews);
+  searchInput.focus();
+
   popupIndex.addEventListener("click", function (event) {
     if (event.target.tagName === "A") {
       onClickIndex(event);
@@ -103,7 +110,6 @@ function openIndexPopup() {
 
   overlay.style.display = "flex";
 
-  // Add ESC key listener
   document.addEventListener("keydown", handleEscKey);
 }
 
@@ -118,5 +124,22 @@ function closeIndexPopup() {
 function handleEscKey(event) {
   if (event.key === "Escape") {
     closeIndexPopup();
+  }
+}
+
+function filterReviews() {
+  const searchTerm = document
+    .getElementById("index-search")
+    .value.toLowerCase();
+  const popupIndex = document.getElementById("popup-index");
+  const allReviews = popupIndex.getElementsByTagName("p");
+
+  for (const item of allReviews) {
+    const title = item.textContent.toLowerCase();
+    if (title.includes(searchTerm)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
   }
 }

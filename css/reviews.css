@@ -60,3 +60,16 @@
   padding: 0 6px;
   cursor: pointer;
 }
+
+.index-search-container {
+  margin-bottom: 12px;
+}
+
+#index-search {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  font-family: "Firs Neue", sans-serif;
+  box-sizing: border-box;
+  font-size: 0.7em;
+}
