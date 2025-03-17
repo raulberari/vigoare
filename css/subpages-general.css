@@ -126,7 +126,8 @@ body {
   margin-bottom: 4px;
 }
 
-.text-grid h1 {
+.text-grid h1,
+#index-popup h1 {
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
   font-size: 1em;
@@ -277,43 +278,6 @@ body {
   margin-bottom: 8px;
 }
 
-#index {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1em;
-  height: 95px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  width: 250px;
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  scrollbar-width: none; /* Firefox */
-}
-
-#index::-webkit-scrollbar {
-  /* WebKit */
-  width: 0;
-  height: 0;
-}
-
-#index p {
-  font-family: "Firs Neue", sans-serif;
-  font-size: 0.8em;
-  margin: 0;
-  margin-bottom: 4px;
-  user-select: none;
-}
-
-#index p a {
-  color: var(--dark-color);
-  text-decoration: none;
-  display: block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .quote-text {
   display: none;
   width: 80%;
@@ -328,4 +292,55 @@ body {
 
 #shuffle-button {
   cursor: pointer;
+}
+
+.index-popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.index-popup {
+  background-color: var(--light-color);
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 300px;
+}
+
+#popup-index {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+#popup-index p {
+  font-family: "Firs Neue", sans-serif;
+  font-size: 0.8em;
+  margin: 0;
+  margin-bottom: 4px;
+  user-select: none;
+}
+
+#popup-index p a {
+  color: var(--dark-color);
+  text-decoration: none;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#index-button {
+  cursor: pointer;
+}
+
+#popup-index p:hover {
+  text-decoration: underline;
 }

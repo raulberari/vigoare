@@ -77,12 +77,22 @@
           title="Go to a random review"
           onclick="getRandomReview()"
         />
-
-        <div class="" id="randomReviewButton"></div>
+        <img
+          id="index-button"
+          src="images/subpages/reviews/menu.png"
+          width="30px"
+          title="Show index"
+          onclick="toggleIndexPopup()"
+        />
       </div>
     </div>
 
-    <div id="index"></div>
     <div class="text-grid" id="reviews-container"></div>
+    <div id="index-popup-overlay" class="index-popup-overlay">
+      <div id="index-popup" class="index-popup">
+        <h1>INDEX</h1>
+        <div id="popup-index"></div>
+      </div>
+    </div>
   </body>
 </html>

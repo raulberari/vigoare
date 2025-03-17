@@ -3,7 +3,8 @@ function onLoad() {
 }
 
 function onClickIndex(event) {
-  let children = document.getElementById("index").children;
+  const popupIndex = document.getElementById("popup-index");
+  let children = popupIndex.children;
 
   for (const element of children) {
     element.firstChild.style.fontWeight = "normal";
@@ -14,12 +15,9 @@ function onClickIndex(event) {
 
 function initReviews(reviews) {
   // Index
-  const indexEl = document.getElementById("index");
-  indexEl.innerHTML = reviews
+  const indexHTML = reviews
     .map((review) => `<p><a href="#${review.id}">${review.title}</a></p>`)
     .join("");
-
-  indexEl.addEventListener("click", onClickIndex);
 
   // Reviews
   const reviewsContainer = document.getElementById("reviews-container");
@@ -51,25 +49,30 @@ function initReviews(reviews) {
     `
     )
     .join("");
+
+  window.reviewsIndexHTML = indexHTML;
+
+  const overlay = document.getElementById("index-popup-overlay");
+
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) {
+      closeIndexPopup();
+    }
+  });
 }
 
 function getRandomReview() {
-  // Get all review links from the index
   const indexLinks = document.querySelectorAll("#index a");
   if (indexLinks.length === 0) return;
 
-  // Select a random link
   const randomIndex = Math.floor(Math.random() * indexLinks.length);
   const randomLink = indexLinks[randomIndex];
 
-  // Simulate clicking the link
   randomLink.click();
 
-  // Scroll to the review
   const reviewId = randomLink.getAttribute("href");
   document.querySelector(reviewId).scrollIntoView({ behavior: "smooth" });
 
-  // Update the bold styling in the index
   randomLink.style.fontWeight = "bold";
 }
 
@@ -87,4 +90,48 @@ function fetchJSONData() {
       initReviews(data);
     })
     .catch((error) => console.error("Unable to fetch data:", error));
+}
+
+function toggleIndexPopup() {
+  const overlay = document.getElementById("index-popup-overlay");
+  if (overlay.style.display === "flex") {
+    closeIndexPopup();
+  } else {
+    openIndexPopup();
+  }
+}
+
+function openIndexPopup() {
+  const overlay = document.getElementById("index-popup-overlay");
+  const popupIndex = document.getElementById("popup-index");
+
+  // Load the index content from the stored HTML
+  popupIndex.innerHTML = window.reviewsIndexHTML;
+
+  // Add click event to popup index links
+  popupIndex.addEventListener("click", function (event) {
+    if (event.target.tagName === "A") {
+      onClickIndex(event);
+      closeIndexPopup();
+    }
+  });
+
+  overlay.style.display = "flex";
+
+  // Add ESC key listener
+  document.addEventListener("keydown", handleEscKey);
+}
+
+function closeIndexPopup() {
+  const overlay = document.getElementById("index-popup-overlay");
+  overlay.style.display = "none";
+
+  // Remove ESC key listener
+  document.removeEventListener("keydown", handleEscKey);
+}
+
+function handleEscKey(event) {
+  if (event.key === "Escape") {
+    closeIndexPopup();
+  }
 }
