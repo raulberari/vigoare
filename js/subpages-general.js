@@ -54,3 +54,9 @@ function initPhotos(descriptions) {
     window.photoGrid.reflowPhotos();
   });
 }
+
+function reflowPhotos() {
+  if (window.photoGrid) {
+    window.photoGrid.reflowPhotos();
+  }
+}

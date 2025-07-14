@@ -96,3 +96,22 @@ class ThemeManager {
     }
   }
 }
+
+// Global functions for backward compatibility
+function changeColour() {
+  if (window.themeManager) {
+    window.themeManager.toggleTheme();
+  }
+}
+
+function changeColumns(origin) {
+  if (window.themeManager) {
+    window.themeManager.changeColumns(origin);
+  }
+}
+
+function onResize() {
+  if (window.themeManager) {
+    window.themeManager.onResize();
+  }
+}
