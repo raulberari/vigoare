@@ -245,6 +245,7 @@ body {
   height: 20px;
   cursor: pointer;
   margin: 8px;
+  margin-bottom: 12px;
   border-radius: 50%;
   border: 1px solid var(--light-color);
   bottom: 0%;
