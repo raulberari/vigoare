@@ -56,28 +56,18 @@ function initReviews(reviews) {
   window.reviewsIndexHTML = indexHTML;
 
   const overlay = document.getElementById("index-popup-overlay");
-
-  overlay.addEventListener("click", function (event) {
-    if (event.target === overlay) {
-      closeIndexPopup();
-    }
-  });
+  Events.onClickOutside(overlay, closeIndexPopup);
 }
 
-function fetchJSONData() {
-  fetch(
-    "https://gist.githubusercontent.com/raulberari/0d206e63880062b162d16aa4f2c3e914/raw"
-  )
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-      return res.json();
-    })
-    .then((data) => {
-      initReviews(data);
-    })
-    .catch((error) => console.error("Unable to fetch data:", error));
+async function fetchJSONData() {
+  try {
+    const data = await fetchData(
+      "https://gist.githubusercontent.com/raulberari/0d206e63880062b162d16aa4f2c3e914/raw"
+    );
+    initReviews(data);
+  } catch (error) {
+    console.error("Failed to load reviews data:", error);
+  }
 }
 
 function toggleIndexPopup() {
@@ -110,7 +100,7 @@ function openIndexPopup() {
 
   overlay.style.display = "flex";
 
-  document.addEventListener("keydown", handleEscKey);
+  window.removeEscListener = Events.onEscape(closeIndexPopup);
 }
 
 function closeIndexPopup() {
@@ -118,12 +108,9 @@ function closeIndexPopup() {
   overlay.style.display = "none";
 
   // Remove ESC key listener
-  document.removeEventListener("keydown", handleEscKey);
-}
-
-function handleEscKey(event) {
-  if (event.key === "Escape") {
-    closeIndexPopup();
+  if (window.removeEscListener) {
+    window.removeEscListener();
+    window.removeEscListener = null;
   }
 }
 

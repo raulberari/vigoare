@@ -2,29 +2,6 @@ function onLoad() {
   fetchJSONData();
 }
 
-function relativeTimeSince(dateString) {
-  const inputDate = new Date(dateString);
-  const currentDate = new Date();
-
-  const diffInMs = currentDate - inputDate;
-
-  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-
-  if (diffInDays === 0) {
-    return "today";
-  } else if (diffInDays === 1) {
-    return "yesterday";
-  } else if (diffInDays < 30) {
-    return `${diffInDays} days ago`;
-  } else if (diffInDays < 365) {
-    const diffInMonths = Math.floor(diffInDays / 30);
-    return `${diffInMonths} month${diffInMonths > 1 ? "s" : ""} ago`;
-  } else {
-    const diffInYears = Math.floor(diffInDays / 365);
-    return `${diffInYears} year${diffInYears > 1 ? "s" : ""} ago`;
-  }
-}
-
 function initComments(data) {
   const container = document.getElementsByClassName("text-grid")[0];
 
@@ -50,18 +27,13 @@ function initComments(data) {
     .join("");
 }
 
-function fetchJSONData() {
-  fetch(
-    "https://gist.githubusercontent.com/raulberari/04a64dcd7ab34489e45740226e0a4a72/raw"
-  )
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-      return res.json();
-    })
-    .then((data) => {
-      initComments(data);
-    })
-    .catch((error) => console.error("Unable to fetch data:", error));
+async function fetchJSONData() {
+  try {
+    const data = await fetchData(
+      "https://gist.githubusercontent.com/raulberari/04a64dcd7ab34489e45740226e0a4a72/raw"
+    );
+    initComments(data);
+  } catch (error) {
+    console.error("Failed to load guestbook data:", error);
+  }
 }
