@@ -55,13 +55,21 @@ class PhotoGrid {
     const container = DOM.createElement("div", "item-container");
     container.appendChild(descriptionContainer);
 
+    let infoButton = null;
     if (description) {
-      const infoButton = DOM.createElement("div", "info-button");
+      infoButton = DOM.createElement("div", "info-button");
       infoButton.style.display = "none";
       container.appendChild(infoButton);
     }
 
     container.appendChild(img);
+
+    // Show info button only when image loads
+    if (description && infoButton) {
+      img.onload = () => {
+        infoButton.style.display = "block";
+      };
+    }
 
     if (description) {
       container.addEventListener("click", () => {
@@ -148,15 +156,6 @@ class PhotoGrid {
         this.observer.disconnect();
       }
     }
-
-    // Show info buttons after a delay
-    setTimeout(() => this.showInfoButtons(), 200);
-  }
-
-  showInfoButtons() {
-    document.querySelectorAll(".info-button").forEach((button) => {
-      button.style.display = "block";
-    });
   }
 
   reflowPhotos() {
