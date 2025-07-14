@@ -21,30 +21,21 @@ class PhotoGrid {
     const idx = this.newPhotos[i];
     const name = this.pageName + idx;
     const description = descriptions[name] || "";
-    const imagePath = `./images/subpages/${this.pageName}/${this.pageName}${idx}.jpg`;
 
-    const descriptionContainer = this.createDescriptionContainer(description);
-    const container = DOM.createElement("div", "new-item-container");
-    container.appendChild(descriptionContainer);
-
-    // Create aspect ratio wrapper
-    const aspectWrapper = DOM.createElement("div", "aspect-wrapper");
-
-    // Create the image
-    const img = DOM.createImageElement(imagePath, description);
+    const img = DOM.createImageElement(
+      `./images/subpages/${this.pageName}/${this.pageName}${idx}.jpg`,
+      description
+    );
 
     const text = DOM.createElement("h1", "new-item-text", "NEW");
+    text.style.display = "block";
 
-    // When image loads, set dynamic aspect ratio and show it
-    img.onload = () => {
-      const aspectRatio = img.naturalWidth / img.naturalHeight;
-      aspectWrapper.style.aspectRatio = aspectRatio.toString();
-      img.style.opacity = "1";
-    };
+    const descriptionContainer = this.createDescriptionContainer(description);
 
-    aspectWrapper.appendChild(img);
-    aspectWrapper.appendChild(text);
-    container.appendChild(aspectWrapper);
+    const container = DOM.createElement("div", "new-item-container");
+    container.appendChild(text);
+    container.appendChild(descriptionContainer);
+    container.appendChild(img);
 
     this.addPhotoInteraction(
       container,
@@ -73,9 +64,25 @@ class PhotoGrid {
 
     // Create aspect ratio wrapper
     const aspectWrapper = DOM.createElement("div", "aspect-wrapper");
+    aspectWrapper.style.cssText = `
+      position: relative;
+      width: 100%;
+      background: var(--color-background-secondary);
+      margin-bottom: 1rem;
+    `;
 
     // Create the image
     const img = DOM.createImageElement(imagePath, description);
+    img.style.cssText = `
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    `;
 
     // When image loads, set dynamic aspect ratio and show it
     img.onload = () => {
