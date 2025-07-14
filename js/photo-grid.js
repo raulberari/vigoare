@@ -7,6 +7,10 @@ class PhotoGrid {
     this.loadedPhotosCount = 0;
     this.photosPerLoad = Math.max(10, this.getColumnCount() * 3);
     this.observer = null;
+
+    // Create shuffled indexes once
+    this.indexes = Array.from({ length: this.photoCount }, (_, i) => i);
+    shuffleArray(this.indexes);
   }
 
   getColumnCount() {
@@ -17,21 +21,30 @@ class PhotoGrid {
     const idx = this.newPhotos[i];
     const name = this.pageName + idx;
     const description = descriptions[name] || "";
-
-    const img = DOM.createImageElement(
-      `./images/subpages/${this.pageName}/${this.pageName}${idx}.jpg`,
-      description
-    );
-
-    const text = DOM.createElement("h1", "new-item-text", "NEW");
-    text.style.display = "block";
+    const imagePath = `./images/subpages/${this.pageName}/${this.pageName}${idx}.jpg`;
 
     const descriptionContainer = this.createDescriptionContainer(description);
-
     const container = DOM.createElement("div", "new-item-container");
-    container.appendChild(text);
     container.appendChild(descriptionContainer);
-    container.appendChild(img);
+
+    // Create aspect ratio wrapper
+    const aspectWrapper = DOM.createElement("div", "aspect-wrapper");
+
+    // Create the image
+    const img = DOM.createImageElement(imagePath, description);
+
+    const text = DOM.createElement("h1", "new-item-text", "NEW");
+
+    // When image loads, set dynamic aspect ratio and show it
+    img.onload = () => {
+      const aspectRatio = img.naturalWidth / img.naturalHeight;
+      aspectWrapper.style.aspectRatio = aspectRatio.toString();
+      img.style.opacity = "1";
+    };
+
+    aspectWrapper.appendChild(img);
+    aspectWrapper.appendChild(text);
+    container.appendChild(aspectWrapper);
 
     this.addPhotoInteraction(
       container,
@@ -45,11 +58,7 @@ class PhotoGrid {
   createNormalPhoto(idx, descriptions) {
     const name = this.pageName + idx;
     const description = descriptions[name] || "";
-
-    const img = DOM.createImageElement(
-      `./images/subpages/${this.pageName}/${this.pageName}${idx}.jpg`,
-      description
-    );
+    const imagePath = `./images/subpages/${this.pageName}/${this.pageName}${idx}.jpg`;
 
     const descriptionContainer = this.createDescriptionContainer(description);
     const container = DOM.createElement("div", "item-container");
@@ -62,14 +71,22 @@ class PhotoGrid {
       container.appendChild(infoButton);
     }
 
-    container.appendChild(img);
+    // Create aspect ratio wrapper
+    const aspectWrapper = DOM.createElement("div", "aspect-wrapper");
 
-    // Show info button only when image loads
-    if (description && infoButton) {
-      img.onload = () => {
-        infoButton.style.display = "block";
-      };
-    }
+    // Create the image
+    const img = DOM.createImageElement(imagePath, description);
+
+    // When image loads, set dynamic aspect ratio and show it
+    img.onload = () => {
+      const aspectRatio = img.naturalWidth / img.naturalHeight;
+      aspectWrapper.style.aspectRatio = aspectRatio.toString();
+      img.style.opacity = "1";
+      if (infoButton) infoButton.style.display = "block";
+    };
+
+    aspectWrapper.appendChild(img);
+    container.appendChild(aspectWrapper);
 
     if (description) {
       container.addEventListener("click", () => {
@@ -131,13 +148,9 @@ class PhotoGrid {
     const start = this.loadedPhotosCount;
     const end = Math.min(start + this.photosPerLoad, this.photoCount);
 
-    // Create shuffled indexes
-    const indexes = Array.from({ length: this.photoCount }, (_, i) => i);
-    shuffleArray(indexes);
-
-    // Add regular photos
+    // Add regular photos using pre-shuffled indexes
     for (let i = start; i < end; i++) {
-      const idx = indexes[i] + 1;
+      const idx = this.indexes[i] + 1;
       if (!this.newPhotos.includes(idx)) {
         this.photos.push(this.createNormalPhoto(idx, descriptions));
       }

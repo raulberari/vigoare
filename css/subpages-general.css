@@ -235,14 +235,17 @@ body {
   background: #0f0f0f99;
   width: 100%;
   height: 100%;
+  z-index: 10;
 }
 
 .info-button {
   position: absolute;
+  z-index: 20;
   width: 20px;
   height: 20px;
   cursor: pointer;
   margin: 8px;
+  margin-bottom: 12px;
   border-radius: 50%;
   border: 1px solid var(--light-color);
   bottom: 0%;
