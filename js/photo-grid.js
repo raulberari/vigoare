@@ -49,7 +49,11 @@ class PhotoGrid {
   createNormalPhoto(idx, descriptions) {
     const name = this.pageName + idx;
     const description = descriptions[name] || "";
-    const imagePath = `./images/subpages/${this.pageName}/${this.pageName}${idx}.jpg`;
+
+    const img = DOM.createImageElement(
+      `./images/subpages/${this.pageName}/${this.pageName}${idx}.jpg`,
+      description
+    );
 
     const descriptionContainer = this.createDescriptionContainer(description);
     const container = DOM.createElement("div", "item-container");
@@ -62,38 +66,14 @@ class PhotoGrid {
       container.appendChild(infoButton);
     }
 
-    // Create aspect ratio wrapper
-    const aspectWrapper = DOM.createElement("div", "aspect-wrapper");
-    aspectWrapper.style.cssText = `
-      position: relative;
-      width: 100%;
-      background: var(--color-background-secondary);
-      margin-bottom: 1rem;
-    `;
+    container.appendChild(img);
 
-    // Create the image
-    const img = DOM.createImageElement(imagePath, description);
-    img.style.cssText = `
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    `;
-
-    // When image loads, set dynamic aspect ratio and show it
-    img.onload = () => {
-      const aspectRatio = img.naturalWidth / img.naturalHeight;
-      aspectWrapper.style.aspectRatio = aspectRatio.toString();
-      img.style.opacity = "1";
-      if (infoButton) infoButton.style.display = "block";
-    };
-
-    aspectWrapper.appendChild(img);
-    container.appendChild(aspectWrapper);
+    // Show info button only when image loads
+    if (description && infoButton) {
+      img.onload = () => {
+        infoButton.style.display = "block";
+      };
+    }
 
     if (description) {
       container.addEventListener("click", () => {
