@@ -57,6 +57,8 @@ function initReviews(reviews) {
 
   const overlay = document.getElementById("index-popup-overlay");
   Events.onClickOutside(overlay, closeIndexPopup);
+
+  window.location.hash = window.location.hash;
 }
 
 async function fetchJSONData() {
