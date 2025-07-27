@@ -72,22 +72,22 @@ body {
 
 #links a[href="architecture.html"] {
   grid-row: row1-start;
-  grid-column: col1-start / span 4;
+  grid-column: col1-start / span 5;
 }
 
 #links a[href="canon.html"] {
   grid-row: row2-start;
-  grid-column: col3-start / span 2;
+  grid-column: col3-start / span 3;
 }
 
 #links a[href="guestbook.html"] {
   grid-row: row3-start;
-  grid-column: col3-start / span 4;
+  grid-column: col3-start / span 5;
 }
 
 #links a[href="industry.html"] {
   grid-row: row4-start;
-  grid-column: col5-start / span 3;
+  grid-column: col5-start / span 4;
 }
 
 #links a[href="light.html"] {
@@ -97,17 +97,17 @@ body {
 
 #links a[href="nature.html"] {
   grid-row: row6-start;
-  grid-column: col5-start / span 2;
+  grid-column: col5-start / span 3;
 }
 
 #links a[href="noise.html"] {
   grid-row: row7-start;
-  grid-column: col5-start / span 2;
+  grid-column: col5-start / span 3;
 }
 
 #links a[href="reviews.html"] {
   grid-row: row8-start;
-  grid-column: col1-start / span 3;
+  grid-column: col1-start / span 4;
 }
 
 #links a[href="stills.html"] {
@@ -117,12 +117,12 @@ body {
 
 #links a[href="lines.html"] {
   grid-row: row10-start;
-  grid-column: col7-start / span 2;
+  grid-column: col7-start / span 3;
 }
 
 #links a[href="me.html"] {
   grid-row: row10-start;
-  grid-column: col3-start / span 1;
+  grid-column: col3-start / span 2;
 }
 
 #black-square {
