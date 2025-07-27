@@ -60,3 +60,8 @@ function reflowPhotos() {
     window.photoGrid.reflowPhotos();
   }
 }
+
+setTimeout(function() {
+  const quoteText = document.querySelector('.quote-text');
+  quoteText.classList.add('visible');
+}, 1000);
