@@ -117,12 +117,7 @@ body {
 
 #links a[href="lines.html"] {
   grid-row: row10-start;
-  grid-column: col7-start / span 3;
-}
-
-#links a[href="me.html"] {
-  grid-row: row10-start;
-  grid-column: col3-start / span 2;
+  grid-column: col3-start / span 3;
 }
 
 #black-square {
