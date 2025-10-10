@@ -5,7 +5,7 @@ function onLoad() {
 }
 
 const photoCount = {
-  architecture: 71,
+  structures: 71,
   industry: 26,
   light: 30,
   lines: 26,
@@ -15,7 +15,7 @@ const photoCount = {
 };
 
 const newPhotos = {
-  architecture: [71],
+  structures: [71],
   industry: [26],
   light: [30],
   lines: [26],
@@ -61,7 +61,7 @@ function reflowPhotos() {
   }
 }
 
-setTimeout(function() {
-  const quoteText = document.querySelector('.quote-text');
-  quoteText.classList.add('visible');
+setTimeout(function () {
+  const quoteText = document.querySelector(".quote-text");
+  quoteText.classList.add("visible");
 }, 1000);

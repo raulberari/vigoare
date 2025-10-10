@@ -70,7 +70,7 @@ body {
     [col8-end];
 }
 
-#links a[href="architecture.html"] {
+#links a[href="structures.html"] {
   grid-row: row1-start;
   grid-column: col1-start / span 5;
 }
