@@ -3,10 +3,10 @@
   .text-grid {
     width: 70%;
   }
-  .canon-grid {
+  .constellations-grid {
     width: 90%;
   }
-  .canon-grid h1 {
+  .constellations-grid h1 {
     font-size: 1.5em;
   }
 }
@@ -19,7 +19,7 @@
     padding: 60px 0;
   }
 
-  .canon-grid {
+  .constellations-grid {
     width: 80%;
     max-width: none;
     padding: 60px 0;
@@ -31,7 +31,7 @@
     gap: 0;
   }
 
-  .canon-grid h1 {
+  .constellations-grid h1 {
     font-size: 1em;
     writing-mode: vertical-rl;
     text-align: end;
@@ -41,7 +41,7 @@
     margin-bottom: 2em;
   }
 
-  .canon-grid p {
+  .constellations-grid p {
     margin-bottom: 2em;
   }
 

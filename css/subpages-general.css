@@ -2,7 +2,7 @@
   color-scheme: light dark;
 }
 
-#canon,
+#constellations,
 #changelog,
 #guestbook,
 #reviews {
@@ -142,7 +142,7 @@ body {
   color: var(--dark-color);
 }
 
-.canon-grid {
+.constellations-grid {
   padding-top: 140px;
   padding-bottom: 40px;
   width: 60%;
@@ -151,7 +151,7 @@ body {
   gap: 20px 0;
 }
 
-.canon-grid h1 {
+.constellations-grid h1 {
   font-family: "GT America Extended", Helvetica Neue, sans-serif;
   font-weight: 900;
   font-size: 1.5em;
@@ -159,7 +159,7 @@ body {
   margin: 0;
 }
 
-.canon-grid p {
+.constellations-grid p {
   font-family: "Firs Neue", sans-serif;
   font-size: 1em;
   margin: 0;
@@ -170,11 +170,11 @@ body {
   grid-column: span 2;
 }
 
-.canon-grid p span:not(:last-child)::after {
+.constellations-grid p span:not(:last-child)::after {
   content: " •";
 }
 
-.canon-grid {
+.constellations-grid {
   display: grid;
   grid-template-columns:
     [col1-start] 40%
