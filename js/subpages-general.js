@@ -13,7 +13,7 @@ const photoCount = {
 };
 
 const newPhotos = {
-  structures: [81],
+  structures: [82],
   industry: [25],
   light: [25],
   nature: [22, 23],
