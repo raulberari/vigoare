@@ -75,9 +75,9 @@ body {
   grid-column: col1-start / span 5;
 }
 
-#links a[href="constellations.html"] {
+#links a[href="reviews.html"] {
   grid-row: row2-start;
-  grid-column: col3-start / span 5;
+  grid-column: col3-start / span 3;
 }
 
 #links a[href="guestbook.html"] {
@@ -105,14 +105,9 @@ body {
   grid-column: col5-start / span 3;
 }
 
-#links a[href="reviews.html"] {
+#links a[href="constellations.html"] {
   grid-row: row8-start;
-  grid-column: col1-start / span 4;
-}
-
-#links a[href="stills.html"] {
-  grid-row: row9-start;
-  grid-column: col5-start / span 4;
+  grid-column: col1-start / span 5;
 }
 
 #black-square {
