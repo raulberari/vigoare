@@ -92,7 +92,7 @@ body {
 
 #links a[href="noise.html"] {
   grid-row: row6-start;
-  grid-column: col5-start / span 3;
+  grid-column: col6-start / span 3;
 }
 
 #links a[href="constellations.html"] {
