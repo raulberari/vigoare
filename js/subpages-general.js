@@ -5,7 +5,7 @@ function onLoad() {
 }
 
 const photoCount = {
-  structures: 70,
+  structures: 69,
   industry: 25,
   light: 27,
   nature: 24,
@@ -13,7 +13,7 @@ const photoCount = {
 };
 
 const newPhotos = {
-  structures: [70],
+  structures: [69],
   industry: [25],
   light: [27],
   nature: [23, 24],
