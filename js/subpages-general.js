@@ -9,7 +9,7 @@ const photoCount = {
   industry: 25,
   light: 26,
   nature: 24,
-  noise: 26,
+  noise: 24,
 };
 
 const newPhotos = {
