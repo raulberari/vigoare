@@ -111,6 +111,7 @@ body {
   grid-column: col2-start / span 2;
   outline: 8px solid var(--dark-color);
   outline-offset: 40px;
+  cursor: pointer;
 }
 
 #links a {
