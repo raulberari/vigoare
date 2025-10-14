@@ -17,7 +17,7 @@ const newPhotos = {
   industry: [25],
   light: [24],
   nature: [23, 24],
-  noise: [26],
+  noise: [24],
 };
 
 async function fetchJSONData() {
