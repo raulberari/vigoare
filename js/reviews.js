@@ -63,9 +63,7 @@ function initReviews(reviews) {
 
 async function fetchJSONData() {
   try {
-    const data = await fetchData(
-      "https://gist.githubusercontent.com/raulberari/0d206e63880062b162d16aa4f2c3e914/raw"
-    );
+    const data = await fetchData("./data/reviews.json")
     initReviews(data);
   } catch (error) {
     console.error("Failed to load reviews data:", error);

@@ -23,7 +23,7 @@ const newPhotos = {
 async function fetchJSONData() {
   try {
     const data = await fetchData(
-      "https://gist.githubusercontent.com/raulberari/05acdedc2aff60d2b940ca73ca654404/raw"
+      "./data/descriptions.json"
     );
     initPhotos(data);
   } catch (error) {

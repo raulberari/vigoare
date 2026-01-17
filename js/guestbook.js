@@ -30,7 +30,7 @@ function initComments(data) {
 async function fetchJSONData() {
   try {
     const data = await fetchData(
-      "https://gist.githubusercontent.com/raulberari/04a64dcd7ab34489e45740226e0a4a72/raw"
+      "./data/comments.json"
     );
     initComments(data);
   } catch (error) {
