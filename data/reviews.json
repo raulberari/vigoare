@@ -1,5 +1,18 @@
 [
   {
+    "id": "thief",
+    "title": "Thief",
+    "director": "Michael Mann",
+    "image": "images/subpages/reviews/thief.jpg",
+    "rating": 4,
+    "duration": "123 mins",
+    "year": "1981",
+    "watchDate": "Watched 13 Jan 2026",
+    "content": [
+      "In the haunting coldness of the Great Lakes on the eve of neoliberalism, Frank, an ex-con and thief, moves from nothing to having everything and back to nothing again. Since the banks and companies already made their wealth through theft, stealing from them can only be honest work, at least until a new boss inserts himself to siphon it off, triggering another cycle of violence and retribution. When Frank reaches the top—having a wife, a child, a house, a car, designer clothes—all the signifiers of individual accomplishment become liabilities that reduce him to being just another worker, no labor union."
+    ]
+  },
+  {
     "id": "history-lessons",
     "title": "History Lessons",
     "director": "Straub-Huillet",
