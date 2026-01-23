@@ -1,5 +1,18 @@
 [
   {
+    "id": "the-bone-temple",
+    "title": "28 Years Later: The Bone Temple",
+    "director": "Michael Mann",
+    "image": "images/subpages/reviews/the-bone-temple.jpg",
+    "rating": 4,
+    "duration": "109 mins",
+    "year": "2026",
+    "watchDate": "Watched 20 Jan 2026",
+    "content": [
+      "It paints the post-Brexit anxieties of the British psyche as they come to terms with their increasing isolation and abandonment. The zombies here are more of a backdrop than in any of the other films: instead, we see an exploration of belief in a world where all gods have been wiped out by the apocalypse. One path to it may mean allegiance to a Satanist warlord, where the odds seem better than going at it alone. However, Dr. Kelson (played by Ralph Fiennes) offers another way of radically believing in humanity. It is a belief that keeps intact not only its history, from each individually cleaned skull in the ossuary down to the grooves of a vinyl, but also its universal impulse toward accepting every person, where zombies stop being caricature stand-ins for the Other (immigrant, non-white, different) and humanity alters itself in the process—through and after the Rage virus."
+    ]
+  },
+  {
     "id": "thief",
     "title": "Thief",
     "director": "Michael Mann",
