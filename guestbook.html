@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>VIGOARE | Guestbook</title>
@@ -26,9 +26,10 @@
     <link rel="manifest" href="/images/favicon/site.webmanifest" />
     <script src="./js/utils.js"></script>
     <script src="./js/guestbook.js"></script>
+    <script type="module" src="./js/visit-display.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta name="description" content="Sign off here" />
 
     <!-- Facebook Meta Tags -->
@@ -66,10 +67,10 @@
 
     <div class="text-grid">
       <img src="images/subpages/guestbook/guestbook.jpg" width="100%" />
-      <img id="hit-counter" height="20" src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fvigoa.re%2F&label=VISITS&icon=bar-chart-fill&color=%23875f5e&message=&style=for-the-badge&tz=Europe%2FBucharest">
+      <h1 id="comment-heading">Visits</h1>
+      <p id="visit-count">-</p>
+
       <h1 id="comment-heading">Comments</h1>
     </div>
-    
-
   </body>
 </html>
