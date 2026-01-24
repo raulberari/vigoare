@@ -22,7 +22,7 @@ async function loadVisits() {
 
   const { today, allTime } = snap.data();
   document.getElementById("visit-count").innerText =
-    `${today} today — ${allTime} all time`;
+    `${today} today • ${allTime} all time`;
 }
 
 loadVisits();

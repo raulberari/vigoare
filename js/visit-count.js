@@ -46,15 +46,18 @@ async function countVisit() {
   });
 }
 
-const VISIT_KEY = "vigoare_visit_counted";
+const VISIT_KEY = "vigoare_last_visit_date";
 
-async function countVisitOncePerSession() {
-  if (sessionStorage.getItem(VISIT_KEY)) {
-    return; // already counted this visit
-  }
-
-  await countVisit();
-  sessionStorage.setItem(VISIT_KEY, "true");
+function shouldCountVisit() {
+  const lastVisit = localStorage.getItem(VISIT_KEY);
+  return lastVisit !== todayString();
 }
 
-countVisitOncePerSession();
+async function countUniqueDailyVisit() {
+  if (!shouldCountVisit()) return;
+
+  await countVisit();
+  localStorage.setItem(VISIT_KEY, todayString());
+}
+
+countUniqueDailyVisit();
