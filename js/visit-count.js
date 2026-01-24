@@ -46,4 +46,15 @@ async function countVisit() {
   });
 }
 
-countVisit();
+const VISIT_KEY = "vigoare_visit_counted";
+
+async function countVisitOncePerSession() {
+  if (sessionStorage.getItem(VISIT_KEY)) {
+    return; // already counted this visit
+  }
+
+  await countVisit();
+  sessionStorage.setItem(VISIT_KEY, "true");
+}
+
+countVisitOncePerSession();
