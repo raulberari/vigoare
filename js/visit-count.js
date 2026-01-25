@@ -20,7 +20,9 @@ const db = getFirestore(app);
 const visitRef = doc(db, "stats", "visits");
 
 function todayString() {
-  return new Date().toISOString().split("T")[0];
+  return new Date().toLocaleDateString("en-CA", {
+    timeZone: "Europe/Bucharest",
+  });
 }
 
 async function countVisit() {
