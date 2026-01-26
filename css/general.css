@@ -1,27 +1,53 @@
 @font-face {
   font-family: "GT America Extended";
-  src: local("GT-America-Extended-Black-Trial"),
+  src:
+    local("GT-America-Extended-Black-Trial"),
     url("../fonts/GT-America-Extended-Black-Trial.otf") format("opentype");
   font-weight: 900;
 }
 
 @font-face {
   font-family: "GT America Extended";
-  src: local("GT-America-Extended-Thin-Trial"),
+  src:
+    local("GT-America-Extended-Thin-Trial"),
     url("../fonts/GT-America-Extended-Thin-Trial.otf") format("opentype");
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Firs Neue";
-  src: url("../fonts/TT\ Firs\ Neue\ Trial\ Regular.ttf") format("truetype");
+  src: url("../fonts/TTFirsNeue-Regular.ttf") format("truetype");
   font-weight: 500;
+}
+
+@font-face {
+  font-family: "Firs Neue";
+  src: url("../fonts/TTFirsNeue-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Firs Neue";
+  src: url("../fonts/TTFirsNeue-DemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "Neue Haas Grotesk";
   src: url("../fonts/NeueHaasGroteskRegular.ttf");
   font-weight: 300;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 600;
 }
 
 :root {

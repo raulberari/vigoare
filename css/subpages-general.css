@@ -44,7 +44,10 @@ body {
 .title {
   text-decoration: none;
   color: light-dark(var(--dark-color), var(--light-color));
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-family:
+    "GT America Extended",
+    Helvetica Neue,
+    sans-serif;
   font-weight: 900;
   align-content: center;
 }
@@ -73,7 +76,10 @@ body {
 
 #buttons p {
   color: light-dark(var(--dark-color), var(--light-color));
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-family:
+    "GT America Extended",
+    Helvetica Neue,
+    sans-serif;
   font-weight: 900;
   margin: 0;
 }
@@ -84,7 +90,10 @@ body {
   cursor: pointer;
   justify-content: center;
   user-select: none;
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-family:
+    "GT America Extended",
+    Helvetica Neue,
+    sans-serif;
   font-weight: 300;
   width: 30px;
   height: 30px;
@@ -128,7 +137,10 @@ body {
 }
 
 .text-grid h1 {
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-family:
+    "GT America Extended",
+    Helvetica Neue,
+    sans-serif;
   font-weight: 900;
   font-size: 1em;
   text-transform: uppercase;
@@ -153,7 +165,10 @@ body {
 }
 
 .constellations-grid h1 {
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-family:
+    "GT America Extended",
+    Helvetica Neue,
+    sans-serif;
   font-weight: 900;
   font-size: 1.5em;
   text-transform: uppercase;
@@ -215,7 +230,7 @@ body {
 .description {
   display: grid;
   align-self: flex-end;
-  margin: 0;
+  margin: 8px;
   font-family: "Firs Neue", sans-serif;
   color: var(--light-color);
   font-size: 0.8em;
@@ -277,7 +292,7 @@ body {
 }
 
 .film-review p {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .quote-text {
