@@ -62,4 +62,8 @@
   .film-review {
     margin-bottom: 32px;
   }
+
+  q {
+    margin-left: 16px;
+  }
 }

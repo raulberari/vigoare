@@ -1,5 +1,8 @@
 #index-popup h1 {
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-family:
+    "GT America Extended",
+    Helvetica Neue,
+    sans-serif;
   font-weight: 900;
   font-size: 1em;
   text-transform: uppercase;
@@ -72,4 +75,8 @@
   font-family: "Firs Neue", sans-serif;
   box-sizing: border-box;
   font-size: 0.7em;
+}
+
+q {
+  margin-left: 32px;
 }
