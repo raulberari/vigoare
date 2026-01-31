@@ -6,7 +6,8 @@
 #changelog,
 #guestbook,
 #reviews,
-#about {
+#about,
+#translations {
   color-scheme: light;
 }
 
@@ -120,7 +121,8 @@ body {
   flex: 1;
 }
 
-.text-grid {
+.text-grid,
+.article {
   padding-top: 140px;
   padding-bottom: 40px;
   width: 45%;
@@ -129,15 +131,18 @@ body {
 }
 
 .text-grid p,
-.text-grid li {
+.text-grid li,
+.article p,
+.article li {
   font-family: "Firs Neue", sans-serif;
   font-size: 1em;
   margin: 0;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
   line-height: 1.35;
 }
 
-.text-grid h1 {
+.text-grid h1,
+.article h1 {
   font-family:
     "GT America Extended",
     Helvetica Neue,
@@ -148,11 +153,14 @@ body {
   margin-bottom: 4px;
 }
 
-.text-grid ul {
+.text-grid ul,
+.article ul,
+.article ol {
   margin: 0;
 }
 
-.text-grid a {
+.text-grid a,
+.article a {
   color: var(--dark-color);
 }
 
@@ -314,4 +322,120 @@ body {
 
 .visible {
   opacity: 1;
+}
+
+.link-symbol {
+  color: red;
+  user-select: none;
+}
+
+.text-grid a,
+.article a {
+  text-decoration: none;
+}
+
+.text-grid a::after,
+.article a::after {
+  content: "°";
+  color: #d34f4f;
+  user-select: none;
+}
+
+.text-grid a:hover,
+.article a:hover {
+  background-color: #f7d4d4;
+  text-decoration: none;
+}
+
+.review-image a::after,
+sup a::after,
+.footnote-arrow::after {
+  content: "" !important;
+}
+
+.review-image a:hover {
+  background-color: unset;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+}
+
+.article p,
+.article .text-list li {
+  font-size: 18px;
+}
+
+.article img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  text-align: center;
+  font-size: 2em !important;
+  margin: 0 !important;
+}
+
+.article-author {
+  text-align: center;
+  font-family:
+    "GT America Extended",
+    Helvetica Neue,
+    sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.article-date {
+  text-align: center;
+  margin: 0;
+  font-family: "Firs Neue", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 1em;
+}
+
+.article h1 {
+  margin-bottom: 1em;
+}
+
+.article .quote {
+  padding-left: 2em;
+}
+
+.end-separator {
+  align-self: center;
+  font-size: 2em;
+}
+
+footer {
+  margin-top: 30px;
+  border: 30%;
+  font-size: 14px !important;
+  color: gray;
+}
+
+footer a {
+  color: gray !important;
+}
+
+footer ol {
+  padding-left: 16px;
+}
+
+footer ol li {
+  margin-bottom: 4px !important;
+}
+
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+  font-size: 12px;
 }

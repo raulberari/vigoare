@@ -1,6 +1,7 @@
 @media screen and (max-width: 1280px) {
   #grid,
-  .text-grid {
+  .text-grid,
+  .article {
     width: 70%;
   }
   .constellations-grid {
@@ -13,7 +14,8 @@
 
 @media screen and (max-width: 800px) {
   #grid,
-  .text-grid {
+  .text-grid,
+  .article {
     width: 80%;
     max-width: none;
     padding: 60px 0;

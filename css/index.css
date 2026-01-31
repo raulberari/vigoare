@@ -22,7 +22,10 @@ body {
 .title {
   text-decoration: none;
   color: var(--dark-color);
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-family:
+    "GT America Extended",
+    Helvetica Neue,
+    sans-serif;
   font-weight: 900;
   align-content: center;
 }
@@ -44,25 +47,27 @@ body {
 
 #links {
   grid-template-rows:
-    [row1-start] 12.5%
-    [row2-start] 12.5%
-    [row3-start] 12.5%
-    [row4-start] 12.5%
-    [row5-start] 12.5%
-    [row6-start] 12.5%
-    [row7-start] 12.5%
-    [row8-end];
+    [row1-start] 11.11%
+    [row2-start] 11.11%
+    [row3-start] 11.11%
+    [row4-start] 11.11%
+    [row5-start] 11.11%
+    [row6-start] 11.11%
+    [row7-start] 11.11%
+    [row8-start] 11.11%
+    [row9-end];
 
   grid-template-columns:
-    [col1-start] 12.5%
-    [col2-start] 12.5%
-    [col3-start] 12.5%
-    [col4-start] 12.5%
-    [col5-start] 12.5%
-    [col6-start] 12.5%
-    [col7-start] 12.5%
-    [col8-start] 12.5%
-    [col8-end];
+    [col1-start] 11.11%
+    [col2-start] 11.11%
+    [col3-start] 11.11%
+    [col4-start] 11.11%
+    [col5-start] 11.11%
+    [col6-start] 11.11%
+    [col7-start] 11.11%
+    [col8-start] 11.11%
+    [col9-start] 11.11%
+    [col9-end];
 }
 
 #links a[href="structures.html"] {
@@ -95,14 +100,19 @@ body {
   grid-column: col6-start / span 3;
 }
 
-#links a[href="constellations.html"] {
+#links a[href="translations.html"] {
   grid-row: row7-start;
   grid-column: col1-start / span 5;
 }
 
-#links a[href="guestbook.html"] {
+#links a[href="constellations.html"] {
   grid-row: row8-start;
-  grid-column: col3-start / span 5;
+  grid-column: col3-start / span 6;
+}
+
+#links a[href="guestbook.html"] {
+  grid-row: row9-start;
+  grid-column: col2-start / span 5;
 }
 
 #black-square {
@@ -172,7 +182,10 @@ body {
   background: var(--dark-color);
   color: var(--light-color);
 
-  font-family: "GT America Extended", Helvetica Neue, sans-serif;
+  font-family:
+    "GT America Extended",
+    Helvetica Neue,
+    sans-serif;
   font-size: 0.8em;
   font-weight: 900;
 }

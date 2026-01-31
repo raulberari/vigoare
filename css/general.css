@@ -1,8 +1,6 @@
 @font-face {
   font-family: "GT America Extended";
-  src:
-    local("GT-America-Extended-Black-Trial"),
-    url("../fonts/GT-America-Extended-Black-Trial.otf") format("opentype");
+  src: url("../fonts/GT-America-Extended-Black.ttf") format("truetype");
   font-weight: 900;
 }
 
