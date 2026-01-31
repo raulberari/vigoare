@@ -14,9 +14,14 @@
 
 @media screen and (max-width: 800px) {
   #grid,
-  .text-grid,
-  .article {
+  .text-grid {
     width: 80%;
+    max-width: none;
+    padding: 60px 0;
+  }
+
+  .article {
+    width: 90%;
     max-width: none;
     padding: 60px 0;
   }
