@@ -25,6 +25,16 @@
     font-size: 15px;
   }
 
+  .article p,
+  .article li,
+  .article .text-list li {
+    font-size: 16px;
+  }
+
+  footer li {
+    font-size: 14px !important;
+  }
+
   .constellations-grid {
     width: 80%;
     max-width: none;
