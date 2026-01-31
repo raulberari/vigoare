@@ -159,6 +159,11 @@ body {
   margin: 0;
 }
 
+.text-grid ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 .text-grid a,
 .article a {
   color: var(--dark-color);
