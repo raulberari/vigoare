@@ -6,7 +6,7 @@ function onLoad() {
 
 const photoCount = {
   structures: 69,
-  industry: 25,
+  industry: 26,
   light: 24,
   nature: 24,
   noise: 24,
@@ -14,7 +14,7 @@ const photoCount = {
 
 const newPhotos = {
   structures: [69],
-  industry: [25],
+  industry: [26],
   light: [24],
   nature: [23, 24],
   noise: [24],
@@ -22,9 +22,7 @@ const newPhotos = {
 
 async function fetchJSONData() {
   try {
-    const data = await fetchData(
-      "./data/descriptions.json"
-    );
+    const data = await fetchData("./data/descriptions.json");
     initPhotos(data);
   } catch (error) {
     console.error("Failed to load subpages data:", error);
@@ -37,7 +35,7 @@ function initPhotos(descriptions) {
   window.photoGrid = new PhotoGrid(
     pageName,
     photoCount[pageName],
-    newPhotos[pageName]
+    newPhotos[pageName],
   );
 
   window.photoGrid.setupIntersectionObserver(descriptions);
