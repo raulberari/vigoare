@@ -22,13 +22,17 @@
   font-size: 0.7em;
 }
 
+.comment-header > * {
+  margin-bottom: 0 !important;
+}
+
 .comment-author {
-  font-family: "Firs Neue", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 700;
 }
 
 .comment-date {
-  font-family: "Firs Neue", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 300;
   color: #999999;
   position: relative;

@@ -36,7 +36,7 @@
 }
 
 #popup-index p {
-  font-family: "Firs Neue", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 0.8em;
   margin: 0;
   margin-bottom: 4px;
@@ -72,7 +72,7 @@
   width: 100%;
   padding: 4px;
   border: 1px solid #ccc;
-  font-family: "Firs Neue", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   box-sizing: border-box;
   font-size: 0.7em;
 }

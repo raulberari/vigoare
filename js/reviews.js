@@ -18,7 +18,7 @@ function initReviews(reviews) {
   const indexHTML = reviews
     .map(
       (review) =>
-        `<p data-director="${review.director}"><a href="#${review.id}">${review.title} (${review.year})</a></p>`
+        `<p data-director="${review.director}"><a href="#${review.id}">${review.title} (${review.year})</a></p>`,
     )
     .join("");
 
@@ -49,7 +49,7 @@ function initReviews(reviews) {
         <div class="film-review">
           ${review.content.map((para) => `<p>${para}</p>`).join("")}
         </div>
-    `
+    `,
     )
     .join("");
 
@@ -63,7 +63,7 @@ function initReviews(reviews) {
 
 async function fetchJSONData() {
   try {
-    const data = await fetchData("./data/reviews.json")
+    const data = await fetchData("./data/reviews.json");
     initReviews(data);
   } catch (error) {
     console.error("Failed to load reviews data:", error);
