@@ -290,7 +290,7 @@ body {
 }
 
 .film-details p {
-  font-size: 0.7em;
+  font-size: 12px !important;
   margin-bottom: 0;
 }
 
