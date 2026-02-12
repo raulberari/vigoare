@@ -30,6 +30,7 @@
     font-size: 15px;
   }
 
+  .text-grid p,
   .article p,
   .article li,
   .article .text-list li {
@@ -63,6 +64,7 @@
   }
 
   .constellations-grid p {
+    font-size: 15px;
     margin-bottom: 2em;
   }
 
