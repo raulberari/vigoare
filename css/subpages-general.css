@@ -329,14 +329,10 @@ body {
   opacity: 1;
 }
 
-.link-symbol {
-  color: red;
-  user-select: none;
-}
-
 .text-grid a,
 .article a {
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .text-grid a::after,
