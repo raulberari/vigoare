@@ -377,6 +377,7 @@ sup a::after,
   text-align: center;
   font-size: 2em !important;
   margin: 0 !important;
+  white-space: normal;
 }
 
 .article-author {
