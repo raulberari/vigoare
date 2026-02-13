@@ -314,11 +314,13 @@ body {
 .quote-text {
   display: none;
   width: 80%;
+  max-width: 400px;
   align-self: center;
-  text-align: center;
   font-family: "IBM Plex Sans";
   font-size: 15px;
   line-height: 1.2;
+  border-left: 1px solid var(--light-color);
+  padding-left: 8px;
 }
 
 .quote-text {
