@@ -319,7 +319,7 @@ body {
   font-family: "IBM Plex Sans";
   font-size: 15px;
   line-height: 1.2;
-  border-left: 1px solid var(--light-color);
+  border-left: 1px solid light-dark(var(--dark-color), var(--light-color));
   padding-left: 8px;
 }
 
