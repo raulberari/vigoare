@@ -7,7 +7,10 @@ Website for everything I publish. Photography & film reviews.
 
 Homepage design changes on a whim when it gets boring. Here's how it looked before:
 
-**2024-12 (current)**
+**2026-02 (current)**
+![2026-02](images/readme/2026-02.png?raw=true)
+
+**2024-12**
 ![2024-12](images/readme/2025-10.jpg?raw=true)
 
 **2024-10**
