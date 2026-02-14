@@ -3,6 +3,7 @@ body {
   min-height: 100vh;
   overflow-y: auto;
   background-color: var(--light-color);
+  background-color: #c8251d;
 }
 
 #title-buttons {
@@ -17,6 +18,7 @@ body {
   position: fixed;
   z-index: 1;
   background-color: light-dark(var(--light-color), var(--dark-color));
+  background-color: #c8251d;
 }
 
 .title {
@@ -49,8 +51,30 @@ body {
   font-weight: 500;
   color: var(--dark-color);
   margin: 0;
+  width: fit-content;
   text-decoration: none;
   align-content: end;
+}
+
+#struc:hover,
+#tures:hover,
+#reviews:hover,
+#noise:hover,
+#constel:hover,
+#lations:hover {
+  background-color: #f7d4d4;
+}
+#struc:hover + #tures {
+  background-color: #f7d4d4;
+}
+#struc:has(+ #tures:hover) {
+  background-color: #f7d4d4;
+}
+#constel:hover + #lations {
+  background-color: #f7d4d4;
+}
+#constel:has(+ #lations:hover) {
+  background-color: #f7d4d4;
 }
 
 #tures,
@@ -122,33 +146,4 @@ body {
   #small-links a {
     font-size: 16px !important;
   }
-}
-
-#news-link {
-  text-decoration: none;
-}
-
-.news {
-  display: flex;
-  justify-content: center;
-  padding: 1px 11px;
-  margin-left: 12px;
-
-  background: var(--dark-color);
-  color: var(--light-color);
-
-  font-family:
-    "GT America Extended",
-    Helvetica Neue,
-    sans-serif;
-  font-size: 0.8em;
-  font-weight: 900;
-}
-
-.news p {
-  margin: 0;
-}
-
-.jagged {
-  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 7%, 80% 10%);
 }
