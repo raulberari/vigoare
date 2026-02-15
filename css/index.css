@@ -2,7 +2,6 @@ body {
   margin: 0;
   min-height: 100vh;
   overflow-y: auto;
-  background-color: var(--light-color);
   background-color: var(--red);
 }
 
