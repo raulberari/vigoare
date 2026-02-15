@@ -51,4 +51,6 @@ b {
 :root {
   --light-color: #fafafa;
   --dark-color: #0f0f0f;
+  --red: #c8251d;
+  --light-red: #ffa4a4;
 }

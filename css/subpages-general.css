@@ -29,6 +29,14 @@ body {
   color: light-dark(var(--dark-color), var(--light-color));
 }
 
+#constellations {
+  background-color: var(--red);
+}
+
+#constellations #title-buttons {
+  background-color: var(--red);
+}
+
 #title-buttons {
   display: flex;
   padding: 0.5em;
@@ -181,28 +189,27 @@ body {
 
 .constellations-grid h1 {
   font-family:
-    "GT America Extended",
+    "Neue Haas Grotesk",
     Helvetica Neue,
     sans-serif;
-  font-weight: 900;
-  font-size: 1.5em;
+  font-weight: 600;
+  font-size: 38px;
   text-transform: uppercase;
   margin: 0;
 }
 
 .constellations-grid p {
-  font-family: "IBM Plex Sans", sans-serif;
-  line-height: 1.4;
+  font-family: "Neue Haas Grotesk", sans-serif;
+  line-height: 1.2;
   margin: 0;
   margin-bottom: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: flex-start;
 }
 
 .wide-item {
   grid-column: span 2;
-}
-
-.constellations-grid p span:not(:last-child)::after {
-  content: " •";
 }
 
 .constellations-grid {
