@@ -17,7 +17,6 @@ body {
   transform: translateX(-50%);
   position: fixed;
   z-index: 1;
-  background-color: light-dark(var(--light-color), var(--dark-color));
   background-color: #c8251d;
 }
 
