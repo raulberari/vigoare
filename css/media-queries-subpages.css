@@ -7,9 +7,6 @@
   .constellations-grid {
     width: 90%;
   }
-  .constellations-grid h1 {
-    font-size: 1.5em;
-  }
 }
 
 @media screen and (max-width: 800px) {
@@ -42,30 +39,32 @@
   }
 
   .constellations-grid {
-    width: 80%;
+    width: 100%;
+    margin-left: 20px;
     max-width: none;
     padding: 60px 0;
 
     grid-template-columns:
-      [col1-start] 10%
-      [col2-start] 90%
+      [col1-start] 20%
+      [col2-start] 80%
       [col2-end];
     gap: 0;
   }
 
   .constellations-grid h1 {
-    font-size: 1em;
+    font-size: 32px;
     writing-mode: vertical-rl;
     text-align: end;
     display: inline-block;
     transform: rotate(180deg);
-    margin-top: 0.25em;
     margin-bottom: 2em;
   }
 
   .constellations-grid p {
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 1.1;
     margin-bottom: 2em;
+    grid-template-columns: 1fr;
   }
 
   .item-container,

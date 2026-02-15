@@ -3,7 +3,7 @@ body {
   min-height: 100vh;
   overflow-y: auto;
   background-color: var(--light-color);
-  background-color: #c8251d;
+  background-color: var(--red);
 }
 
 #title-buttons {
@@ -17,7 +17,7 @@ body {
   transform: translateX(-50%);
   position: fixed;
   z-index: 1;
-  background-color: #c8251d;
+  background-color: var(--red);
 }
 
 .title {
@@ -61,19 +61,19 @@ body {
 #noise:hover,
 #constel:hover,
 #lations:hover {
-  background-color: #ffa4a4;
+  background-color: var(--light-red);
 }
 #struc:hover + #tures {
-  background-color: #ffa4a4;
+  background-color: var(--light-red);
 }
 #struc:has(+ #tures:hover) {
-  background-color: #ffa4a4;
+  background-color: var(--light-red);
 }
 #constel:hover + #lations {
-  background-color: #ffa4a4;
+  background-color: var(--light-red);
 }
 #constel:has(+ #lations:hover) {
-  background-color: #ffa4a4;
+  background-color: var(--light-red);
 }
 
 #tures,
@@ -125,7 +125,7 @@ body {
 }
 
 #small-links a:hover {
-  background-color: #ffa4a4;
+  background-color: var(--light-red);
 }
 
 @media screen and (max-width: 1280px) {
