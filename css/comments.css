@@ -1,5 +1,6 @@
 .comment {
   padding-bottom: 12px;
+  margin-bottom: 20px;
   display: flex;
   width: 100%;
 }
@@ -18,7 +19,6 @@
 
 .comment-header {
   display: flex;
-  margin-bottom: 4px;
   font-size: 11px;
   align-items: center;
 }
@@ -40,7 +40,6 @@
 }
 
 .comment-content {
-  margin-top: 5px;
   width: 100%;
 }
 
@@ -50,4 +49,8 @@
 
 #hit-counter {
   margin-top: 14px;
+}
+
+.bullet-spacer {
+  font-size: 11px !important;
 }

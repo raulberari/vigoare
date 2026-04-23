@@ -22,16 +22,14 @@ function initComments(data) {
           </div>
         </div>
       </div>
-      `
+      `,
     )
     .join("");
 }
 
 async function fetchJSONData() {
   try {
-    const data = await fetchData(
-      "./data/comments.json"
-    );
+    const data = await fetchData("./data/comments.json");
     initComments(data);
   } catch (error) {
     console.error("Failed to load guestbook data:", error);
