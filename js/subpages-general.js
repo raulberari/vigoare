@@ -5,19 +5,19 @@ function onLoad() {
 }
 
 const photoCount = {
-  structures: 70,
-  industry: 26,
-  light: 24,
-  nature: 24,
-  noise: 24,
+  structures: 75,
+  industry: 27,
+  light: 29,
+  nature: 26,
+  noise: 31,
 };
 
 const newPhotos = {
-  structures: [70],
-  industry: [26],
-  light: [24],
-  nature: [23, 24],
-  noise: [24],
+  structures: [71, 72, 73, 74, 75],
+  industry: [27],
+  light: [25, 26, 27, 28, 29],
+  nature: [25, 26],
+  noise: [25, 26, 27, 28, 29, 30, 31],
 };
 
 async function fetchJSONData() {
