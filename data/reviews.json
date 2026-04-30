@@ -1,8 +1,22 @@
 [
   {
+    "id": "lily-chou-chou",
+    "title": "All About Lily Chou-Chou",
+    "director": "Shunji Iwai",
+    "image": "images/subpages/reviews/lily-chou-chou.jpg",
+    "rating": 4,
+    "duration": "146 mins",
+    "year": "2001",
+    "watchDate": "Watched 14 Apr 2025",
+    "content": [
+      "CDs encapsulating the death of sociality, the forum prefiguring its stunted form of today.",
+      "Iwai shot a film about the violent passage through adolescence, one of the first feature lengths to be captured digitally. Its visual decay, glitches, and compression artifacts are an indictment against nostalgia. Floating in the hazy green fields reads like a symptom—a false space shielding against the desolation and foreclosed futures of the youth. The “ether” of Lily Chou Chou, far from the emancipatory fiction of the network, was the last utopian enclosure before loneliness became fully commodified and turned inward. Ferocious fandoms grew into templates for all sociality; drowning in the Okinawan sea mirrored the suffocating existence of always being online, never being seen."
+    ]
+  },
+  {
     "id": "the-bone-temple",
     "title": "28 Years Later: The Bone Temple",
-    "director": "Michael Mann",
+    "director": "Nia DaCosta",
     "image": "images/subpages/reviews/the-bone-temple.jpg",
     "rating": 4,
     "duration": "109 mins",
