@@ -33,7 +33,7 @@ class ThemeManager {
     if (columnNumber > 1) {
       this.changeColumns("storage");
     } else {
-      const button = document.getElementById("columnsButton");
+      const button = document.getElementById("columns-button");
       if (button) button.innerText = "1";
     }
   }
@@ -56,7 +56,7 @@ class ThemeManager {
 
   changeColumns(origin) {
     const grid = document.getElementById("grid");
-    const columnButton = document.getElementById("columnsButton");
+    const columnButton = document.getElementById("columns-button");
     const currentColumns = Storage.getNumber("columnNumber", 1);
 
     if (currentColumns > 1 && origin !== "storage") {
@@ -84,7 +84,7 @@ class ThemeManager {
     if (numberOfColumns === 1) numberOfColumns = 2;
 
     const grid = document.getElementById("grid");
-    const columnButton = document.getElementById("columnsButton");
+    const columnButton = document.getElementById("columns-button");
     const currentColumns = Storage.getNumber("columnNumber", 1);
 
     if (currentColumns > 1) {

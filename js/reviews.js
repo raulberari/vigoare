@@ -15,12 +15,16 @@ function onClickIndex(event) {
 
 function initReviews(reviews) {
   // Index
-  const indexHTML = reviews
+  const indexHTML = [...reviews]
+    .sort((a, b) => a.title > b.title)
     .map(
       (review) =>
         `<p data-director="${review.director}"><a href="#${review.id}">${review.title} (${review.year})</a></p>`,
     )
     .join("");
+
+  const button = document.getElementById("index-button");
+  if (button) button.innerText = reviews.length.toString();
 
   // Reviews
   const reviewsContainer = document.getElementById("reviews-container");
