@@ -1,56 +1,82 @@
 @font-face {
-  font-family: "GT America Extended";
-  src: url("../fonts/GT-America-Extended-Black.ttf") format("truetype");
-  font-weight: 900;
+    font-family: "GT America Extended";
+    src: url("../fonts/GT-America-Extended-Black.ttf") format("truetype");
+    font-weight: 900;
 }
 
 @font-face {
-  font-family: "GT America Extended";
-  src:
-    local("GT-America-Extended-Thin-Trial"),
-    url("../fonts/GT-America-Extended-Thin-Trial.otf") format("opentype");
-  font-weight: 300;
+    font-family: "GT America Extended";
+    src:
+        local("GT-America-Extended-Thin-Trial"),
+        url("../fonts/GT-America-Extended-Thin-Trial.otf") format("opentype");
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: "IBM Plex Sans";
-  src: url("../fonts/IBMPlexSans-Text.otf");
-  font-weight: 500;
+    font-family: "IBM Plex Sans";
+    src: url("../fonts/IBMPlexSans-Text.otf");
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "IBM Plex Sans";
-  src: url("../fonts/IBMPlexSans-Italic.otf");
-  font-weight: 500;
-  font-style: italic;
+    font-family: "IBM Plex Sans";
+    src: url("../fonts/IBMPlexSans-Italic.otf");
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "IBM Plex Sans";
-  src: url("../fonts/IBMPlexSans-SemiBold.otf");
-  font-weight: 600;
-  font-style: normal;
+    font-family: "IBM Plex Sans";
+    src: url("../fonts/IBMPlexSans-SemiBold.otf");
+    font-weight: 600;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "Neue Haas Grotesk";
-  src: url("../fonts/NHaasGroteskDSPro-65Md.otf");
-  font-weight: 500;
+    font-family: "Domine";
+    src: url("../fonts/Domine-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Domine";
+    src: url("../fonts/Domine-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Domine";
+    src: url("../fonts/Domine-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Domine";
+    src: url("../fonts/Domine-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neue Haas Grotesk";
+    src: url("../fonts/NHaasGroteskDSPro-65Md.otf");
+    font-weight: 500;
 }
 
 em,
 i {
-  font-style: italic;
+    font-style: italic;
 }
 
 strong,
 b {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 :root {
-  --light-color: #fafafa;
-  --dark-color: #0f0f0f;
-  --red: #c8251d;
-  --light-red: #ffa4a4;
+    --light-color: #fafafa;
+    --dark-color: #0f0f0f;
+    --red: #c8251d;
+    --light-red: #ffa4a4;
 }
