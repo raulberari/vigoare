@@ -1,61 +1,61 @@
 function onLoad() {
-  window.photos = [];
-  window.themeManager = new ThemeManager();
-  fetchJSONData();
+    window.photos = [];
+    window.themeManager = new ThemeManager();
+    fetchJSONData();
 }
 
 const photoCount = {
-  structures: 75,
-  industry: 27,
-  light: 30,
-  nature: 26,
-  noise: 31,
+    structures: 77,
+    industry: 29,
+    light: 30,
+    nature: 27,
+    noise: 31,
 };
 
 const newPhotos = {
-  structures: [71, 72, 73, 74, 75],
-  industry: [27],
-  light: [26, 27, 28, 29, 30],
-  nature: [25, 26],
-  noise: [25, 26, 27, 28, 29, 30, 31],
+    structures: [76, 77],
+    industry: [28, 29],
+    light: [26, 27, 28, 29, 30],
+    nature: [27],
+    noise: [25, 26, 27, 28, 29, 30, 31],
 };
 
 async function fetchJSONData() {
-  try {
-    const data = await fetchData("./data/descriptions.json");
-    initPhotos(data);
-  } catch (error) {
-    console.error("Failed to load subpages data:", error);
-  }
+    try {
+        const data = await fetchData("./data/descriptions.json");
+        initPhotos(data);
+    } catch (error) {
+        console.error("Failed to load subpages data:", error);
+    }
 }
 
 function initPhotos(descriptions) {
-  const pageName = document.body.getAttribute("data-name");
+    const pageName = document.body.getAttribute("data-name");
 
-  window.photoGrid = new PhotoGrid(
-    pageName,
-    photoCount[pageName],
-    newPhotos[pageName],
-  );
+    window.photoGrid = new PhotoGrid(
+        pageName,
+        photoCount[pageName],
+        newPhotos[pageName],
+    );
 
-  window.photoGrid.setupIntersectionObserver(descriptions);
+    window.photoGrid.setupIntersectionObserver(descriptions);
 
-  // Initial load
-  window.photoGrid.loadPhotos(descriptions);
+    // Initial load
+    window.photoGrid.loadPhotos(descriptions);
 
-  // Reflow photos on window resize
-  window.addEventListener("resize", () => {
-    window.photoGrid.reflowPhotos();
-  });
+    // Reflow photos on window resize
+    window.addEventListener("resize", () => {
+        window.photoGrid.reflowPhotos();
+    });
 }
 
 function reflowPhotos() {
-  if (window.photoGrid) {
-    window.photoGrid.reflowPhotos();
-  }
+    if (window.photoGrid) {
+        window.photoGrid.reflowPhotos();
+    }
 }
 
 setTimeout(function () {
-  const quoteText = document.querySelector(".quote-text");
-  quoteText.classList.add("visible");
+    const quoteText = document.querySelector(".quote-text");
+    quoteText.classList.add("visible");
 }, 1000);
