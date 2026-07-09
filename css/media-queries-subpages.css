@@ -1,90 +1,90 @@
 @media screen and (max-width: 1280px) {
-  #grid,
-  .text-grid,
-  .article {
-    width: 70%;
-  }
-  .constellations-grid {
-    width: 90%;
-  }
+    #grid,
+    .text-grid,
+    .article {
+        width: 70%;
+    }
+    .constellations-grid {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 800px) {
-  #grid,
-  .text-grid {
-    width: 80%;
-    max-width: none;
-    padding: 60px 0;
-  }
+    #grid,
+    .text-grid {
+        width: 80%;
+        max-width: none;
+        padding: 60px 0;
+    }
 
-  .article {
-    width: 85%;
-    max-width: none;
-    padding: 60px 0;
-  }
+    .article {
+        width: 85%;
+        max-width: none;
+        padding: 60px 0;
+    }
 
-  .film-review p {
-    font-size: 15px;
-  }
+    .film-review p {
+        font-size: 15px;
+    }
 
-  .text-grid p,
-  .article p,
-  .article li,
-  .article .text-list li {
-    font-size: 15px;
-  }
+    .text-grid p,
+    .article p,
+    .article li,
+    .article .text-list li {
+        font-size: 15px;
+    }
 
-  footer li {
-    font-size: 14px !important;
-  }
+    footer li {
+        font-size: 14px !important;
+    }
 
-  .constellations-grid {
-    margin-left: 20px;
-    max-width: none;
-    padding: 60px 0;
+    .constellations-grid {
+        margin-left: 20px;
+        max-width: none;
+        padding: 60px 0;
 
-    grid-template-columns:
-      [col1-start] 20%
-      [col2-start] 80%
-      [col2-end];
-    gap: 0;
-  }
+        grid-template-columns:
+            [col1-start] 20%
+            [col2-start] 80%
+            [col2-end];
+        gap: 0;
+    }
 
-  .constellations-grid h1 {
-    font-size: 32px;
-    writing-mode: vertical-rl;
-    text-align: end;
-    display: inline-block;
-    transform: rotate(180deg);
-    margin-bottom: 2em;
-  }
+    .constellations-grid h1 {
+        font-size: 32px;
+        writing-mode: vertical-rl;
+        text-align: end;
+        display: inline-block;
+        transform: rotate(180deg);
+        margin-bottom: 2em;
+    }
 
-  .constellations-grid p {
-    font-size: 18px;
-    line-height: 1.1;
-    margin-bottom: 2em;
-    grid-template-columns: 1fr;
-  }
+    .constellations-grid p {
+        font-size: 18px;
+        line-height: 1.1;
+        margin-bottom: 2em;
+        grid-template-columns: 1fr;
+    }
 
-  .item-container,
-  .new-item-container {
-    margin-bottom: 1em;
-  }
+    .item-container,
+    .new-item-container {
+        margin-bottom: 1em;
+    }
 
-  .new-item-text,
-  .description {
-    font-size: 0.8em;
-  }
+    .new-item-text,
+    .description {
+        font-size: 0.8em;
+    }
 
-  .quote-text {
-    width: 90%;
-  }
+    .quote-text {
+        width: 90%;
+    }
 
-  .film-review {
-    margin-bottom: 32px;
-  }
+    .film-review {
+        margin-bottom: 32px;
+    }
 
-  q {
-    margin-left: 16px;
-  }
+    q {
+        margin-left: 16px;
+    }
 }

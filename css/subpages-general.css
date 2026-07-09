@@ -147,7 +147,7 @@ body {
     font-size: 16px;
     margin: 0;
     margin-bottom: 14px;
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
 .text-grid h1,
@@ -254,7 +254,7 @@ body {
     display: grid;
     align-self: flex-end;
     margin: 8px;
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "Domine", serif;
     color: var(--light-color);
     font-size: 0.8em;
     user-select: none;
@@ -324,7 +324,7 @@ body {
     width: 80%;
     max-width: 400px;
     align-self: center;
-    font-family: "IBM Plex Sans";
+    font-family: "Domine";
     font-size: 15px;
     line-height: 1.2;
     border-left: 1px solid light-dark(var(--dark-color), var(--light-color));
@@ -406,7 +406,7 @@ sup a::after,
 .article-date {
     text-align: center;
     margin: 0;
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "Domine", serif;
     font-weight: 300;
     font-size: 14px;
     margin-bottom: 1em;

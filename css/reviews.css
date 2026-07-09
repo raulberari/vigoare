@@ -1,74 +1,74 @@
 #index-popup h1 {
-  font-family:
-    "GT America Extended",
-    Helvetica Neue,
-    sans-serif;
-  font-weight: 900;
-  font-size: 1em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
+    font-family:
+        "GT America Extended",
+        Helvetica Neue,
+        sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
 }
 
 .index-popup-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 100;
-  align-items: center;
-  justify-content: center;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
 }
 
 .index-popup {
-  background-color: var(--light-color);
-  padding: 20px;
-  max-height: 80vh;
-  overflow-y: auto;
-  width: 300px;
+    background-color: var(--light-color);
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 300px;
 }
 
 #popup-index {
-  max-height: 60vh;
-  overflow-y: auto;
+    max-height: 60vh;
+    overflow-y: auto;
 }
 
 #popup-index p {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.8em;
-  margin: 0;
-  margin-bottom: 4px;
-  user-select: none;
+    font-family: "Domine", serif;
+    font-size: 0.8em;
+    margin: 0;
+    margin-bottom: 4px;
+    user-select: none;
 }
 
 #popup-index p a {
-  color: var(--dark-color);
-  text-decoration: none;
-  display: block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+    color: var(--dark-color);
+    text-decoration: none;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #popup-index p:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .index-search-container {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 #index-search {
-  width: 100%;
-  padding: 4px;
-  border: 1px solid #ccc;
-  font-family: "IBM Plex Sans", sans-serif;
-  box-sizing: border-box;
-  font-size: 0.7em;
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    font-family: "Domine", serif;
+    box-sizing: border-box;
+    font-size: 0.7em;
 }
 
 q {
-  margin-left: 32px;
+    margin-left: 32px;
 }

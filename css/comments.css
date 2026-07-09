@@ -1,56 +1,56 @@
 .comment {
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  display: flex;
-  width: 100%;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
 }
 
 .comment:first-of-type {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
 .comment:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .text-container {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .comment-header {
-  display: flex;
-  font-size: 11px;
-  align-items: center;
+    display: flex;
+    font-size: 11px;
+    align-items: center;
 }
 
 .comment-header > * {
-  margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .comment-author {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 700;
+    font-family: "Domine", serif;
+    font-weight: 700;
 }
 
 .comment-date {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 300;
-  color: #999999;
-  position: relative;
+    font-family: "Domine", serif;
+    font-weight: 400;
+    color: #999999;
+    position: relative;
 }
 
 .comment-content {
-  width: 100%;
+    width: 100%;
 }
 
 #comment-heading {
-  margin-top: 14px;
+    margin-top: 14px;
 }
 
 #hit-counter {
-  margin-top: 14px;
+    margin-top: 14px;
 }
 
 .bullet-spacer {
-  font-size: 11px !important;
+    font-size: 11px !important;
 }
