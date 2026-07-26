@@ -64,7 +64,30 @@ function initReviews(reviews) {
     const overlay = document.getElementById("index-popup-overlay");
     Events.onClickOutside(overlay, closeIndexPopup);
 
-    window.location.hash = window.location.hash;
+    // wait for images to load before scrolling
+    if (window.location.hash) {
+        const target = document.getElementById(window.location.hash.slice(1));
+        if (target) {
+            const images = reviewsContainer.querySelectorAll("img");
+            const pending = [...images].filter((img) => !img.complete);
+
+            if (pending.length === 0) {
+                target.scrollIntoView({ block: "start" });
+            } else {
+                let remaining = pending.length;
+                const onDone = () => {
+                    remaining--;
+                    if (remaining === 0) {
+                        target.scrollIntoView({ block: "start" });
+                    }
+                };
+                pending.forEach((img) => {
+                    img.addEventListener("load", onDone, { once: true });
+                    img.addEventListener("error", onDone, { once: true });
+                });
+            }
+        }
+    }
 }
 
 async function fetchJSONData() {

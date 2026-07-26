@@ -17,7 +17,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 9rem;
 }
 
 body {
@@ -59,20 +58,6 @@ body {
         sans-serif;
     font-weight: 900;
     align-content: center;
-}
-
-#stills-container {
-    width: 100%;
-}
-
-#stills-container img {
-    height: 100vh;
-    padding: 50px 0;
-    object-fit: contain;
-}
-
-#stills-container img:first-child {
-    padding: 0;
 }
 
 #buttons {
