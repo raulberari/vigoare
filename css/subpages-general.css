@@ -472,3 +472,8 @@ sup {
 .preview-article .article-author {
     font-size: 1em;
 }
+
+.article li[id^="fn"],
+.article a[id^="ref"] {
+    scroll-margin-top: 48px;
+}
