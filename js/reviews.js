@@ -13,6 +13,14 @@ function onClickIndex(event) {
     document.body.style.overflow = "auto";
 
     event.target.style.fontWeight = "bold";
+
+    const id = event.target.dataset.target;
+    const target = document.getElementById(id);
+    if (target) {
+        event.preventDefault();
+        target.scrollIntoView({ block: "start" });
+        history.pushState({}, "", `?r=${id}`);
+    }
 }
 
 function initReviews(reviews) {
@@ -21,7 +29,7 @@ function initReviews(reviews) {
         .sort((a, b) => a.title > b.title)
         .map(
             (review) =>
-                `<p data-director="${review.director}"><a href="#${review.id}">${review.title} (${review.year})</a></p>`,
+                `<p data-director="${review.director}"><a href="?r=${review.id}" data-target="${review.id}">${review.title} (${review.year})</a></p>`,
         )
         .join("");
 
@@ -65,8 +73,11 @@ function initReviews(reviews) {
     Events.onClickOutside(overlay, closeIndexPopup);
 
     // wait for images to load before scrolling
-    if (window.location.hash) {
-        const target = document.getElementById(window.location.hash.slice(1));
+    const params = new URLSearchParams(window.location.search);
+    const targetId = params.get("r") || window.location.hash.slice(1);
+
+    if (targetId) {
+        const target = document.getElementById(targetId);
         if (target) {
             const images = reviewsContainer.querySelectorAll("img");
             const pending = [...images].filter((img) => !img.complete);
