@@ -104,10 +104,12 @@ body {
 
 #grid {
     display: flex;
-    gap: 20px;
-    padding: 80px 0;
+    gap: 5px;
     width: 45%;
     margin: 0 auto;
+    padding: 5px;
+    margin-top: 42px;
+    box-sizing: border-box;
 }
 
 .grid-column {
@@ -216,7 +218,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .new-item-text {

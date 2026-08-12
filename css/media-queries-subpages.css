@@ -13,7 +13,6 @@
     #grid {
         width: 80%;
         max-width: none;
-        padding: 60px 0;
     }
 
     .text-grid {
@@ -69,11 +68,6 @@
         line-height: 1.1;
         margin-bottom: 2em;
         grid-template-columns: 1fr;
-    }
-
-    .item-container,
-    .new-item-container {
-        margin-bottom: 1em;
     }
 
     .new-item-text,
