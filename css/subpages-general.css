@@ -142,6 +142,7 @@ body {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     overflow-wrap: break-word;
+    hyphenate-limit-chars: 6 3 3;
 }
 
 .text-grid h1,
