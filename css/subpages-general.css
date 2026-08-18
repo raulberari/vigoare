@@ -135,6 +135,13 @@ body {
     margin: 0;
     margin-bottom: 14px;
     line-height: 1.45;
+
+    text-justify: inter-word;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    overflow-wrap: break-word;
 }
 
 .text-grid h1,
@@ -363,6 +370,12 @@ sup a::after,
 .article p,
 .article .text-list li {
     font-size: 18px;
+    text-justify: inter-word;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    overflow-wrap: break-word;
 }
 
 .article img {
