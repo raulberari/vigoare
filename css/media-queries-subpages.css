@@ -16,13 +16,13 @@
     }
 
     .text-grid {
-        width: 85%;
+        width: 75%;
         max-width: none;
         padding: 60px 0;
     }
 
     .article {
-        width: 85%;
+        width: 75%;
         max-width: none;
         padding: 60px 0;
     }
@@ -35,11 +35,11 @@
     .article p,
     .article li,
     .article .text-list li {
-        font-size: 15px;
+        font-size: 17px;
     }
 
     footer li {
-        font-size: 14px !important;
+        font-size: 15px !important;
     }
 
     .constellations-grid {
@@ -85,5 +85,30 @@
 
     q {
         margin-left: 16px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .text-grid p,
+    .article p,
+    .article li,
+    .article .text-list li {
+        font-size: 15px;
+    }
+
+    footer li {
+        font-size: 14px !important;
+    }
+
+    .text-grid {
+        width: 85%;
+        max-width: none;
+        padding: 60px 0;
+    }
+
+    .article {
+        width: 85%;
+        max-width: none;
+        padding: 60px 0;
     }
 }
