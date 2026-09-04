@@ -130,7 +130,7 @@ body {
 .article p,
 .article li,
 .film-review p {
-    font-family: "Domine", sans-serif;
+    font-family: "Tiempos", sans-serif;
     font-size: 16px;
     margin: 0;
     margin-bottom: 14px;
@@ -249,7 +249,7 @@ body {
     display: grid;
     align-self: flex-end;
     margin: 8px;
-    font-family: "Domine", serif;
+    font-family: "Tiempos", serif;
     color: var(--light-color);
     font-size: 0.8em;
     user-select: none;
@@ -319,7 +319,7 @@ body {
     width: 80%;
     max-width: 400px;
     align-self: center;
-    font-family: "Domine";
+    font-family: "Tiempos";
     font-size: 15px;
     line-height: 1.2;
     border-left: 1px solid light-dark(var(--dark-color), var(--light-color));
@@ -407,7 +407,7 @@ sup a::after,
 .article-date {
     text-align: center;
     margin: 0;
-    font-family: "Domine", serif;
+    font-family: "Tiempos", serif;
     font-weight: 300;
     font-size: 14px;
     margin-bottom: 1em;

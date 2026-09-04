@@ -36,7 +36,7 @@
 }
 
 #popup-index p {
-    font-family: "Domine", serif;
+    font-family: "Tiempos", serif;
     font-size: 0.8em;
     margin: 0;
     margin-bottom: 4px;
@@ -64,7 +64,7 @@
     width: 100%;
     padding: 4px;
     border: 1px solid #ccc;
-    font-family: "Domine", serif;
+    font-family: "Tiempos", serif;
     box-sizing: border-box;
     font-size: 0.7em;
 }

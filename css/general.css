@@ -13,32 +13,17 @@
 }
 
 @font-face {
-    font-family: "Domine";
-    src: url("../fonts/Domine-Regular.ttf");
+    font-family: "Tiempos";
+    src: url("../fonts/tiempos-text-web-regular.woff");
     font-weight: 400;
 }
 
 @font-face {
-    font-family: "Domine";
-    src: url("../fonts/Domine-Medium.ttf");
-    font-weight: 500;
+    font-family: "Tiempos";
+    src: url("../fonts/tiempos-text-web-regular-italic.woff");
+    font-weight: 400;
+    font-style: italic;
 }
-
-@font-face {
-    font-family: "Domine";
-    src: url("../fonts/Domine-SemiBold.ttf");
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Domine";
-    src: url("../fonts/Domine-Bold.ttf");
-    font-weight: 700;
-    font-style: normal;
-}
-
-
 
 @font-face {
     font-family: "Neue Haas Grotesk";
