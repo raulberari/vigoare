@@ -19,20 +19,24 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .index-popup {
     background-color: var(--light-color);
-    padding: 20px;
+    padding: 16px;
     max-height: 80vh;
     overflow-y: auto;
     width: 300px;
+    height: 300px;
+    top: calc(50% - 150px);
+    position: relative;
 }
 
 #popup-index {
-    max-height: 60vh;
+    max-height: 220px;
     overflow-y: auto;
+    padding-left: 16px;
 }
 
 #popup-index p {
