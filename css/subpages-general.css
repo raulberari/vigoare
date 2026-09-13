@@ -380,7 +380,8 @@ sup a::after,
 }
 
 .article img {
-    width: 100%;
+    width: 200%;
+    align-self: center;
     margin-bottom: 20px;
 }
 

@@ -7,6 +7,9 @@
     .constellations-grid {
         width: 90%;
     }
+    .article img {
+        width: 150%;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -25,6 +28,10 @@
         width: 75%;
         max-width: none;
         padding: 60px 0;
+    }
+
+    .article img {
+        width: 100%;
     }
 
     .film-review p {
