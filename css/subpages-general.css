@@ -118,11 +118,15 @@ body {
 
 .text-grid,
 .article {
-    padding-top: 80px;
+    padding-top: 140px;
     padding-bottom: 40px;
     width: 45%;
     max-width: 600px;
     margin: 0 auto;
+}
+
+.article {
+    padding-top: 80px;
 }
 
 .text-grid p,
