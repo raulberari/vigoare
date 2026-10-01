@@ -135,10 +135,10 @@ body {
 .article li,
 .film-review p {
     font-family: "Tiempos", sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     margin: 0;
     margin-bottom: 14px;
-    line-height: 1.45;
+    line-height: 1.5;
 
     text-justify: inter-word;
     -moz-hyphens: auto;
@@ -255,7 +255,7 @@ body {
     margin: 8px;
     font-family: "Neue Haas Grotesk";
     color: var(--light-color);
-    font-size: 16px;
+    font-size: 17px;
     user-select: none;
     overflow: none;
     overflow-wrap: break-word;

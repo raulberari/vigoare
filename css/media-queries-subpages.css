@@ -100,11 +100,11 @@
     .article p,
     .article li,
     .article .text-list li {
-        font-size: 15px;
+        font-size: 17px;
     }
 
     footer li {
-        font-size: 14px !important;
+        font-size: 15px !important;
     }
 
     .text-grid {
@@ -114,7 +114,7 @@
     }
 
     .article {
-        width: 85%;
+        width: 90%;
         max-width: none;
         padding: 60px 0;
     }
